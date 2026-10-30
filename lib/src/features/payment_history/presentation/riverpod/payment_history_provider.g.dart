@@ -6,157 +6,86 @@ part of 'payment_history_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$paymentHistoryHash() => r'2d138f1d27479249e6ccd555126fd0af0ef3657d';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-/// See also [paymentHistory].
 @ProviderFor(paymentHistory)
-const paymentHistoryProvider = PaymentHistoryFamily();
+final paymentHistoryProvider = PaymentHistoryFamily._();
 
-/// See also [paymentHistory].
-class PaymentHistoryFamily
-    extends Family<AsyncValue<List<PaymentHistoryModel>>> {
-  /// See also [paymentHistory].
-  const PaymentHistoryFamily();
+final class PaymentHistoryProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<PaymentHistoryModel>>,
+          List<PaymentHistoryModel>,
+          FutureOr<List<PaymentHistoryModel>>
+        >
+    with
+        $FutureModifier<List<PaymentHistoryModel>>,
+        $FutureProvider<List<PaymentHistoryModel>> {
+  PaymentHistoryProvider._({
+    required PaymentHistoryFamily super.from,
+    required (String, String) super.argument,
+  }) : super(
+         retry: null,
+         name: r'paymentHistoryProvider',
+         isAutoDispose: false,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
 
-  /// See also [paymentHistory].
-  PaymentHistoryProvider call(String month, String year) {
-    return PaymentHistoryProvider(month, year);
+  @override
+  String debugGetCreateSourceHash() => _$paymentHistoryHash();
+
+  @override
+  String toString() {
+    return r'paymentHistoryProvider'
+        ''
+        '$argument';
   }
 
+  @$internal
   @override
-  PaymentHistoryProvider getProviderOverride(
-    covariant PaymentHistoryProvider provider,
-  ) {
-    return call(provider.month, provider.year);
-  }
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
+  $FutureProviderElement<List<PaymentHistoryModel>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
 
   @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'paymentHistoryProvider';
-}
-
-/// See also [paymentHistory].
-class PaymentHistoryProvider extends FutureProvider<List<PaymentHistoryModel>> {
-  /// See also [paymentHistory].
-  PaymentHistoryProvider(String month, String year)
-    : this._internal(
-        (ref) => paymentHistory(ref as PaymentHistoryRef, month, year),
-        from: paymentHistoryProvider,
-        name: r'paymentHistoryProvider',
-        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-            ? null
-            : _$paymentHistoryHash,
-        dependencies: PaymentHistoryFamily._dependencies,
-        allTransitiveDependencies:
-            PaymentHistoryFamily._allTransitiveDependencies,
-        month: month,
-        year: year,
-      );
-
-  PaymentHistoryProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.month,
-    required this.year,
-  }) : super.internal();
-
-  final String month;
-  final String year;
-
-  @override
-  Override overrideWith(
-    FutureOr<List<PaymentHistoryModel>> Function(PaymentHistoryRef provider)
-    create,
-  ) {
-    return ProviderOverride(
-      origin: this,
-      override: PaymentHistoryProvider._internal(
-        (ref) => create(ref as PaymentHistoryRef),
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        month: month,
-        year: year,
-      ),
-    );
-  }
-
-  @override
-  FutureProviderElement<List<PaymentHistoryModel>> createElement() {
-    return _PaymentHistoryProviderElement(this);
+  FutureOr<List<PaymentHistoryModel>> create(Ref ref) {
+    final argument = this.argument as (String, String);
+    return paymentHistory(ref, argument.$1, argument.$2);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is PaymentHistoryProvider &&
-        other.month == month &&
-        other.year == year;
+    return other is PaymentHistoryProvider && other.argument == argument;
   }
 
   @override
   int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, month.hashCode);
-    hash = _SystemHash.combine(hash, year.hashCode);
-
-    return _SystemHash.finish(hash);
+    return argument.hashCode;
   }
 }
 
-mixin PaymentHistoryRef on FutureProviderRef<List<PaymentHistoryModel>> {
-  /// The parameter `month` of this provider.
-  String get month;
+String _$paymentHistoryHash() => r'23c34e879277bd04923cb84696394e494e32ded2';
 
-  /// The parameter `year` of this provider.
-  String get year;
-}
+final class PaymentHistoryFamily extends $Family
+    with
+        $FunctionalFamilyOverride<
+          FutureOr<List<PaymentHistoryModel>>,
+          (String, String)
+        > {
+  PaymentHistoryFamily._()
+    : super(
+        retry: null,
+        name: r'paymentHistoryProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: false,
+      );
 
-class _PaymentHistoryProviderElement
-    extends FutureProviderElement<List<PaymentHistoryModel>>
-    with PaymentHistoryRef {
-  _PaymentHistoryProviderElement(super.provider);
+  PaymentHistoryProvider call(String month, String year) =>
+      PaymentHistoryProvider._(argument: (month, year), from: this);
 
   @override
-  String get month => (origin as PaymentHistoryProvider).month;
-  @override
-  String get year => (origin as PaymentHistoryProvider).year;
+  String toString() => r'paymentHistoryProvider';
 }
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

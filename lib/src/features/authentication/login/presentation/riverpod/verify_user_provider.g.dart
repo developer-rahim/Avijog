@@ -6,21 +6,50 @@ part of 'verify_user_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(VerifyUser)
+final verifyUserProvider = VerifyUserProvider._();
+
+final class VerifyUserProvider
+    extends $AsyncNotifierProvider<VerifyUser, VerifyUserEntity> {
+  VerifyUserProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'verifyUserProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$verifyUserHash();
+
+  @$internal
+  @override
+  VerifyUser create() => VerifyUser();
+}
+
 String _$verifyUserHash() => r'0d8a9ac750959831693da88a3bd3a9c32a2a4778';
 
-/// See also [VerifyUser].
-@ProviderFor(VerifyUser)
-final verifyUserProvider =
-    AsyncNotifierProvider<VerifyUser, VerifyUserEntity>.internal(
-      VerifyUser.new,
-      name: r'verifyUserProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$verifyUserHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$VerifyUser = AsyncNotifier<VerifyUserEntity>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+abstract class _$VerifyUser extends $AsyncNotifier<VerifyUserEntity> {
+  FutureOr<VerifyUserEntity> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref =
+        this.ref as $Ref<AsyncValue<VerifyUserEntity>, VerifyUserEntity>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<VerifyUserEntity>, VerifyUserEntity>,
+              AsyncValue<VerifyUserEntity>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

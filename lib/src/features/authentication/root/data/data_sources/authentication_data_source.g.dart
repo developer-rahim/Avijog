@@ -6,22 +6,55 @@ part of 'authentication_data_source.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authenticationDataSourceHash() =>
-    r'590173c0997cdade1507d414361fba80616f831f';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [authenticationDataSource].
 @ProviderFor(authenticationDataSource)
-final authenticationDataSourceProvider =
-    Provider<AuthenticationDataSource>.internal(
-      authenticationDataSource,
-      name: r'authenticationDataSourceProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$authenticationDataSourceHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final authenticationDataSourceProvider = AuthenticationDataSourceProvider._();
 
-typedef AuthenticationDataSourceRef = ProviderRef<AuthenticationDataSource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class AuthenticationDataSourceProvider
+    extends
+        $FunctionalProvider<
+          AuthenticationDataSource<dynamic>,
+          AuthenticationDataSource<dynamic>,
+          AuthenticationDataSource<dynamic>
+        >
+    with $Provider<AuthenticationDataSource<dynamic>> {
+  AuthenticationDataSourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'authenticationDataSourceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$authenticationDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<AuthenticationDataSource<dynamic>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  AuthenticationDataSource<dynamic> create(Ref ref) {
+    return authenticationDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(AuthenticationDataSource<dynamic> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<AuthenticationDataSource<dynamic>>(
+        value,
+      ),
+    );
+  }
+}
+
+String _$authenticationDataSourceHash() =>
+    r'9ce888a0b3a648a933b537331948b07418864b15';

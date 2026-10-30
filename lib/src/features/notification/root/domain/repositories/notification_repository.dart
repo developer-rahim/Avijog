@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'notification_repository.g.dart';
 
 @Riverpod(keepAlive: false)
-NotificationRepository notificationRepository(NotificationRepositoryRef ref) {
+NotificationRepository notificationRepository(Ref ref) {
   return NotificationRepositoryImpl(
     dataSource: ref.read(notificationDataSourceProvider),
   );

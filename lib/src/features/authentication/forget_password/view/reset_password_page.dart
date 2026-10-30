@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/gen/assets.gen.dart';
 import 'package:obhijuk/src/core/routes/app_routes.dart';
@@ -32,31 +32,31 @@ class ResetPasswordPage extends StatelessWidget {
                   const SizedBox(height: 30),
                   Center(
                     child: Text(
-                      AppLocalizations.of(context)!.setNewPassword,
+                      AppLocalizations.of(context).setNewPassword,
                       style: AppTextStyle.bold28,
                     ),
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    AppLocalizations.of(context)!.setNewPasswordCaption,
+                    AppLocalizations.of(context).setNewPasswordCaption,
                     textAlign: TextAlign.center,
                     style: AppTextStyle.medium18,
                   ),
                   const SizedBox(height: 30),
                   OutlinedInputField(
-                    labelText: AppLocalizations.of(context)!.password,
+                    labelText: AppLocalizations.of(context).password,
                     controller: TextEditingController(),
-                    hintText: AppLocalizations.of(context)!
+                    hintText: AppLocalizations.of(context)
                         .enterEightDigitCharacter,
                   ),
                   OutlinedInputField(
-                    labelText: AppLocalizations.of(context)!.confirmPassword,
+                    labelText: AppLocalizations.of(context).confirmPassword,
                     controller: TextEditingController(),
-                    hintText: AppLocalizations.of(context)!.confirmPassword,
+                    hintText: AppLocalizations.of(context).confirmPassword,
                   ),
                   const SizedBox(height: 20),
                   Button(
-                    label: AppLocalizations.of(context)!.submit,
+                    label: AppLocalizations.of(context).submit,
                     onPressed: () {
                       context.goNamed(Routes.login);
                     },

@@ -6,20 +6,46 @@ part of 'privacy_policy_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$privacyPolicyHash() => r'ff4520487589a86ad45010423572e2f3c06b56db';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [privacyPolicy].
 @ProviderFor(privacyPolicy)
-final privacyPolicyProvider = FutureProvider<PrivacyPolicyEntity?>.internal(
-  privacyPolicy,
-  name: r'privacyPolicyProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$privacyPolicyHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final privacyPolicyProvider = PrivacyPolicyProvider._();
 
-typedef PrivacyPolicyRef = FutureProviderRef<PrivacyPolicyEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class PrivacyPolicyProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<PrivacyPolicyEntity?>,
+          PrivacyPolicyEntity?,
+          FutureOr<PrivacyPolicyEntity?>
+        >
+    with
+        $FutureModifier<PrivacyPolicyEntity?>,
+        $FutureProvider<PrivacyPolicyEntity?> {
+  PrivacyPolicyProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'privacyPolicyProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$privacyPolicyHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<PrivacyPolicyEntity?> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<PrivacyPolicyEntity?> create(Ref ref) {
+    return privacyPolicy(ref);
+  }
+}
+
+String _$privacyPolicyHash() => r'6de890bfd0bee66e1f58d43bf4f8060fd514c080';

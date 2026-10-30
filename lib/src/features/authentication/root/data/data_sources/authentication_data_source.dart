@@ -6,9 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'authentication_data_source.g.dart';
 
 @Riverpod(keepAlive: true)
-AuthenticationDataSource authenticationDataSource(
-  AuthenticationDataSourceRef ref,
-) {
+AuthenticationDataSource authenticationDataSource(Ref ref) {
   return AuthenticationDataSourceImpl(ref.read(restClientProvider));
 }
 

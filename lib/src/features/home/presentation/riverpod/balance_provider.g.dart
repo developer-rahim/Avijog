@@ -6,20 +6,44 @@ part of 'balance_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$balanceHash() => r'cbcd337c81f990d4d9b4e1e8e4e526590653dfdd';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [balance].
 @ProviderFor(balance)
-final balanceProvider = FutureProvider<BalanceEntity?>.internal(
-  balance,
-  name: r'balanceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$balanceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final balanceProvider = BalanceProvider._();
 
-typedef BalanceRef = FutureProviderRef<BalanceEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class BalanceProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<BalanceEntity?>,
+          BalanceEntity?,
+          FutureOr<BalanceEntity?>
+        >
+    with $FutureModifier<BalanceEntity?>, $FutureProvider<BalanceEntity?> {
+  BalanceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'balanceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$balanceHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<BalanceEntity?> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<BalanceEntity?> create(Ref ref) {
+    return balance(ref);
+  }
+}
+
+String _$balanceHash() => r'8bce6d6f05107d48fee4a202e509d790fe35de77';

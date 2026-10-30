@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'user_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Future<UserEntity?> user(UserRef ref) async {
+Future<UserEntity?> user(Ref ref) async {
   final profileUseCase = ref.read(profileUseCaseProvider);
 
   ErrorModel? errorModel;

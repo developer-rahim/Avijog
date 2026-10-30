@@ -7,7 +7,7 @@ part 'notification_data_source.g.dart';
 part 'notification_data_source_imp.dart';
 
 @Riverpod(keepAlive: true)
-NotificationDataSource notificationDataSource(NotificationDataSourceRef ref) {
+NotificationDataSource notificationDataSource(Ref ref) {
   return NotificationDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 

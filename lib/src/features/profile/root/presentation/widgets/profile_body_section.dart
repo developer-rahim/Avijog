@@ -14,12 +14,12 @@ class ProfileBodySection extends StatelessWidget {
             children: [
               ProfileListTile(
                 image: Assets.language.path,
-                title: AppLocalizations.of(context)!.language,
+                title: AppLocalizations.of(context).language,
                 isLanguage: true,
               ),
               ProfileListTile(
                 image: Assets.accountType.path,
-                title: AppLocalizations.of(context)!.account_type,
+                title: AppLocalizations.of(context).account_type,
                 isAccountType: true,
               ),
               InkWell(
@@ -39,7 +39,7 @@ class ProfileBodySection extends StatelessWidget {
                       Image.asset(Assets.whatsapp.path, height: 20, width: 20),
                       const SizedBox(width: 5),
                       Text(
-                        AppLocalizations.of(context)!.supportCenter,
+                        AppLocalizations.of(context).supportCenter,
                         style: AppTextStyle.bold16,
                       ),
                     ],
@@ -54,28 +54,28 @@ class ProfileBodySection extends StatelessWidget {
                   context.pushNamed(Routes.passwordChange);
                 },
                 image: Assets.pinChange.path,
-                title: AppLocalizations.of(context)!.pinCahnge,
+                title: AppLocalizations.of(context).pinCahnge,
               ),
               ProfileListTile(
                 onTap: () {
                   context.pushNamed(Routes.userGuide);
                 },
                 image: Assets.userGuide.path,
-                title: AppLocalizations.of(context)!.userGuide,
+                title: AppLocalizations.of(context).userGuide,
               ),
               ProfileListTile(
                 onTap: () {
                   context.pushNamed(Routes.privacyPolicy);
                 },
                 image: Assets.privacyPolicy.path,
-                title: AppLocalizations.of(context)!.privacyPolicy,
+                title: AppLocalizations.of(context).privacyPolicy,
               ),
               ProfileListTile(
                 onTap: () {
                   context.pushNamed(Routes.faq);
                 },
                 image: Assets.faq.path,
-                title: AppLocalizations.of(context)!.faqs,
+                title: AppLocalizations.of(context).faqs,
                 isLast: true,
               ),
               const SizedBox(height: 10),
@@ -99,7 +99,7 @@ class LogOutSection extends ConsumerWidget {
       onTap: () {
         appDialog(
           context: context,
-          title: AppLocalizations.of(context)!.logOut,
+          title: AppLocalizations.of(context).logOut,
           description: 'Are you sure you want to log out?',
           onYesPressed: () {
             ref.read(cacheServiceProvider).delete(CacheKeys.token);
@@ -120,7 +120,7 @@ class LogOutSection extends ConsumerWidget {
             Image.asset(Assets.logOut.path, height: 20, width: 20),
             const SizedBox(width: 5),
             Text(
-              AppLocalizations.of(context)!.logOut,
+              AppLocalizations.of(context).logOut,
               style: AppTextStyle.extraBold16.copyWith(color: AppColors.white),
             ),
           ],
@@ -256,7 +256,7 @@ class ProfileListTile extends ConsumerWidget {
                               ),
                               const SizedBox(width: 7),
                               Text(
-                                AppLocalizations.of(context)!.language_type,
+                                AppLocalizations.of(context).language_type,
                                 style: AppTextStyle.medium16,
                               ),
                             ],
@@ -266,7 +266,7 @@ class ProfileListTile extends ConsumerWidget {
                   const SizedBox(width: 3),
                   isAccountType == true
                       ? Text(
-                          AppLocalizations.of(context)!.general,
+                          AppLocalizations.of(context).general,
                           style: AppTextStyle.medium16,
                         )
                       : const Icon(

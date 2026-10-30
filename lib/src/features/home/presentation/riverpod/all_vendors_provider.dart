@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'all_vendors_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Future<List<VendorEntity>> allVendors(AllVendorsRef ref) async {
+Future<List<VendorEntity>> allVendors(Ref ref) async {
   final getVendorsUseCase = ref.read(getVendorsUseCaseProvider);
 
   ErrorModel? errorModel;

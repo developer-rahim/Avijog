@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_vendors_use_case.g.dart';
 
 @Riverpod()
-GetVendorsUseCase getVendorsUseCase(GetVendorsUseCaseRef ref) {
+GetVendorsUseCase getVendorsUseCase(Ref ref) {
   return GetVendorsUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 

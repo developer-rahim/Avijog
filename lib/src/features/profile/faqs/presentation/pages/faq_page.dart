@@ -8,7 +8,7 @@ class FaqPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.faqs,
+          AppLocalizations.of(context).faqs,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(

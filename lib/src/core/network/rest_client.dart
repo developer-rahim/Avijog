@@ -13,7 +13,7 @@ import 'pretty_dio_logger.dart';
 part 'rest_client.g.dart';
 
 @Riverpod(keepAlive: true)
-RestClient restClient(RestClientRef ref) {
+RestClient restClient(Ref ref) {
   return RestClient(cacheService: ref.read(cacheServiceProvider));
 }
 
@@ -272,9 +272,6 @@ class RestClient {
 
       case APIType.protected:
         return ProtectedApiOptions(token).options;
-
-      default:
-        return PublicApiOptions().options;
     }
   }
 }

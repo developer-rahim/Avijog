@@ -1,0 +1,14 @@
+# Configuration for the `flutter gen-l10n` generator.
+#
+# Flutter 3.47 removed the `synthetic-package` option (the old
+# `package:flutter_gen/gen_l10n/app_localizations.dart` import path no longer
+# exists). Localizations are now generated directly into `lib/l10n/`, so the
+# app imports them via `package:obhijuk/l10n/app_localizations.dart`.
+#
+# `nullable-getter: false` matches the app's existing
+# `AppLocalizations.of(context)!` call sites.
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+nullable-getter: false

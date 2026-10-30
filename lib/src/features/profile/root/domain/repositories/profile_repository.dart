@@ -17,7 +17,7 @@ part 'profile_repository.g.dart';
 part '../../data/repositories/profile_repository_impl.dart';
 
 @Riverpod()
-ProfileRepository profileRepository(ProfileRepositoryRef ref) {
+ProfileRepository profileRepository(Ref ref) {
   return ProfileRepositoryImpl(dataSource: ref.read(profileDataSourceProvider));
 }
 

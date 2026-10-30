@@ -7,7 +7,7 @@ part 'get_product_details_use_case.g.dart';
 
 @Riverpod()
 GetProductDetailsUseCase getProductDetailsUseCase(
-  GetProductDetailsUseCaseRef ref, {
+  Ref ref, {
   required String productId,
 }) {
   return GetProductDetailsUseCase(

@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'payment_history_use_case.g.dart';
 
 @Riverpod()
-PaymentHistoryUseCase paymentHistoryUseCase(PaymentHistoryUseCaseRef ref) {
+PaymentHistoryUseCase paymentHistoryUseCase(Ref ref) {
   return PaymentHistoryUseCase(
     paymentRepository: ref.read(paymentHistoryRepositoryProvider),
   );

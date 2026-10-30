@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:obhijuk/src/core/contstant_data/contstant_data.dart';
 import 'package:obhijuk/src/core/extension/generic_extension.dart';
@@ -35,7 +35,7 @@ class PaymentHistoryPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.history,
+          AppLocalizations.of(context).history,
           style: const TextStyle(color: AppColors.white),
         ),
       ),

@@ -36,7 +36,7 @@ class GeneralNotificationCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          AppLocalizations.of(context)!.paymentSucessful,
+                          AppLocalizations.of(context).paymentSucessful,
                           style: AppTextStyle.extraBold12,
                         ),
                         const SizedBox(height: 5),

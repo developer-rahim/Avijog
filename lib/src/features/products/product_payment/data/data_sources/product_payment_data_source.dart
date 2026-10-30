@@ -8,9 +8,7 @@ part 'product_payment_data_source.g.dart';
 part 'product_payment_data_source_impl.dart';
 
 @Riverpod()
-ProductPaymentDataSource productPaymentDataSource(
-  ProductPaymentDataSourceRef ref,
-) {
+ProductPaymentDataSource productPaymentDataSource(Ref ref) {
   return ProductPaymentDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 

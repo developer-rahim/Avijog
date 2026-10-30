@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:obhijuk/src/core/gen/assets.gen.dart';
 import 'package:obhijuk/src/core/gen/colors.gen.dart';
@@ -25,7 +25,7 @@ class PriceSection extends StatelessWidget {
         isProductDetails
             ? const Offstage()
             : Text(
-                AppLocalizations.of(context)!.price,
+                AppLocalizations.of(context).price,
                 style: AppTextStyle.bold16.copyWith(fontSize: 16.sp),
               ),
         Column(

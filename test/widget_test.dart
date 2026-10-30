@@ -1,30 +1,59 @@
-// This is a basic Flutter widget test.
+// Smoke tests for the Avijog app.
 //
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// The previous version of this file was the stock Flutter counter template
+// (`expect(find.text('0'), findsOneWidget)`), which never matched this app —
+// it expected a counter widget that the real root widget does not contain.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:obhijuk/root.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
+import 'package:obhijuk/src/core/gen/colors.gen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const Root());
+  group('AppLocalizations', () {
+    test('exposes both supported locales', () {
+      expect(AppLocalizations.supportedLocales, contains(const Locale('en')));
+      expect(AppLocalizations.supportedLocales, contains(const Locale('bn')));
+    });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    test('resolves English strings', () {
+      final localizations = lookupAppLocalizations(const Locale('en'));
+      expect(localizations.appName, isNotEmpty);
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    test('resolves Bengali strings', () {
+      final localizations = lookupAppLocalizations(const Locale('bn'));
+      expect(localizations.appName, isNotEmpty);
+    });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    testWidgets('renders a localized string', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          locale: const Locale('en'),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Builder(
+            builder: (context) => Text(AppLocalizations.of(context).appName),
+          ),
+        ),
+      );
+
+      expect(find.byType(Text), findsOneWidget);
+      final context = tester.element(find.byType(Text));
+      expect(find.text(AppLocalizations.of(context).appName), findsOneWidget);
+    });
+  });
+
+  group('AppColors', () {
+    test('exposes the generated palette', () {
+      expect(AppColors.primary, isNotNull);
+      expect(AppColors.lighterBlue, isNotNull);
+    });
   });
 }

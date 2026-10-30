@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_banners_use_case.g.dart';
 
 @Riverpod()
-GetBannersUseCase getBannersUseCase(GetBannersUseCaseRef ref) {
+GetBannersUseCase getBannersUseCase(Ref ref) {
   return GetBannersUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 

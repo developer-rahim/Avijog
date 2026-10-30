@@ -6,23 +6,53 @@ part of 'payment_history_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$paymentHistoryUseCaseHash() =>
-    r'2f26cc0a5125e91231e5512ce84e7b628e68679a';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [paymentHistoryUseCase].
 @ProviderFor(paymentHistoryUseCase)
-final paymentHistoryUseCaseProvider =
-    AutoDisposeProvider<PaymentHistoryUseCase>.internal(
-      paymentHistoryUseCase,
-      name: r'paymentHistoryUseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$paymentHistoryUseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final paymentHistoryUseCaseProvider = PaymentHistoryUseCaseProvider._();
 
-typedef PaymentHistoryUseCaseRef =
-    AutoDisposeProviderRef<PaymentHistoryUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class PaymentHistoryUseCaseProvider
+    extends
+        $FunctionalProvider<
+          PaymentHistoryUseCase,
+          PaymentHistoryUseCase,
+          PaymentHistoryUseCase
+        >
+    with $Provider<PaymentHistoryUseCase> {
+  PaymentHistoryUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'paymentHistoryUseCaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$paymentHistoryUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<PaymentHistoryUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  PaymentHistoryUseCase create(Ref ref) {
+    return paymentHistoryUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(PaymentHistoryUseCase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<PaymentHistoryUseCase>(value),
+    );
+  }
+}
+
+String _$paymentHistoryUseCaseHash() =>
+    r'85d82ed7249750ca64a31a87f56f8fa75cf0d08a';

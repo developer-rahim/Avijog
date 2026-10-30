@@ -12,6 +12,6 @@ abstract class HomeDataSource {
 }
 
 @Riverpod()
-HomeDataSource homeDataSource(HomeDataSourceRef ref) {
+HomeDataSource homeDataSource(Ref ref) {
   return HomeDataSourceImpl(restClient: ref.read(restClientProvider));
 }

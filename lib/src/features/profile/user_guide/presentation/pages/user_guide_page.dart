@@ -8,7 +8,7 @@ class UserGuidePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.userGuide,
+          AppLocalizations.of(context).userGuide,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(

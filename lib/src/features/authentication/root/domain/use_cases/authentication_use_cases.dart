@@ -11,7 +11,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'authentication_use_cases.g.dart';
 
 @Riverpod(keepAlive: true)
-AuthenticationUseCase authenticationUseCase(AuthenticationUseCaseRef ref) {
+AuthenticationUseCase authenticationUseCase(Ref ref) {
   return AuthenticationUseCase(ref.read(authenticationRepositoryProvider));
 }
 

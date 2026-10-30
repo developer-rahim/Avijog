@@ -1,14 +1,12 @@
 //part of 'verify_user_page.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/extension/sized_box_extension.dart';
 import 'package:obhijuk/src/core/gen/colors.gen.dart';
 import 'package:obhijuk/src/core/routes/app_routes.dart';
-import 'package:obhijuk/src/core/service/cache/cache_keys.dart';
-import 'package:obhijuk/src/core/service/cache/cache_service.dart';
 import 'package:obhijuk/src/core/theme/text_style.dart';
 import 'package:obhijuk/src/core/widgets/form_validation.dart';
 import 'package:obhijuk/src/core/widgets/gobal_snack_bar.dart';
@@ -32,7 +30,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final cacheService = ref.watch(cacheServiceProvider);
     ref.listen(loginProvider, (previous, next) {
       if (next.hasError) {
         GlobalSnackBar.show(context, next.asError!.error.toString());
@@ -61,14 +58,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 children: [
                   Center(
                     child: Text(
-                      AppLocalizations.of(context)!.welcomeBack,
+                      AppLocalizations.of(context).welcomeBack,
                       style: AppTextStyle.bold28,
                     ),
                   ),
                   const SizedBox(height: 20),
                   20.sh,
                   Text(
-                    AppLocalizations.of(context)!.loginSubTitle,
+                    AppLocalizations.of(context).loginSubTitle,
                     textAlign: TextAlign.center,
                     style: AppTextStyle.medium18,
                   ),
@@ -79,9 +76,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       maxLines: 1,
                       keyboardType: TextInputType.visiblePassword,
                       isPasswordField: true,
-                      labelText: AppLocalizations.of(context)!.password,
+                      labelText: AppLocalizations.of(context).password,
                       controller: _passwordController,
-                      hintText: AppLocalizations.of(context)!
+                      hintText: AppLocalizations.of(context)
                           .enterEightDigitCharacter,
                       validator: InputFieldValidator.password(),
                     ),
@@ -104,7 +101,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           })
                           .then((value) => context.goNamed(Routes.homeTab));
                     },
-                    buttonText: AppLocalizations.of(context)!.login,
+                    buttonText: AppLocalizations.of(context).login,
                   ),
                 ],
               ),
@@ -134,7 +131,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     );
               },
               child: Text(
-                AppLocalizations.of(context)!.forgotPassword,
+                AppLocalizations.of(context).forgotPassword,
                 style: const TextStyle(color: AppColors.primary),
               ),
             ),

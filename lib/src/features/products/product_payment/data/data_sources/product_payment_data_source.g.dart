@@ -6,23 +6,53 @@ part of 'product_payment_data_source.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productPaymentDataSourceHash() =>
-    r'5f8ecc44c3f49089861a81652494e72966d5fffc';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [productPaymentDataSource].
 @ProviderFor(productPaymentDataSource)
-final productPaymentDataSourceProvider =
-    AutoDisposeProvider<ProductPaymentDataSource>.internal(
-      productPaymentDataSource,
-      name: r'productPaymentDataSourceProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$productPaymentDataSourceHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final productPaymentDataSourceProvider = ProductPaymentDataSourceProvider._();
 
-typedef ProductPaymentDataSourceRef =
-    AutoDisposeProviderRef<ProductPaymentDataSource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProductPaymentDataSourceProvider
+    extends
+        $FunctionalProvider<
+          ProductPaymentDataSource,
+          ProductPaymentDataSource,
+          ProductPaymentDataSource
+        >
+    with $Provider<ProductPaymentDataSource> {
+  ProductPaymentDataSourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'productPaymentDataSourceProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$productPaymentDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProductPaymentDataSource> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProductPaymentDataSource create(Ref ref) {
+    return productPaymentDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProductPaymentDataSource value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProductPaymentDataSource>(value),
+    );
+  }
+}
+
+String _$productPaymentDataSourceHash() =>
+    r'f58e48e9cf2dd0e6b722d96a0249251d023e78ea';

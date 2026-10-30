@@ -6,20 +6,52 @@ part of 'profile_usecase.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$profileUseCaseHash() => r'991a00b0f85c9f2ea8c2e95a8d2492fc25f9a746';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [profileUseCase].
 @ProviderFor(profileUseCase)
-final profileUseCaseProvider = AutoDisposeProvider<ProfileUseCase>.internal(
-  profileUseCase,
-  name: r'profileUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$profileUseCaseHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final profileUseCaseProvider = ProfileUseCaseProvider._();
 
-typedef ProfileUseCaseRef = AutoDisposeProviderRef<ProfileUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProfileUseCaseProvider
+    extends
+        $FunctionalProvider<
+          ProfileUseCase<dynamic>,
+          ProfileUseCase<dynamic>,
+          ProfileUseCase<dynamic>
+        >
+    with $Provider<ProfileUseCase<dynamic>> {
+  ProfileUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'profileUseCaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$profileUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProfileUseCase<dynamic>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProfileUseCase<dynamic> create(Ref ref) {
+    return profileUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProfileUseCase<dynamic> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProfileUseCase<dynamic>>(value),
+    );
+  }
+}
+
+String _$profileUseCaseHash() => r'ef91740b9048ecd09ad23e042c72ac542006efca';

@@ -10,7 +10,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'profile_usecase.g.dart';
 
 @Riverpod()
-ProfileUseCase profileUseCase(ProfileUseCaseRef ref) {
+ProfileUseCase profileUseCase(Ref ref) {
   return ProfileUseCase(ref.read(profileRepositoryProvider));
 }
 

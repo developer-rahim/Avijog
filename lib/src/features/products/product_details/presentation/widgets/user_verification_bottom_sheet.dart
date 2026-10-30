@@ -51,11 +51,11 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
               Image.asset(Assets.alert.path, height: 56, width: 56),
               const SizedBox(height: 10),
               Text(
-                AppLocalizations.of(context)!.verificationCheck,
+                AppLocalizations.of(context).verificationCheck,
                 style: AppTextStyle.bold22,
               ),
               Text(
-                AppLocalizations.of(context)!.verificationSubTitle,
+                AppLocalizations.of(context).verificationSubTitle,
                 textAlign: TextAlign.center,
                 style: AppTextStyle.regular12,
               ),
@@ -63,7 +63,7 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                 key: _formKey,
                 child: OutlinedInputField(
                   controller: _phoneNumberController,
-                  hintText: AppLocalizations.of(context)!.phoneNunber,
+                  hintText: AppLocalizations.of(context).phoneNunber,
                   fillColor: AppColors.lighterBlue,
                   borderColor: AppColors.primary,
                   keyboardType: TextInputType.phone,
@@ -143,7 +143,7 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                       width: 142,
                       borderRadius: 33,
                       label: (customerInfo?.exists ?? true)
-                          ? AppLocalizations.of(context)!.nextStep
+                          ? AppLocalizations.of(context).nextStep
                           : 'Create Account',
                       isLoading: initiatePayment is AsyncLoading<void>,
                       onPressed: () async {
@@ -263,13 +263,13 @@ class CustomerInformation extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              AppLocalizations.of(context)!.status,
+              AppLocalizations.of(context).status,
               style: AppTextStyle.medium12,
             ),
             Text(
               customerInfo.exists ?? false
-                  ? AppLocalizations.of(context)!.verified
-                  : AppLocalizations.of(context)!.notVerified,
+                  ? AppLocalizations.of(context).verified
+                  : AppLocalizations.of(context).notVerified,
               style: AppTextStyle.extraBold12.copyWith(
                 color: customerInfo.exists ?? false
                     ? AppColors.primary

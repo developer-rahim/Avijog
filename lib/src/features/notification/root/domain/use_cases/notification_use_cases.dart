@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'notification_use_cases.g.dart';
 
 @Riverpod()
-NotificationUseCase notificationUseCase(NotificationUseCaseRef ref) {
+NotificationUseCase notificationUseCase(Ref ref) {
   return NotificationUseCase(
     notificationRepository: ref.read(notificationRepositoryProvider),
   );

@@ -9,9 +9,7 @@ part '../../data/repository/product_details_repository_impl.dart';
 part 'product_details_repository.g.dart';
 
 @Riverpod()
-ProductDetailsRepository productDetailsRepository(
-  ProductDetailsRepositoryRef ref,
-) {
+ProductDetailsRepository productDetailsRepository(Ref ref) {
   return ProductDetailsRepositoryImpl(
     dataSource: ref.read(productDetailsDataSourceProvider),
   );

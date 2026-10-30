@@ -6,20 +6,46 @@ part of 'rest_client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$restClientHash() => r'31ab97a222aba749a1ee337e43ad90130a581b27';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [restClient].
 @ProviderFor(restClient)
-final restClientProvider = Provider<RestClient>.internal(
-  restClient,
-  name: r'restClientProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$restClientHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final restClientProvider = RestClientProvider._();
 
-typedef RestClientRef = ProviderRef<RestClient>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class RestClientProvider
+    extends $FunctionalProvider<RestClient, RestClient, RestClient>
+    with $Provider<RestClient> {
+  RestClientProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'restClientProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$restClientHash();
+
+  @$internal
+  @override
+  $ProviderElement<RestClient> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  RestClient create(Ref ref) {
+    return restClient(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(RestClient value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<RestClient>(value),
+    );
+  }
+}
+
+String _$restClientHash() => r'75e2c5fafbee6f6c421b56896dfbed89213e6890';

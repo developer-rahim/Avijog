@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'banners_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Future<List<BannerEntity>> banners(BannersRef ref) async {
+Future<List<BannerEntity>> banners(Ref ref) async {
   final getBannersUseCase = ref.read(getBannersUseCaseProvider);
 
   ErrorModel? errorModel;

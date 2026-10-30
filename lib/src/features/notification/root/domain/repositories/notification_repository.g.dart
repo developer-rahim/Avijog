@@ -6,23 +6,53 @@ part of 'notification_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$notificationRepositoryHash() =>
-    r'844da51bc6e0cf44bc52c699c0d63767e03ff645';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [notificationRepository].
 @ProviderFor(notificationRepository)
-final notificationRepositoryProvider =
-    AutoDisposeProvider<NotificationRepository>.internal(
-      notificationRepository,
-      name: r'notificationRepositoryProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$notificationRepositoryHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final notificationRepositoryProvider = NotificationRepositoryProvider._();
 
-typedef NotificationRepositoryRef =
-    AutoDisposeProviderRef<NotificationRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class NotificationRepositoryProvider
+    extends
+        $FunctionalProvider<
+          NotificationRepository,
+          NotificationRepository,
+          NotificationRepository
+        >
+    with $Provider<NotificationRepository> {
+  NotificationRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'notificationRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$notificationRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<NotificationRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  NotificationRepository create(Ref ref) {
+    return notificationRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(NotificationRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<NotificationRepository>(value),
+    );
+  }
+}
+
+String _$notificationRepositoryHash() =>
+    r'1c4367969b9de6cc6d7a9faf5a092759ae56d3b9';

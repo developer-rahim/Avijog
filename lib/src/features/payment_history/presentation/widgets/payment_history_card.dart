@@ -39,23 +39,23 @@ class _PaymentHistoryCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _PaymentHistoryItems(
-                        title: AppLocalizations.of(context)!.vendor,
+                        title: AppLocalizations.of(context).vendor,
                         value: paymentHistoryModel?.vendor?.name ?? 'N/A',
                       ),
                       _PaymentHistoryItems(
-                        title: AppLocalizations.of(context)!.product,
+                        title: AppLocalizations.of(context).product,
                         value: paymentHistoryModel?.product?.name ?? 'N/A',
                       ),
                       _PaymentHistoryItems(
-                        title: AppLocalizations.of(context)!.student,
+                        title: AppLocalizations.of(context).student,
                         value: paymentHistoryModel?.clientName ?? 'N/A',
                       ),
                       _PaymentHistoryItems(
-                        title: AppLocalizations.of(context)!.phone,
+                        title: AppLocalizations.of(context).phone,
                         value: paymentHistoryModel?.clientPhone ?? 'N/A',
                       ),
                       _PaymentHistoryItems(
-                        title: AppLocalizations.of(context)!.status,
+                        title: AppLocalizations.of(context).status,
                         value: paymentHistoryModel?.status ?? '',
                       ),
                       _PriceSection(paymentHistoryModel: paymentHistoryModel!),
@@ -94,7 +94,7 @@ class _PriceSection extends ConsumerWidget {
                 ],
               ),
               Text(
-                AppLocalizations.of(context)!.price,
+                AppLocalizations.of(context).price,
                 style: AppTextStyle.medium10,
               ),
             ],
@@ -111,7 +111,7 @@ class _PriceSection extends ConsumerWidget {
                 ],
               ),
               Text(
-                AppLocalizations.of(context)!.commission,
+                AppLocalizations.of(context).commission,
                 style: AppTextStyle.medium10,
               ),
             ],
@@ -135,7 +135,7 @@ class _PaymentHistoryCardHeader extends ConsumerWidget {
         Column(
           children: [
             Text(
-              AppLocalizations.of(context)!.orderId,
+              AppLocalizations.of(context).orderId,
               style: AppTextStyle.medium12,
             ),
             const SizedBox(height: 4),
@@ -146,12 +146,12 @@ class _PaymentHistoryCardHeader extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              "${AppLocalizations.of(context)!.date} ${paymentHistoryModel.createdAt!.formattedDate()}",
+              "${AppLocalizations.of(context).date} ${paymentHistoryModel.createdAt!.formattedDate()}",
               style: AppTextStyle.medium12,
             ),
             const SizedBox(height: 4),
             Text(
-              "${AppLocalizations.of(context)!.time} ${paymentHistoryModel.createdAt!.formattedTime()}",
+              "${AppLocalizations.of(context).time} ${paymentHistoryModel.createdAt!.formattedTime()}",
               style: AppTextStyle.medium12,
             ),
           ],

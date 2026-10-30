@@ -6,20 +6,44 @@ part of 'user_guide_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userGuideHash() => r'db4dca174bf1bb588fa1e1d5fd284010ccbdbb1c';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [userGuide].
 @ProviderFor(userGuide)
-final userGuideProvider = FutureProvider<UserGuideEntity?>.internal(
-  userGuide,
-  name: r'userGuideProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$userGuideHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final userGuideProvider = UserGuideProvider._();
 
-typedef UserGuideRef = FutureProviderRef<UserGuideEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class UserGuideProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<UserGuideEntity?>,
+          UserGuideEntity?,
+          FutureOr<UserGuideEntity?>
+        >
+    with $FutureModifier<UserGuideEntity?>, $FutureProvider<UserGuideEntity?> {
+  UserGuideProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'userGuideProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$userGuideHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<UserGuideEntity?> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<UserGuideEntity?> create(Ref ref) {
+    return userGuide(ref);
+  }
+}
+
+String _$userGuideHash() => r'6b93936c1fff8aa6e933dbd420615b9fe202c058';

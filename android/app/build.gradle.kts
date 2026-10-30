@@ -6,7 +6,9 @@ plugins {
 
 android {
     namespace = "com.example.obhijuk"
-    compileSdk = flutter.compileSdkVersion
+    // Overrides Flutter's default (36): permission_handler_android 14.1.1 requires
+    // compileSdk 37 or later.
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

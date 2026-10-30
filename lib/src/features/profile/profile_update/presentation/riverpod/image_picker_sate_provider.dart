@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+// Riverpod 3.x moved StateProvider / StateNotifierProvider to the legacy library.
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:obhijuk/src/features/profile/profile_update/presentation/riverpod/image_picker_provider.dart';
 

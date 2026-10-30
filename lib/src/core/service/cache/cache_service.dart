@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'cache_service.g.dart';
 
 @Riverpod(keepAlive: true)
-CacheService cacheService(CacheServiceRef ref) => CacheServiceImpl();
+CacheService cacheService(Ref ref) => CacheServiceImpl();
 // final cacheServiceProvider = Provider<CacheService>(
 //   (ref) => CacheServiceImpl(),
 // );

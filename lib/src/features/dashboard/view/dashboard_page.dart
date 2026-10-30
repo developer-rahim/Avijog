@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/gen/assets.gen.dart';
@@ -60,7 +60,7 @@ class _DashboardPageState extends ConsumerState<DashboardPage> {
                       ? AppColors.primary
                       : AppColors.lightBlack20,
                 ),
-                label: AppLocalizations.of(context)!.history,
+                label: AppLocalizations.of(context).history,
               ),
               const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
               BottomNavigationBarItem(
@@ -72,7 +72,7 @@ class _DashboardPageState extends ConsumerState<DashboardPage> {
                       ? AppColors.primary
                       : AppColors.lightBlack20,
                 ),
-                label: AppLocalizations.of(context)!.profile,
+                label: AppLocalizations.of(context).profile,
               ),
             ],
           ),

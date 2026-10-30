@@ -7,7 +7,7 @@ part './product_data_source_impl.dart';
 part 'product_data_source.g.dart';
 
 @Riverpod()
-ProductDataSource productDataSource(ProductDataSourceRef ref) {
+ProductDataSource productDataSource(Ref ref) {
   return ProductDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 

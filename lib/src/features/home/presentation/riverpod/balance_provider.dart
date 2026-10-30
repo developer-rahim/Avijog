@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'balance_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Future<BalanceEntity?> balance(BalanceRef ref) async {
+Future<BalanceEntity?> balance(Ref ref) async {
   final getBalanceUseCase = ref.read(getBalanceUseCaseProvider);
 
   ErrorModel? errorModel;

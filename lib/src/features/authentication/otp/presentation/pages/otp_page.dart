@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/extension/sized_box_extension.dart';
@@ -50,12 +50,12 @@ class _OtpPageState extends ConsumerState<OtpPage> {
                 ),
                 const SizedBox(height: 51),
                 Text(
-                  AppLocalizations.of(context)!.verifyYourNumber,
+                  AppLocalizations.of(context).verifyYourNumber,
                   style: AppTextStyle.bold28,
                 ),
                 20.sh,
                 Text(
-                  AppLocalizations.of(context)!.enterOtp,
+                  AppLocalizations.of(context).enterOtp,
                   textAlign: TextAlign.center,
                   style: AppTextStyle.medium18,
                 ),
@@ -65,18 +65,18 @@ class _OtpPageState extends ConsumerState<OtpPage> {
                   child: OutlinedInputField(
                     keyboardType: TextInputType.number,
                     controller: _otpController,
-                    hintText: AppLocalizations.of(context)!.enterYourOtp,
+                    hintText: AppLocalizations.of(context).enterYourOtp,
                     validator: InputFieldValidator.otp(),
                   ),
                 ),
                 // 40.sh,
                 PrimaryButton(
                   onTap: _onTap,
-                  buttonText: AppLocalizations.of(context)!.verify,
+                  buttonText: AppLocalizations.of(context).verify,
                 ),
                 32.sh,
                 Text(
-                  AppLocalizations.of(context)!.otpConfirmation,
+                  AppLocalizations.of(context).otpConfirmation,
                   style: AppTextStyle.medium14,
                 ),
                 10.sh,
@@ -231,7 +231,7 @@ class _ResendOTPState extends ConsumerState<_ResendOTP> {
                                     },
                               )
                             : Text(
-                                AppLocalizations.of(context)!.resendCode,
+                                AppLocalizations.of(context).resendCode,
                                 style: AppTextStyle.bold16.copyWith(
                                   color: AppColors.primary,
                                 ),

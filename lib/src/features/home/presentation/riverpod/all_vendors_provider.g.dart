@@ -6,20 +6,46 @@ part of 'all_vendors_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$allVendorsHash() => r'1719f64545f2200d752a48a30f932861b5fe152f';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [allVendors].
 @ProviderFor(allVendors)
-final allVendorsProvider = FutureProvider<List<VendorEntity>>.internal(
-  allVendors,
-  name: r'allVendorsProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$allVendorsHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final allVendorsProvider = AllVendorsProvider._();
 
-typedef AllVendorsRef = FutureProviderRef<List<VendorEntity>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class AllVendorsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<VendorEntity>>,
+          List<VendorEntity>,
+          FutureOr<List<VendorEntity>>
+        >
+    with
+        $FutureModifier<List<VendorEntity>>,
+        $FutureProvider<List<VendorEntity>> {
+  AllVendorsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'allVendorsProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$allVendorsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<VendorEntity>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<VendorEntity>> create(Ref ref) {
+    return allVendors(ref);
+  }
+}
+
+String _$allVendorsHash() => r'c3ae1c101471499ca06aeb64574a7ba03f56e0e3';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/gen/assets.gen.dart';
@@ -34,12 +34,12 @@ class WelcomePage extends StatelessWidget {
               ),
               const SizedBox(height: 64),
               Text(
-                AppLocalizations.of(context)!.appName,
+                AppLocalizations.of(context).appName,
                 style: AppTextStyle.bold32,
               ),
               const SizedBox(height: 24),
               Text(
-                AppLocalizations.of(context)!.onBoardingSubTitle,
+                AppLocalizations.of(context).onBoardingSubTitle,
                 textAlign: TextAlign.center,
                 style: AppTextStyle.medium14,
               ),
@@ -66,7 +66,7 @@ class WelcomePage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                AppLocalizations.of(context)!.letsGo,
+                AppLocalizations.of(context).letsGo,
                 style: AppTextStyle.bold18,
               ),
             ],

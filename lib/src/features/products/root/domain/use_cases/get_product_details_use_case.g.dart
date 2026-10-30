@@ -6,152 +6,90 @@ part of 'get_product_details_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getProductDetailsUseCaseHash() =>
-    r'f54ba7c053cd1849bc4b842ecf9f9a0b80a31843';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-/// See also [getProductDetailsUseCase].
 @ProviderFor(getProductDetailsUseCase)
-const getProductDetailsUseCaseProvider = GetProductDetailsUseCaseFamily();
+final getProductDetailsUseCaseProvider = GetProductDetailsUseCaseFamily._();
 
-/// See also [getProductDetailsUseCase].
-class GetProductDetailsUseCaseFamily extends Family<GetProductDetailsUseCase> {
-  /// See also [getProductDetailsUseCase].
-  const GetProductDetailsUseCaseFamily();
+final class GetProductDetailsUseCaseProvider
+    extends
+        $FunctionalProvider<
+          GetProductDetailsUseCase,
+          GetProductDetailsUseCase,
+          GetProductDetailsUseCase
+        >
+    with $Provider<GetProductDetailsUseCase> {
+  GetProductDetailsUseCaseProvider._({
+    required GetProductDetailsUseCaseFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'getProductDetailsUseCaseProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
 
-  /// See also [getProductDetailsUseCase].
-  GetProductDetailsUseCaseProvider call({required String productId}) {
-    return GetProductDetailsUseCaseProvider(productId: productId);
+  @override
+  String debugGetCreateSourceHash() => _$getProductDetailsUseCaseHash();
+
+  @override
+  String toString() {
+    return r'getProductDetailsUseCaseProvider'
+        ''
+        '($argument)';
   }
 
+  @$internal
   @override
-  GetProductDetailsUseCaseProvider getProviderOverride(
-    covariant GetProductDetailsUseCaseProvider provider,
-  ) {
-    return call(productId: provider.productId);
+  $ProviderElement<GetProductDetailsUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  GetProductDetailsUseCase create(Ref ref) {
+    final argument = this.argument as String;
+    return getProductDetailsUseCase(ref, productId: argument);
   }
 
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'getProductDetailsUseCaseProvider';
-}
-
-/// See also [getProductDetailsUseCase].
-class GetProductDetailsUseCaseProvider
-    extends AutoDisposeProvider<GetProductDetailsUseCase> {
-  /// See also [getProductDetailsUseCase].
-  GetProductDetailsUseCaseProvider({required String productId})
-    : this._internal(
-        (ref) => getProductDetailsUseCase(
-          ref as GetProductDetailsUseCaseRef,
-          productId: productId,
-        ),
-        from: getProductDetailsUseCaseProvider,
-        name: r'getProductDetailsUseCaseProvider',
-        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-            ? null
-            : _$getProductDetailsUseCaseHash,
-        dependencies: GetProductDetailsUseCaseFamily._dependencies,
-        allTransitiveDependencies:
-            GetProductDetailsUseCaseFamily._allTransitiveDependencies,
-        productId: productId,
-      );
-
-  GetProductDetailsUseCaseProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.productId,
-  }) : super.internal();
-
-  final String productId;
-
-  @override
-  Override overrideWith(
-    GetProductDetailsUseCase Function(GetProductDetailsUseCaseRef provider)
-    create,
-  ) {
-    return ProviderOverride(
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetProductDetailsUseCase value) {
+    return $ProviderOverride(
       origin: this,
-      override: GetProductDetailsUseCaseProvider._internal(
-        (ref) => create(ref as GetProductDetailsUseCaseRef),
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        productId: productId,
-      ),
+      providerOverride: $SyncValueProvider<GetProductDetailsUseCase>(value),
     );
-  }
-
-  @override
-  AutoDisposeProviderElement<GetProductDetailsUseCase> createElement() {
-    return _GetProductDetailsUseCaseProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
     return other is GetProductDetailsUseCaseProvider &&
-        other.productId == productId;
+        other.argument == argument;
   }
 
   @override
   int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, productId.hashCode);
-
-    return _SystemHash.finish(hash);
+    return argument.hashCode;
   }
 }
 
-mixin GetProductDetailsUseCaseRef
-    on AutoDisposeProviderRef<GetProductDetailsUseCase> {
-  /// The parameter `productId` of this provider.
-  String get productId;
-}
+String _$getProductDetailsUseCaseHash() =>
+    r'f170f68a208890f5792a65c41bc7d4ae6e447ee2';
 
-class _GetProductDetailsUseCaseProviderElement
-    extends AutoDisposeProviderElement<GetProductDetailsUseCase>
-    with GetProductDetailsUseCaseRef {
-  _GetProductDetailsUseCaseProviderElement(super.provider);
+final class GetProductDetailsUseCaseFamily extends $Family
+    with $FunctionalFamilyOverride<GetProductDetailsUseCase, String> {
+  GetProductDetailsUseCaseFamily._()
+    : super(
+        retry: null,
+        name: r'getProductDetailsUseCaseProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  GetProductDetailsUseCaseProvider call({required String productId}) =>
+      GetProductDetailsUseCaseProvider._(argument: productId, from: this);
 
   @override
-  String get productId =>
-      (origin as GetProductDetailsUseCaseProvider).productId;
+  String toString() => r'getProductDetailsUseCaseProvider';
 }
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

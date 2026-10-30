@@ -6,21 +6,54 @@ part of 'forget_password_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(ForgetPassword)
+final forgetPasswordProvider = ForgetPasswordProvider._();
+
+final class ForgetPasswordProvider
+    extends $AsyncNotifierProvider<ForgetPassword, ForgotPasswordEntity> {
+  ForgetPasswordProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'forgetPasswordProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$forgetPasswordHash();
+
+  @$internal
+  @override
+  ForgetPassword create() => ForgetPassword();
+}
+
 String _$forgetPasswordHash() => r'78b5212dc70cf250deef92ddbc2eed3742810760';
 
-/// See also [ForgetPassword].
-@ProviderFor(ForgetPassword)
-final forgetPasswordProvider =
-    AsyncNotifierProvider<ForgetPassword, ForgotPasswordEntity>.internal(
-      ForgetPassword.new,
-      name: r'forgetPasswordProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$forgetPasswordHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$ForgetPassword = AsyncNotifier<ForgotPasswordEntity>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+abstract class _$ForgetPassword extends $AsyncNotifier<ForgotPasswordEntity> {
+  FutureOr<ForgotPasswordEntity> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref =
+        this.ref
+            as $Ref<AsyncValue<ForgotPasswordEntity>, ForgotPasswordEntity>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<
+                AsyncValue<ForgotPasswordEntity>,
+                ForgotPasswordEntity
+              >,
+              AsyncValue<ForgotPasswordEntity>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

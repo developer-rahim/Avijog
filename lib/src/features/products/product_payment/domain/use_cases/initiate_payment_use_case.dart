@@ -8,7 +8,7 @@ part 'initiate_payment_use_case.g.dart';
 
 @Riverpod()
 InitiatePaymentUseCase initiatePaymentUseCase(
-  InitiatePaymentUseCaseRef ref, {
+  Ref ref, {
   required Map<String, dynamic> body,
   required PaymentMethod paymentMethod,
 }) {

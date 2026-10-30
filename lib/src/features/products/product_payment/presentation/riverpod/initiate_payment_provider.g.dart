@@ -6,21 +6,49 @@ part of 'initiate_payment_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(InitiatePayment)
+final initiatePaymentProvider = InitiatePaymentProvider._();
+
+final class InitiatePaymentProvider
+    extends $AsyncNotifierProvider<InitiatePayment, PaymentEntity?> {
+  InitiatePaymentProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'initiatePaymentProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$initiatePaymentHash();
+
+  @$internal
+  @override
+  InitiatePayment create() => InitiatePayment();
+}
+
 String _$initiatePaymentHash() => r'2c0a1aa12ff9ad2d16e2c8dae8805e19acae9770';
 
-/// See also [InitiatePayment].
-@ProviderFor(InitiatePayment)
-final initiatePaymentProvider =
-    AutoDisposeAsyncNotifierProvider<InitiatePayment, PaymentEntity?>.internal(
-      InitiatePayment.new,
-      name: r'initiatePaymentProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$initiatePaymentHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$InitiatePayment = AutoDisposeAsyncNotifier<PaymentEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+abstract class _$InitiatePayment extends $AsyncNotifier<PaymentEntity?> {
+  FutureOr<PaymentEntity?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<PaymentEntity?>, PaymentEntity?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<PaymentEntity?>, PaymentEntity?>,
+              AsyncValue<PaymentEntity?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

@@ -7,7 +7,7 @@ part 'product_details_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 Future<ProductEntity?> productDetails(
-  ProductDetailsRef ref, {
+  Ref ref, {
   required String productId,
 }) async {
   final getProductDetails = ref.read(

@@ -6,21 +6,52 @@ part of 'product_data_source.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productDataSourceHash() => r'34a8cd4e89e07d4172cdb2f501fb6765e644b542';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [productDataSource].
 @ProviderFor(productDataSource)
-final productDataSourceProvider =
-    AutoDisposeProvider<ProductDataSource>.internal(
-      productDataSource,
-      name: r'productDataSourceProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$productDataSourceHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final productDataSourceProvider = ProductDataSourceProvider._();
 
-typedef ProductDataSourceRef = AutoDisposeProviderRef<ProductDataSource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProductDataSourceProvider
+    extends
+        $FunctionalProvider<
+          ProductDataSource,
+          ProductDataSource,
+          ProductDataSource
+        >
+    with $Provider<ProductDataSource> {
+  ProductDataSourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'productDataSourceProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$productDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProductDataSource> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProductDataSource create(Ref ref) {
+    return productDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProductDataSource value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProductDataSource>(value),
+    );
+  }
+}
+
+String _$productDataSourceHash() => r'4d2c9fc9f746944fff828d2d46765d9bafc7abb4';

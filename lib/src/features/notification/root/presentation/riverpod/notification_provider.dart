@@ -7,7 +7,7 @@ part 'notification_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 Future<List<NotificationEntity>> notification(
-  NotificationRef ref,
+  Ref ref,
   String type,
 ) async {
   final notificationUseCase = ref.read(notificationUseCaseProvider);

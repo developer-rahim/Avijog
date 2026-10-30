@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'privacy_policy_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Future<PrivacyPolicyEntity?> privacyPolicy(PrivacyPolicyRef ref) async {
+Future<PrivacyPolicyEntity?> privacyPolicy(Ref ref) async {
   final profileUseCase = ref.read(profileUseCaseProvider);
 
   ErrorModel? errorModel;

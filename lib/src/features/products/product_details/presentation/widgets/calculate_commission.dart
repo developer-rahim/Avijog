@@ -66,18 +66,18 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
             child: Column(
               children: [
                 _PriceInfoItem(
-                  title: AppLocalizations.of(context)!.minimumSellingPrice,
+                  title: AppLocalizations.of(context).minimumSellingPrice,
                   value: '$minimumSellingPrice',
                 ),
                 const SizedBox(height: 10),
                 _PriceInfoItem(
-                  title: AppLocalizations.of(context)!.commission,
+                  title: AppLocalizations.of(context).commission,
                   value: '$commissionInPercent %',
                   showSymbol: false,
                 ),
                 const SizedBox(height: 10),
                 _PriceInfoItem(
-                  title: AppLocalizations.of(context)!.yourSellingPrice,
+                  title: AppLocalizations.of(context).yourSellingPrice,
                   showSymbol: false,
                   valueWidget: Form(
                     key: _formKey,
@@ -176,12 +176,12 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
                 ),
                 const SizedBox(height: 10),
                 _PriceInfoItem(
-                  title: AppLocalizations.of(context)!.yourCommission,
+                  title: AppLocalizations.of(context).yourCommission,
                   value: '$yourCommission',
                 ),
                 const SizedBox(height: 10),
                 _PriceInfoItem(
-                  title: AppLocalizations.of(context)!.youNeedToPay,
+                  title: AppLocalizations.of(context).youNeedToPay,
                   value: '$youNeedToPay',
                 ),
               ],
@@ -195,7 +195,7 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
             child: Button(
               background: isSellingPriceInvalid ? AppColors.lightBlack40 : null,
               borderRadius: 50,
-              label: AppLocalizations.of(context)!.nextStep,
+              label: AppLocalizations.of(context).nextStep,
               onPressed: () {
                 if (minimumPriceCrossed) {
                   ScaffoldMessenger.of(context).showSnackBar(

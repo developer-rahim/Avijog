@@ -13,7 +13,7 @@ class _ProductDescription extends StatelessWidget {
         children: [
           const SizedBox(height: 16),
           Text(
-            AppLocalizations.of(context)!.subscriptionFacility,
+            AppLocalizations.of(context).subscriptionFacility,
             style: AppTextStyle.bold16,
           ),
           const SizedBox(height: 10),

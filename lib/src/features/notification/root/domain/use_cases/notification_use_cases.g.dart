@@ -6,22 +6,53 @@ part of 'notification_use_cases.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$notificationUseCaseHash() =>
-    r'0f362721c8ac189676184f92457e1bff397216d5';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [notificationUseCase].
 @ProviderFor(notificationUseCase)
-final notificationUseCaseProvider =
-    AutoDisposeProvider<NotificationUseCase>.internal(
-      notificationUseCase,
-      name: r'notificationUseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$notificationUseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final notificationUseCaseProvider = NotificationUseCaseProvider._();
 
-typedef NotificationUseCaseRef = AutoDisposeProviderRef<NotificationUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class NotificationUseCaseProvider
+    extends
+        $FunctionalProvider<
+          NotificationUseCase,
+          NotificationUseCase,
+          NotificationUseCase
+        >
+    with $Provider<NotificationUseCase> {
+  NotificationUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'notificationUseCaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$notificationUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<NotificationUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  NotificationUseCase create(Ref ref) {
+    return notificationUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(NotificationUseCase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<NotificationUseCase>(value),
+    );
+  }
+}
+
+String _$notificationUseCaseHash() =>
+    r'4ddba97b4bab35dbbfbdcc67e37607ff8c886c9a';

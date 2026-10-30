@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/extension/sized_box_extension.dart';
@@ -57,29 +57,29 @@ class ForgetPasswordPage extends ConsumerWidget {
                       const SizedBox(height: 30),
                       Center(
                         child: Text(
-                          AppLocalizations.of(context)!.setNewPassword,
+                          AppLocalizations.of(context).setNewPassword,
                           style: AppTextStyle.bold28,
                         ),
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        AppLocalizations.of(context)!.setNewPasswordCaption,
+                        AppLocalizations.of(context).setNewPasswordCaption,
                         textAlign: TextAlign.center,
                         style: AppTextStyle.medium18,
                       ),
                       30.sh,
                       OutlinedInputField(
-                        labelText: AppLocalizations.of(context)!.password,
+                        labelText: AppLocalizations.of(context).password,
                         controller: _passwordController,
-                        hintText: AppLocalizations.of(context)!
+                        hintText: AppLocalizations.of(context)
                             .enterEightDigitCharacter,
                         validator: InputFieldValidator.password(),
                       ),
                       OutlinedInputField(
-                        labelText: AppLocalizations.of(context)!
+                        labelText: AppLocalizations.of(context)
                             .confirmPassword,
                         controller: _confirmPasswordController,
-                        hintText: AppLocalizations.of(context)!.confirmPassword,
+                        hintText: AppLocalizations.of(context).confirmPassword,
                         validator: InputFieldValidator.confirmPassword(
                           password: _passwordController.text,
                           optional: _passwordController.text.isEmpty,
@@ -102,7 +102,7 @@ class ForgetPasswordPage extends ConsumerWidget {
                                     _confirmPasswordController.text,
                               );
                         },
-                        buttonText: AppLocalizations.of(context)!.submit,
+                        buttonText: AppLocalizations.of(context).submit,
                       ),
                     ],
                   ),

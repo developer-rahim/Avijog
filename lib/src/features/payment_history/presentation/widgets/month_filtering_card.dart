@@ -9,22 +9,22 @@ class MonthFilteringCard extends ConsumerWidget {
     final yearProvider = ref.watch(selectedYearProvider);
     final language = ref.watch(languageProvider);
     final List<String> monthList = [
-      AppLocalizations.of(context)!.january,
-      AppLocalizations.of(context)!.february,
-      AppLocalizations.of(context)!.march,
-      AppLocalizations.of(context)!.april,
-      AppLocalizations.of(context)!.may,
-      AppLocalizations.of(context)!.june,
-      AppLocalizations.of(context)!.july,
-      AppLocalizations.of(context)!.august,
-      AppLocalizations.of(context)!.september,
-      AppLocalizations.of(context)!.october,
-      AppLocalizations.of(context)!.november,
-      AppLocalizations.of(context)!.december,
+      AppLocalizations.of(context).january,
+      AppLocalizations.of(context).february,
+      AppLocalizations.of(context).march,
+      AppLocalizations.of(context).april,
+      AppLocalizations.of(context).may,
+      AppLocalizations.of(context).june,
+      AppLocalizations.of(context).july,
+      AppLocalizations.of(context).august,
+      AppLocalizations.of(context).september,
+      AppLocalizations.of(context).october,
+      AppLocalizations.of(context).november,
+      AppLocalizations.of(context).december,
     ];
     final List<String> yearList = [
-      AppLocalizations.of(context)!.year2024,
-      AppLocalizations.of(context)!.year2025,
+      AppLocalizations.of(context).year2024,
+      AppLocalizations.of(context).year2025,
     ];
 
     return Row(
@@ -51,9 +51,9 @@ class MonthFilteringCard extends ConsumerWidget {
                   },
                   selectedValue: language.code == 'bn'
                       ? monthProvider?.englishToBanglaMonth ??
-                            AppLocalizations.of(context)!.selectMonth
+                            AppLocalizations.of(context).selectMonth
                       : monthProvider ??
-                            AppLocalizations.of(context)!.selectMonth,
+                            AppLocalizations.of(context).selectMonth,
                 ),
               );
             },
@@ -65,9 +65,9 @@ class MonthFilteringCard extends ConsumerWidget {
             builder: (context, ref, child) {
               return OutlinedInputField(
                 readOnly: true,
-                // labelText: AppLocalizations.of(context)!.studyLevel,
+                // labelText: AppLocalizations.of(context).studyLevel,
                 controller: TextEditingController(),
-                hintText: AppLocalizations.of(context)!.enterinstituteName,
+                hintText: AppLocalizations.of(context).enterinstituteName,
                 suffix: CommonPopupMenu(
                   data: yearList,
                   onSelected: (value) {
@@ -83,9 +83,9 @@ class MonthFilteringCard extends ConsumerWidget {
                   },
                   selectedValue: language.code == 'bn'
                       ? yearProvider?.englishToBanglaYear ??
-                            AppLocalizations.of(context)!.selectYear
+                            AppLocalizations.of(context).selectYear
                       : yearProvider ??
-                            AppLocalizations.of(context)!.selectYear,
+                            AppLocalizations.of(context).selectYear,
                 ),
               );
             },

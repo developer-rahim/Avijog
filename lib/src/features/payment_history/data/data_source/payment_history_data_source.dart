@@ -7,9 +7,7 @@ part 'payment_history_data_source.g.dart';
 part 'payment_history_data_source_imp.dart';
 
 @Riverpod()
-PaymentHistoryDataSource paymentHistoryDataSource(
-  PaymentHistoryDataSourceRef ref,
-) {
+PaymentHistoryDataSource paymentHistoryDataSource(Ref ref) {
   return PaymentHistoryDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 

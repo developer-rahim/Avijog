@@ -7,7 +7,7 @@ part 'profile_data_source.g.dart';
 part 'profile_data_source_impl.dart';
 
 @Riverpod()
-ProfileDataSource profileDataSource(ProfileDataSourceRef ref) {
+ProfileDataSource profileDataSource(Ref ref) {
   return ProfileDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 

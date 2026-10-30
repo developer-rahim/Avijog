@@ -6,172 +6,106 @@ part of 'initiate_payment_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$initiatePaymentUseCaseHash() =>
-    r'ef3fd74d3a508d86789a12badd1a5d5afcc6d872';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-/// See also [initiatePaymentUseCase].
 @ProviderFor(initiatePaymentUseCase)
-const initiatePaymentUseCaseProvider = InitiatePaymentUseCaseFamily();
+final initiatePaymentUseCaseProvider = InitiatePaymentUseCaseFamily._();
 
-/// See also [initiatePaymentUseCase].
-class InitiatePaymentUseCaseFamily extends Family<InitiatePaymentUseCase> {
-  /// See also [initiatePaymentUseCase].
-  const InitiatePaymentUseCaseFamily();
-
-  /// See also [initiatePaymentUseCase].
-  InitiatePaymentUseCaseProvider call({
-    required Map<String, dynamic> body,
-    required PaymentMethod paymentMethod,
-  }) {
-    return InitiatePaymentUseCaseProvider(
-      body: body,
-      paymentMethod: paymentMethod,
-    );
-  }
-
-  @override
-  InitiatePaymentUseCaseProvider getProviderOverride(
-    covariant InitiatePaymentUseCaseProvider provider,
-  ) {
-    return call(body: provider.body, paymentMethod: provider.paymentMethod);
-  }
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'initiatePaymentUseCaseProvider';
-}
-
-/// See also [initiatePaymentUseCase].
-class InitiatePaymentUseCaseProvider
-    extends AutoDisposeProvider<InitiatePaymentUseCase> {
-  /// See also [initiatePaymentUseCase].
-  InitiatePaymentUseCaseProvider({
-    required Map<String, dynamic> body,
-    required PaymentMethod paymentMethod,
-  }) : this._internal(
-         (ref) => initiatePaymentUseCase(
-           ref as InitiatePaymentUseCaseRef,
-           body: body,
-           paymentMethod: paymentMethod,
-         ),
-         from: initiatePaymentUseCaseProvider,
+final class InitiatePaymentUseCaseProvider
+    extends
+        $FunctionalProvider<
+          InitiatePaymentUseCase,
+          InitiatePaymentUseCase,
+          InitiatePaymentUseCase
+        >
+    with $Provider<InitiatePaymentUseCase> {
+  InitiatePaymentUseCaseProvider._({
+    required InitiatePaymentUseCaseFamily super.from,
+    required ({Map<String, dynamic> body, PaymentMethod paymentMethod})
+    super.argument,
+  }) : super(
+         retry: null,
          name: r'initiatePaymentUseCaseProvider',
-         debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-             ? null
-             : _$initiatePaymentUseCaseHash,
-         dependencies: InitiatePaymentUseCaseFamily._dependencies,
-         allTransitiveDependencies:
-             InitiatePaymentUseCaseFamily._allTransitiveDependencies,
-         body: body,
-         paymentMethod: paymentMethod,
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
        );
 
-  InitiatePaymentUseCaseProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.body,
-    required this.paymentMethod,
-  }) : super.internal();
-
-  final Map<String, dynamic> body;
-  final PaymentMethod paymentMethod;
+  @override
+  String debugGetCreateSourceHash() => _$initiatePaymentUseCaseHash();
 
   @override
-  Override overrideWith(
-    InitiatePaymentUseCase Function(InitiatePaymentUseCaseRef provider) create,
-  ) {
-    return ProviderOverride(
-      origin: this,
-      override: InitiatePaymentUseCaseProvider._internal(
-        (ref) => create(ref as InitiatePaymentUseCaseRef),
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        body: body,
-        paymentMethod: paymentMethod,
-      ),
+  String toString() {
+    return r'initiatePaymentUseCaseProvider'
+        ''
+        '$argument';
+  }
+
+  @$internal
+  @override
+  $ProviderElement<InitiatePaymentUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  InitiatePaymentUseCase create(Ref ref) {
+    final argument =
+        this.argument
+            as ({Map<String, dynamic> body, PaymentMethod paymentMethod});
+    return initiatePaymentUseCase(
+      ref,
+      body: argument.body,
+      paymentMethod: argument.paymentMethod,
     );
   }
 
-  @override
-  AutoDisposeProviderElement<InitiatePaymentUseCase> createElement() {
-    return _InitiatePaymentUseCaseProviderElement(this);
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(InitiatePaymentUseCase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<InitiatePaymentUseCase>(value),
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return other is InitiatePaymentUseCaseProvider &&
-        other.body == body &&
-        other.paymentMethod == paymentMethod;
+        other.argument == argument;
   }
 
   @override
   int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, body.hashCode);
-    hash = _SystemHash.combine(hash, paymentMethod.hashCode);
-
-    return _SystemHash.finish(hash);
+    return argument.hashCode;
   }
 }
 
-mixin InitiatePaymentUseCaseRef
-    on AutoDisposeProviderRef<InitiatePaymentUseCase> {
-  /// The parameter `body` of this provider.
-  Map<String, dynamic> get body;
+String _$initiatePaymentUseCaseHash() =>
+    r'3046beb12d788880a5a0625d06e921029edf909c';
 
-  /// The parameter `paymentMethod` of this provider.
-  PaymentMethod get paymentMethod;
-}
+final class InitiatePaymentUseCaseFamily extends $Family
+    with
+        $FunctionalFamilyOverride<
+          InitiatePaymentUseCase,
+          ({Map<String, dynamic> body, PaymentMethod paymentMethod})
+        > {
+  InitiatePaymentUseCaseFamily._()
+    : super(
+        retry: null,
+        name: r'initiatePaymentUseCaseProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
 
-class _InitiatePaymentUseCaseProviderElement
-    extends AutoDisposeProviderElement<InitiatePaymentUseCase>
-    with InitiatePaymentUseCaseRef {
-  _InitiatePaymentUseCaseProviderElement(super.provider);
+  InitiatePaymentUseCaseProvider call({
+    required Map<String, dynamic> body,
+    required PaymentMethod paymentMethod,
+  }) => InitiatePaymentUseCaseProvider._(
+    argument: (body: body, paymentMethod: paymentMethod),
+    from: this,
+  );
 
   @override
-  Map<String, dynamic> get body =>
-      (origin as InitiatePaymentUseCaseProvider).body;
-  @override
-  PaymentMethod get paymentMethod =>
-      (origin as InitiatePaymentUseCaseProvider).paymentMethod;
+  String toString() => r'initiatePaymentUseCaseProvider';
 }
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

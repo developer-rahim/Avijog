@@ -7,7 +7,7 @@ part 'verify_customer_use_case.g.dart';
 
 @Riverpod()
 VerifyCustomerUseCase verifyCustomerUseCase(
-  VerifyCustomerUseCaseRef ref, {
+  Ref ref, {
   required Map<String, dynamic> body,
 }) {
   return VerifyCustomerUseCase(

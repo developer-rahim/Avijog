@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +17,6 @@ import 'package:obhijuk/src/features/home/presentation/pages/home_page.dart';
 import 'package:obhijuk/src/features/language/pages/riverpod/language_provider.dart';
 
 import 'package:obhijuk/src/features/notification/root/presentation/page/notification_page.dart';
-import 'package:obhijuk/src/features/payment_history/presentation/pages/payment_history_page.dart';
 
 import 'package:obhijuk/src/features/products/product_details/presentation/pages/customer_sign_up_webview_page.dart';
 
@@ -64,9 +63,9 @@ class _RootState extends ConsumerState<Root> {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           routerConfig: _router,
-          builder: (_, router) {
+          builder: (context, router) {
             return MediaQuery(
-              data: MediaQuery.of(_)
+              data: MediaQuery.of(context)
                   .copyWith(textScaler: const TextScaler.linear(1.0)),
               child: router!,
             );

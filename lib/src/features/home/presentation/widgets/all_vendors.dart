@@ -52,7 +52,7 @@ class _AllVendorsState extends ConsumerState<AllVendors> {
               ),
               const SizedBox(width: 10),
               Text(
-                AppLocalizations.of(context)!.allVendors,
+                AppLocalizations.of(context).allVendors,
                 style: AppTextStyle.bold16,
               ),
             ],
@@ -102,8 +102,8 @@ class _AllVendorsState extends ConsumerState<AllVendors> {
               //           onPressed: toggleExpand,
               //           child: Text(
               //             isExpanded
-              //                 ? AppLocalizations.of(context)!.seeLess
-              //                 : AppLocalizations.of(context)!.seeMore,
+              //                 ? AppLocalizations.of(context).seeLess
+              //                 : AppLocalizations.of(context).seeMore,
               //             style: AppTextStyle.bold16.copyWith(
               //               color: AppColors.white,
               //             ),

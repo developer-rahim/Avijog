@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_balance_use_case.g.dart';
 
 @Riverpod()
-GetBalanceUseCase getBalanceUseCase(GetBalanceUseCaseRef ref) {
+GetBalanceUseCase getBalanceUseCase(Ref ref) {
   return GetBalanceUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 

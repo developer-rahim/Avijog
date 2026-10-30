@@ -6,22 +6,53 @@ part of 'notification_data_source.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$notificationDataSourceHash() =>
-    r'0ff7b7f7d7921e082c979ed24d4d5b38afcd8532';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [notificationDataSource].
 @ProviderFor(notificationDataSource)
-final notificationDataSourceProvider =
-    Provider<NotificationDataSource>.internal(
-      notificationDataSource,
-      name: r'notificationDataSourceProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$notificationDataSourceHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final notificationDataSourceProvider = NotificationDataSourceProvider._();
 
-typedef NotificationDataSourceRef = ProviderRef<NotificationDataSource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class NotificationDataSourceProvider
+    extends
+        $FunctionalProvider<
+          NotificationDataSource,
+          NotificationDataSource,
+          NotificationDataSource
+        >
+    with $Provider<NotificationDataSource> {
+  NotificationDataSourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'notificationDataSourceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$notificationDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<NotificationDataSource> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  NotificationDataSource create(Ref ref) {
+    return notificationDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(NotificationDataSource value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<NotificationDataSource>(value),
+    );
+  }
+}
+
+String _$notificationDataSourceHash() =>
+    r'4731f8e57f5d6a9b3bb75badd64fc09cebe4b05b';

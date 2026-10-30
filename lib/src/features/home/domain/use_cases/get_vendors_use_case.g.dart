@@ -6,21 +6,52 @@ part of 'get_vendors_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getVendorsUseCaseHash() => r'bca253f7b08b67d411a4999c142a4571e6116df9';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [getVendorsUseCase].
 @ProviderFor(getVendorsUseCase)
-final getVendorsUseCaseProvider =
-    AutoDisposeProvider<GetVendorsUseCase>.internal(
-      getVendorsUseCase,
-      name: r'getVendorsUseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$getVendorsUseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final getVendorsUseCaseProvider = GetVendorsUseCaseProvider._();
 
-typedef GetVendorsUseCaseRef = AutoDisposeProviderRef<GetVendorsUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class GetVendorsUseCaseProvider
+    extends
+        $FunctionalProvider<
+          GetVendorsUseCase,
+          GetVendorsUseCase,
+          GetVendorsUseCase
+        >
+    with $Provider<GetVendorsUseCase> {
+  GetVendorsUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'getVendorsUseCaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$getVendorsUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<GetVendorsUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  GetVendorsUseCase create(Ref ref) {
+    return getVendorsUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetVendorsUseCase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GetVendorsUseCase>(value),
+    );
+  }
+}
+
+String _$getVendorsUseCaseHash() => r'd0265fd1c4d65786731d334fa2f8459a09223b87';

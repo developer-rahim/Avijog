@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+// Riverpod 3.x moved StateProvider / StateNotifierProvider to the legacy library.
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:obhijuk/src/core/service/exception/error_model.dart';
 import 'package:obhijuk/src/features/payment_history/data/models/payment_history_model.dart';
 import 'package:obhijuk/src/features/payment_history/domain/use_cases/payment_history_use_case.dart';
@@ -8,7 +10,7 @@ part 'payment_history_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 Future<List<PaymentHistoryModel>> paymentHistory(
-  PaymentHistoryRef ref,
+  Ref ref,
   String month,
   String year,
 ) async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/enums/enums.dart';
@@ -52,7 +52,7 @@ class _NotificationPageState extends State<NotificationPage>
         elevation: 0,
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.notification,
+          AppLocalizations.of(context).notification,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(
@@ -107,13 +107,13 @@ class _NotificationPageState extends State<NotificationPage>
                   tabs: [
                     Tab(
                       child: Text(
-                        AppLocalizations.of(context)!.offer,
+                        AppLocalizations.of(context).offer,
                         style: const TextStyle(fontSize: 14),
                       ),
                     ),
                     Tab(
                       child: Text(
-                        AppLocalizations.of(context)!.general,
+                        AppLocalizations.of(context).general,
                         style: const TextStyle(fontSize: 14),
                       ),
                     ),

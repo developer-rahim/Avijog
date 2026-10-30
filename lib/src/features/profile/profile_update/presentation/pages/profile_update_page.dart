@@ -40,7 +40,7 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.profileUpdate,
+          AppLocalizations.of(context).profileUpdate,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(
@@ -64,43 +64,43 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
                     const ProfileImageUpdatedSection(),
                     const SizedBox(height: 21),
                     Text(
-                      AppLocalizations.of(context)!.updateProfileInfo,
+                      AppLocalizations.of(context).updateProfileInfo,
                       style: AppTextStyle.bold20,
                     ),
                     const SizedBox(height: 21),
                     OutlinedInputField(
-                      labelText: AppLocalizations.of(context)!.affiliatorName,
+                      labelText: AppLocalizations.of(context).affiliatorName,
                       controller: _nameController,
-                      hintText: AppLocalizations.of(context)!.enterYourFullName,
+                      hintText: AppLocalizations.of(context).enterYourFullName,
                       validator: InputFieldValidator.name(),
                     ),
                     const SizedBox(height: 38),
                     Text(
-                      AppLocalizations.of(context)!.studentInformation,
+                      AppLocalizations.of(context).studentInformation,
                       style: AppTextStyle.bold20,
                     ),
                     const SizedBox(height: 20),
                     OutlinedInputField(
-                      labelText: AppLocalizations.of(context)!.instituteName,
+                      labelText: AppLocalizations.of(context).instituteName,
                       controller: _institutionController,
-                      hintText: AppLocalizations.of(context)!
+                      hintText: AppLocalizations.of(context)
                           .enterinstituteName,
                     ),
                     OutlinedInputField(
-                      labelText: AppLocalizations.of(context)!.address,
+                      labelText: AppLocalizations.of(context).address,
                       controller: _addressController,
-                      hintText: AppLocalizations.of(context)!.enterAddress,
+                      hintText: AppLocalizations.of(context).enterAddress,
                       validator: InputFieldValidator.name(),
                     ),
                     OutlinedInputField(
-                      labelText: AppLocalizations.of(context)!.reference,
+                      labelText: AppLocalizations.of(context).reference,
                       controller: _refController,
-                      hintText: AppLocalizations.of(context)!.enterreference,
+                      hintText: AppLocalizations.of(context).enterreference,
                       validator: InputFieldValidator.name(),
                     ),
                     const SizedBox(height: 50),
                     Button(
-                      label: AppLocalizations.of(context)!.submit,
+                      label: AppLocalizations.of(context).submit,
                       onPressed: () {
                         if (!_formKey.currentState!.validate()) {
                           return;

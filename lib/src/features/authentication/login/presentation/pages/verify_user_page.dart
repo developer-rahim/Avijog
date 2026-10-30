@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/extension/sized_box_extension.dart';
@@ -28,12 +28,12 @@ class VerifyUserPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.welcomeBack,
+                  AppLocalizations.of(context).welcomeBack,
                   style: AppTextStyle.bold28,
                 ),
                 20.sh,
                 Text(
-                  AppLocalizations.of(context)!.loginSubTitle,
+                  AppLocalizations.of(context).loginSubTitle,
                   textAlign: TextAlign.center,
                   style: AppTextStyle.medium18,
                 ),
@@ -74,9 +74,9 @@ class _UserVerificationSectionState
           key: _formKey,
           child: OutlinedInputField(
             keyboardType: TextInputType.phone,
-            labelText: AppLocalizations.of(context)!.phoneNunber,
+            labelText: AppLocalizations.of(context).phoneNunber,
             controller: _phoneController,
-            hintText: AppLocalizations.of(context)!.enterYourNunber,
+            hintText: AppLocalizations.of(context).enterYourNunber,
             validator: InputFieldValidator.phoneNumber(),
           ),
         ),
@@ -86,7 +86,7 @@ class _UserVerificationSectionState
           child: PrimaryButton(
             isLoading: ref.watch(verifyUserProvider) is AsyncLoading<void>,
             onTap: _onTab,
-            buttonText: AppLocalizations.of(context)!.submit,
+            buttonText: AppLocalizations.of(context).submit,
           ),
         ),
       ],

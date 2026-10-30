@@ -9,7 +9,8 @@ class BannerWidget extends ConsumerStatefulWidget {
 
 class _BannerWidgetState extends ConsumerState<BannerWidget> {
   int _current = 0;
-  final CarouselController _carouselController = CarouselController();
+  final CarouselSliderController _carouselController =
+      CarouselSliderControllerImpl();
 
   @override
   Widget build(BuildContext context) {

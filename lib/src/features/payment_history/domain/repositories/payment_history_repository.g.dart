@@ -6,23 +6,53 @@ part of 'payment_history_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$paymentHistoryRepositoryHash() =>
-    r'd2ddfd658d8ebe16cefeb6caff651b1f2516f2f1';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [paymentHistoryRepository].
 @ProviderFor(paymentHistoryRepository)
-final paymentHistoryRepositoryProvider =
-    AutoDisposeProvider<PaymentHistoryRepository>.internal(
-      paymentHistoryRepository,
-      name: r'paymentHistoryRepositoryProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$paymentHistoryRepositoryHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final paymentHistoryRepositoryProvider = PaymentHistoryRepositoryProvider._();
 
-typedef PaymentHistoryRepositoryRef =
-    AutoDisposeProviderRef<PaymentHistoryRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class PaymentHistoryRepositoryProvider
+    extends
+        $FunctionalProvider<
+          PaymentHistoryRepository,
+          PaymentHistoryRepository,
+          PaymentHistoryRepository
+        >
+    with $Provider<PaymentHistoryRepository> {
+  PaymentHistoryRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'paymentHistoryRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$paymentHistoryRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<PaymentHistoryRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  PaymentHistoryRepository create(Ref ref) {
+    return paymentHistoryRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(PaymentHistoryRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<PaymentHistoryRepository>(value),
+    );
+  }
+}
+
+String _$paymentHistoryRepositoryHash() =>
+    r'01aa3da104c8f76607ca3268f79bfbc8a4a0ca0c';

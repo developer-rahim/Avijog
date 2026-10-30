@@ -36,7 +36,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.pinCahnge,
+          AppLocalizations.of(context).pinCahnge,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(
@@ -63,7 +63,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
                   fillColor: AppColors.transparent,
                   showBorder: true,
                   controller: _oldPasswordController,
-                  hintText: AppLocalizations.of(context)!.currentPin,
+                  hintText: AppLocalizations.of(context).currentPin,
                   isPasswordField: true,
                   maxLines: 1,
                   validator: InputFieldValidator.password(),
@@ -77,7 +77,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
                     size: 20,
                   ),
                   controller: _newPasswordController,
-                  hintText: AppLocalizations.of(context)!.newPin,
+                  hintText: AppLocalizations.of(context).newPin,
                   fillColor: AppColors.transparent,
                   showBorder: true,
                   isPasswordField: true,
@@ -96,7 +96,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
                   fillColor: AppColors.transparent,
                   showBorder: true,
                   controller: _confirmPasswordController,
-                  hintText: AppLocalizations.of(context)!.retypeNewPin,
+                  hintText: AppLocalizations.of(context).retypeNewPin,
                   isPasswordField: true,
                   maxLines: 1,
                   borderColor: AppColors.primary,
@@ -123,7 +123,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
                         'confirm_new_password': _confirmPasswordController.text,
                       });
                     },
-                    label: AppLocalizations.of(context)!.submit,
+                    label: AppLocalizations.of(context).submit,
                   ),
                 ),
               ],

@@ -6,21 +6,55 @@ part of 'authentication_use_cases.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authenticationUseCaseHash() =>
-    r'424672b8d676fd4936499c9b31ed5452ba05e5da';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [authenticationUseCase].
 @ProviderFor(authenticationUseCase)
-final authenticationUseCaseProvider = Provider<AuthenticationUseCase>.internal(
-  authenticationUseCase,
-  name: r'authenticationUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$authenticationUseCaseHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final authenticationUseCaseProvider = AuthenticationUseCaseProvider._();
 
-typedef AuthenticationUseCaseRef = ProviderRef<AuthenticationUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class AuthenticationUseCaseProvider
+    extends
+        $FunctionalProvider<
+          AuthenticationUseCase<dynamic>,
+          AuthenticationUseCase<dynamic>,
+          AuthenticationUseCase<dynamic>
+        >
+    with $Provider<AuthenticationUseCase<dynamic>> {
+  AuthenticationUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'authenticationUseCaseProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$authenticationUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<AuthenticationUseCase<dynamic>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  AuthenticationUseCase<dynamic> create(Ref ref) {
+    return authenticationUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(AuthenticationUseCase<dynamic> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<AuthenticationUseCase<dynamic>>(
+        value,
+      ),
+    );
+  }
+}
+
+String _$authenticationUseCaseHash() =>
+    r'704b4ac01dcdaaa656d814a1f9110ad1404d4583';

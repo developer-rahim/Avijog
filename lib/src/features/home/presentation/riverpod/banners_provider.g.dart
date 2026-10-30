@@ -6,20 +6,46 @@ part of 'banners_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$bannersHash() => r'82d6f5405699518dd566d104ba4d66a56f19bfc1';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [banners].
 @ProviderFor(banners)
-final bannersProvider = FutureProvider<List<BannerEntity>>.internal(
-  banners,
-  name: r'bannersProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$bannersHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final bannersProvider = BannersProvider._();
 
-typedef BannersRef = FutureProviderRef<List<BannerEntity>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class BannersProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<BannerEntity>>,
+          List<BannerEntity>,
+          FutureOr<List<BannerEntity>>
+        >
+    with
+        $FutureModifier<List<BannerEntity>>,
+        $FutureProvider<List<BannerEntity>> {
+  BannersProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'bannersProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$bannersHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<BannerEntity>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<BannerEntity>> create(Ref ref) {
+    return banners(ref);
+  }
+}
+
+String _$bannersHash() => r'c24ceb0479f70875d7742afb29128ddd81ec203a';

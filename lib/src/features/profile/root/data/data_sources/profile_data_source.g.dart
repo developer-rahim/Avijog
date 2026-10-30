@@ -6,21 +6,52 @@ part of 'profile_data_source.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$profileDataSourceHash() => r'7407d505b3b24423981db4bf8328c9ffc7d8fc3f';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [profileDataSource].
 @ProviderFor(profileDataSource)
-final profileDataSourceProvider =
-    AutoDisposeProvider<ProfileDataSource>.internal(
-      profileDataSource,
-      name: r'profileDataSourceProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$profileDataSourceHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final profileDataSourceProvider = ProfileDataSourceProvider._();
 
-typedef ProfileDataSourceRef = AutoDisposeProviderRef<ProfileDataSource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class ProfileDataSourceProvider
+    extends
+        $FunctionalProvider<
+          ProfileDataSource<dynamic>,
+          ProfileDataSource<dynamic>,
+          ProfileDataSource<dynamic>
+        >
+    with $Provider<ProfileDataSource<dynamic>> {
+  ProfileDataSourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'profileDataSourceProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$profileDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<ProfileDataSource<dynamic>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ProfileDataSource<dynamic> create(Ref ref) {
+    return profileDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ProfileDataSource<dynamic> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ProfileDataSource<dynamic>>(value),
+    );
+  }
+}
+
+String _$profileDataSourceHash() => r'b4187e2bc15649f75427f2380df7abafd141f6d9';

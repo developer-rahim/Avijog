@@ -6,20 +6,44 @@ part of 'faq_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$faqHash() => r'98f131be5fc2ad431f9b7a20f0f919e5c5dfa2a1';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [faq].
 @ProviderFor(faq)
-final faqProvider = FutureProvider<List<FaqEntity>?>.internal(
-  faq,
-  name: r'faqProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$faqHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final faqProvider = FaqProvider._();
 
-typedef FaqRef = FutureProviderRef<List<FaqEntity>?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class FaqProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<FaqEntity>?>,
+          List<FaqEntity>?,
+          FutureOr<List<FaqEntity>?>
+        >
+    with $FutureModifier<List<FaqEntity>?>, $FutureProvider<List<FaqEntity>?> {
+  FaqProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'faqProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$faqHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<FaqEntity>?> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<FaqEntity>?> create(Ref ref) {
+    return faq(ref);
+  }
+}
+
+String _$faqHash() => r'cdc8b77206dd82c17c281f71c3d68ad8cd025c05';

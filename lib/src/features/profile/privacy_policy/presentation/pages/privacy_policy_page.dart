@@ -8,7 +8,7 @@ class PrivacyPolicyPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.privacyPolicy,
+          AppLocalizations.of(context).privacyPolicy,
           style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(

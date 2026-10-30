@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:obhijuk/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:obhijuk/src/core/extension/sized_box_extension.dart';
@@ -49,17 +49,17 @@ class SignUpPage extends ConsumerWidget {
                   // ),
                   const SizedBox(height: 21),
                   Text(
-                    AppLocalizations.of(context)!.welcomeTo,
+                    AppLocalizations.of(context).welcomeTo,
                     style: AppTextStyle.medium20,
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    AppLocalizations.of(context)!.appName,
+                    AppLocalizations.of(context).appName,
                     style: AppTextStyle.bold32,
                   ),
                   const SizedBox(height: 34),
                   Text(
-                    AppLocalizations.of(context)!.createAnAccount,
+                    AppLocalizations.of(context).createAnAccount,
                     style: AppTextStyle.bold20,
                   ),
                   40.sh,
@@ -69,53 +69,53 @@ class SignUpPage extends ConsumerWidget {
                       children: [
                         OutlinedInputField(
                           keyboardType: TextInputType.name,
-                          labelText: AppLocalizations.of(context)!
+                          labelText: AppLocalizations.of(context)
                               .affiliatorName,
                           controller: _nameController,
-                          hintText: AppLocalizations.of(context)!
+                          hintText: AppLocalizations.of(context)
                               .enterYourFullName,
                           validator: InputFieldValidator.name(),
                         ),
                         const SizedBox(height: 38),
                         Text(
-                          AppLocalizations.of(context)!.studentInformation,
+                          AppLocalizations.of(context).studentInformation,
                           style: AppTextStyle.bold20,
                         ),
                         const SizedBox(height: 14),
                         OutlinedInputField(
                           keyboardType: TextInputType.name,
-                          labelText: AppLocalizations.of(context)!
+                          labelText: AppLocalizations.of(context)
                               .instituteName,
                           controller: _institutionNameController,
-                          hintText: AppLocalizations.of(context)!
+                          hintText: AppLocalizations.of(context)
                               .enterinstituteName,
                           validator: InputFieldValidator.name(),
                         ),
                         OutlinedInputField(
                           keyboardType: TextInputType.emailAddress,
-                          labelText: AppLocalizations.of(context)!.address,
+                          labelText: AppLocalizations.of(context).address,
                           controller: _addressController,
-                          hintText: AppLocalizations.of(context)!.enterAddress,
+                          hintText: AppLocalizations.of(context).enterAddress,
                           validator: InputFieldValidator.email(),
                         ),
                         OutlinedInputField(
                           keyboardType: TextInputType.name,
-                          labelText: AppLocalizations.of(context)!.reference,
+                          labelText: AppLocalizations.of(context).reference,
                           controller: _referenceController,
-                          hintText: AppLocalizations.of(context)!
+                          hintText: AppLocalizations.of(context)
                               .enterreference,
                         ),
                         OutlinedInputField(
-                          labelText: AppLocalizations.of(context)!.password,
+                          labelText: AppLocalizations.of(context).password,
                           controller: _passwordController,
-                          hintText: AppLocalizations.of(context)!.password,
+                          hintText: AppLocalizations.of(context).password,
                           validator: InputFieldValidator.password(),
                         ),
                         OutlinedInputField(
-                          labelText: AppLocalizations.of(context)!
+                          labelText: AppLocalizations.of(context)
                               .confirmPassword,
                           controller: _confirmPasswordController,
-                          hintText: AppLocalizations.of(context)!
+                          hintText: AppLocalizations.of(context)
                               .confirmPassword,
                           validator: InputFieldValidator.confirmPassword(
                             password: _passwordController.text,
@@ -158,7 +158,7 @@ class SignUpPage extends ConsumerWidget {
                           )
                           .then((value) => context.pushNamed(Routes.homeTab));
                     },
-                    buttonText: AppLocalizations.of(context)!.signup,
+                    buttonText: AppLocalizations.of(context).signup,
                   ),
                   const SizedBox(height: 32),
                   _joinUsConfirmation(context),
@@ -176,7 +176,7 @@ class SignUpPage extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          AppLocalizations.of(context)!.joinedUsBefore,
+          AppLocalizations.of(context).joinedUsBefore,
           style: AppTextStyle.medium14,
           textAlign: TextAlign.center,
         ),
@@ -185,7 +185,7 @@ class SignUpPage extends ConsumerWidget {
             context.goNamed(Routes.login);
           },
           child: Text(
-            AppLocalizations.of(context)!.login,
+            AppLocalizations.of(context).login,
             style: AppTextStyle.bold14.copyWith(color: AppColors.primary),
             textAlign: TextAlign.center,
           ),

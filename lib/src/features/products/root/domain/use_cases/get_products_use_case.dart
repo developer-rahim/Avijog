@@ -7,7 +7,7 @@ part 'get_products_use_case.g.dart';
 
 @Riverpod()
 GetProductsUseCase getProductsUseCase(
-  GetProductsUseCaseRef ref, {
+  Ref ref, {
   String? vendorId,
 }) {
   return GetProductsUseCase(

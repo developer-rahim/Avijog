@@ -6,21 +6,52 @@ part of 'get_banners_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getBannersUseCaseHash() => r'8458d1265dd6aabbc779a364b2eb29f1b4f4ddaf';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [getBannersUseCase].
 @ProviderFor(getBannersUseCase)
-final getBannersUseCaseProvider =
-    AutoDisposeProvider<GetBannersUseCase>.internal(
-      getBannersUseCase,
-      name: r'getBannersUseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$getBannersUseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+final getBannersUseCaseProvider = GetBannersUseCaseProvider._();
 
-typedef GetBannersUseCaseRef = AutoDisposeProviderRef<GetBannersUseCase>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class GetBannersUseCaseProvider
+    extends
+        $FunctionalProvider<
+          GetBannersUseCase,
+          GetBannersUseCase,
+          GetBannersUseCase
+        >
+    with $Provider<GetBannersUseCase> {
+  GetBannersUseCaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'getBannersUseCaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$getBannersUseCaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<GetBannersUseCase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  GetBannersUseCase create(Ref ref) {
+    return getBannersUseCase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetBannersUseCase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GetBannersUseCase>(value),
+    );
+  }
+}
+
+String _$getBannersUseCaseHash() => r'20612bb5214b0ac03c7a97a2f827b83b21c4b70d';

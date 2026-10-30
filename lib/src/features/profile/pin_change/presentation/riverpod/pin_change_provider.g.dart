@@ -6,21 +6,49 @@ part of 'pin_change_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(PinChange)
+final pinChangeProvider = PinChangeProvider._();
+
+final class PinChangeProvider
+    extends $AsyncNotifierProvider<PinChange, PinChangeEntity> {
+  PinChangeProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'pinChangeProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$pinChangeHash();
+
+  @$internal
+  @override
+  PinChange create() => PinChange();
+}
+
 String _$pinChangeHash() => r'1d0927198bcb3e596a159cd2418352b0d9dcf3dd';
 
-/// See also [PinChange].
-@ProviderFor(PinChange)
-final pinChangeProvider =
-    AsyncNotifierProvider<PinChange, PinChangeEntity>.internal(
-      PinChange.new,
-      name: r'pinChangeProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$pinChangeHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$PinChange = AsyncNotifier<PinChangeEntity>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+abstract class _$PinChange extends $AsyncNotifier<PinChangeEntity> {
+  FutureOr<PinChangeEntity> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<PinChangeEntity>, PinChangeEntity>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<PinChangeEntity>, PinChangeEntity>,
+              AsyncValue<PinChangeEntity>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

@@ -6,20 +6,44 @@ part of 'user_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userHash() => r'261cb6b8531fa30ff84a803390cb0e68bb7bd8d4';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [user].
 @ProviderFor(user)
-final userProvider = FutureProvider<UserEntity?>.internal(
-  user,
-  name: r'userProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$userHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final userProvider = UserProvider._();
 
-typedef UserRef = FutureProviderRef<UserEntity?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class UserProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<UserEntity?>,
+          UserEntity?,
+          FutureOr<UserEntity?>
+        >
+    with $FutureModifier<UserEntity?>, $FutureProvider<UserEntity?> {
+  UserProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'userProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$userHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<UserEntity?> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<UserEntity?> create(Ref ref) {
+    return user(ref);
+  }
+}
+
+String _$userHash() => r'1088984b8b82daf92ad9001c8aa7112ced273678';
