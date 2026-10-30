@@ -17,41 +17,28 @@ class CommonPopupMenu extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return PopupMenuButton<String>(
       color: AppColors.primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       onSelected: onSelected,
       itemBuilder: (context) {
         return [
           for (var value in data)
             PopupMenuItem(
               value: value,
-              child: Text(
-                value,
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            )
+              child: Text(value, style: const TextStyle(color: Colors.white)),
+            ),
         ];
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              left: 10,
-              right: 10,
-            ),
+            padding: const EdgeInsets.only(left: 10, right: 10),
             child: Text(selectedValue!),
           ),
           const Padding(
             padding: EdgeInsets.only(right: 10),
-            child: Icon(
-              Icons.keyboard_arrow_down_rounded,
-              size: 25,
-            ),
-          )
+            child: Icon(Icons.keyboard_arrow_down_rounded, size: 25),
+          ),
         ],
       ),
     );

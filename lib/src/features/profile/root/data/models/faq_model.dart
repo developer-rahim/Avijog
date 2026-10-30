@@ -12,25 +12,19 @@ FaqResponseModel faqResponseModelFromJson(String str) =>
 class FaqResponseModel {
   List<FaqModel>? data;
 
-  FaqResponseModel({
-    this.data,
-  });
+  FaqResponseModel({this.data});
 
   factory FaqResponseModel.fromJson(Map<String, dynamic> json) =>
       FaqResponseModel(
-        data:
-            List<FaqModel>.from(json["data"].map((x) => FaqModel.fromJson(x))),
+        data: List<FaqModel>.from(
+          json["data"].map((x) => FaqModel.fromJson(x)),
+        ),
       );
 }
 
 class FaqModel extends FaqEntity {
-  FaqModel({
-    super.question,
-    super.answer,
-  });
+  FaqModel({super.question, super.answer});
 
-  factory FaqModel.fromJson(Map<String, dynamic> json) => FaqModel(
-        question: json["question"],
-        answer: json["answer"],
-      );
+  factory FaqModel.fromJson(Map<String, dynamic> json) =>
+      FaqModel(question: json["question"], answer: json["answer"]);
 }

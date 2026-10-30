@@ -37,23 +37,24 @@ class MonthFilteringCard extends ConsumerWidget {
                 controller: TextEditingController(),
                 hintText: '',
                 suffix: CommonPopupMenu(
-                    data: monthList,
-                    onSelected: (value) {
-                      if (language.code == 'bn') {
-                        ref
-                            .read(selectedMonthProvider.notifier)
-                            .update((state) => value.banglaToEnglishMonth);
-                      } else {
-                        ref
-                            .read(selectedMonthProvider.notifier)
-                            .update((state) => value);
-                      }
-                    },
-                    selectedValue: language.code == 'bn'
-                        ? monthProvider?.englishToBanglaMonth ??
+                  data: monthList,
+                  onSelected: (value) {
+                    if (language.code == 'bn') {
+                      ref
+                          .read(selectedMonthProvider.notifier)
+                          .update((state) => value.banglaToEnglishMonth);
+                    } else {
+                      ref
+                          .read(selectedMonthProvider.notifier)
+                          .update((state) => value);
+                    }
+                  },
+                  selectedValue: language.code == 'bn'
+                      ? monthProvider?.englishToBanglaMonth ??
                             AppLocalizations.of(context)!.selectMonth
-                        : monthProvider ??
-                            AppLocalizations.of(context)!.selectMonth),
+                      : monthProvider ??
+                            AppLocalizations.of(context)!.selectMonth,
+                ),
               );
             },
           ),
@@ -82,9 +83,9 @@ class MonthFilteringCard extends ConsumerWidget {
                   },
                   selectedValue: language.code == 'bn'
                       ? yearProvider?.englishToBanglaYear ??
-                          AppLocalizations.of(context)!.selectYear
+                            AppLocalizations.of(context)!.selectYear
                       : yearProvider ??
-                          AppLocalizations.of(context)!.selectYear,
+                            AppLocalizations.of(context)!.selectYear,
                 ),
               );
             },

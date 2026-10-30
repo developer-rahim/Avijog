@@ -1,10 +1,7 @@
 part of '../pages/payment_history_page.dart';
 
 class _PaymentHistoryBuilder extends StatelessWidget {
-  const _PaymentHistoryBuilder({
-    super.key,
-    required this.paymentHistory,
-  });
+  const _PaymentHistoryBuilder({required this.paymentHistory});
   final List<PaymentHistoryModel> paymentHistory;
   @override
   Widget build(BuildContext context) {

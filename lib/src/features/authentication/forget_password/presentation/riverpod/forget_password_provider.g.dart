@@ -12,14 +12,14 @@ String _$forgetPasswordHash() => r'78b5212dc70cf250deef92ddbc2eed3742810760';
 @ProviderFor(ForgetPassword)
 final forgetPasswordProvider =
     AsyncNotifierProvider<ForgetPassword, ForgotPasswordEntity>.internal(
-  ForgetPassword.new,
-  name: r'forgetPasswordProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$forgetPasswordHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      ForgetPassword.new,
+      name: r'forgetPasswordProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$forgetPasswordHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$ForgetPassword = AsyncNotifier<ForgotPasswordEntity>;
 // ignore_for_file: type=lint

@@ -10,12 +10,7 @@ class ProductPaymentRepositoryImpl implements ProductPaymentRepository {
     required PaymentMethod paymentMethod,
   }) async {
     return await dataSource
-        .initiatePayment(
-          body: body,
-          paymentMethod: paymentMethod,
-        )
-        .guard(
-          (data) => PaymentModel.fromJson(data),
-        );
+        .initiatePayment(body: body, paymentMethod: paymentMethod)
+        .guard((data) => PaymentModel.fromJson(data));
   }
 }

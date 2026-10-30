@@ -9,11 +9,7 @@ import 'package:obhijuk/src/features/products/product_payment/presentation/river
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewPage extends ConsumerStatefulWidget {
-  const WebViewPage({
-    super.key,
-    required this.url,
-    required this.title,
-  });
+  const WebViewPage({super.key, required this.url, required this.title});
   final String url;
   final String title;
   @override
@@ -94,10 +90,7 @@ class _WebViewScreenState extends ConsumerState<WebViewPage>
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
         shape: const OutlineInputBorder(borderRadius: BorderRadius.zero),
       ),
@@ -105,9 +98,7 @@ class _WebViewScreenState extends ConsumerState<WebViewPage>
         valueListenable: _isLoading,
         builder: (BuildContext context, bool value, Widget? child) {
           return _isLoading.value
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
+              ? const Center(child: CircularProgressIndicator())
               : WebViewWidget(controller: _controller);
         },
       ),

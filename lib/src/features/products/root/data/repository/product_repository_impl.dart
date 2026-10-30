@@ -8,16 +8,17 @@ class ProductRepositoryImpl implements ProductRepository {
   Future<(ErrorModel?, List<ProductEntity>?)> getProducts({
     String? vendorId,
   }) async {
-    return await dataSource.fetchProducts(vendorId: vendorId).guard(
-          (data) => ProductsResponseModel.fromJson(data).products,
-        );
+    return await dataSource
+        .fetchProducts(vendorId: vendorId)
+        .guard((data) => ProductsResponseModel.fromJson(data).products);
   }
 
   @override
-  Future<(ErrorModel?, ProductEntity?)> getProduct(
-      {required String productId}) {
-    return dataSource.fetchProduct(productId: productId).guard(
-          (data) => ProductDetailsResponseModel.fromJson(data).product,
-        );
+  Future<(ErrorModel?, ProductEntity?)> getProduct({
+    required String productId,
+  }) {
+    return dataSource
+        .fetchProduct(productId: productId)
+        .guard((data) => ProductDetailsResponseModel.fromJson(data).product);
   }
 }

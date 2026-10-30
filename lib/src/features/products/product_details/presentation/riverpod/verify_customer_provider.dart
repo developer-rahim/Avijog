@@ -33,9 +33,9 @@ class VerifyCustomer extends _$VerifyCustomer {
     (errorModel, customerVerificationEntity) = await verifyUseCase();
 
     if (errorModel != null) {
-      ref.read(showErrorMessageProvider.notifier).errorMessage(
-            errorModel.message ?? 'Something went wrong',
-          );
+      ref
+          .read(showErrorMessageProvider.notifier)
+          .errorMessage(errorModel.message ?? 'Something went wrong');
 
       state = AsyncError(errorModel, StackTrace.current);
 
@@ -63,9 +63,9 @@ class VerifyCustomer extends _$VerifyCustomer {
     (errorModel, customerVerificationEntity) = await verifyUseCase();
 
     if (errorModel != null) {
-      ref.read(showErrorMessageProvider.notifier).errorMessage(
-            errorModel.message ?? 'Something went wrong',
-          );
+      ref
+          .read(showErrorMessageProvider.notifier)
+          .errorMessage(errorModel.message ?? 'Something went wrong');
 
       state = AsyncError(errorModel, StackTrace.current);
 

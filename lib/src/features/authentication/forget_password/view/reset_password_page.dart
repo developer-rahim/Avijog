@@ -46,8 +46,8 @@ class ResetPasswordPage extends StatelessWidget {
                   OutlinedInputField(
                     labelText: AppLocalizations.of(context)!.password,
                     controller: TextEditingController(),
-                    hintText:
-                        AppLocalizations.of(context)!.enterEightDigitCharacter,
+                    hintText: AppLocalizations.of(context)!
+                        .enterEightDigitCharacter,
                   ),
                   OutlinedInputField(
                     labelText: AppLocalizations.of(context)!.confirmPassword,

@@ -12,14 +12,14 @@ String _$otpVerificationHash() => r'481839f1603bd541faaea2ee1bf626195baf402d';
 @ProviderFor(OtpVerification)
 final otpVerificationProvider =
     AsyncNotifierProvider<OtpVerification, OtpVerificationEntity>.internal(
-  OtpVerification.new,
-  name: r'otpVerificationProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$otpVerificationHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      OtpVerification.new,
+      name: r'otpVerificationProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$otpVerificationHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$OtpVerification = AsyncNotifier<OtpVerificationEntity>;
 // ignore_for_file: type=lint

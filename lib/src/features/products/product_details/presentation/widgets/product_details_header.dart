@@ -1,10 +1,7 @@
 part of '../pages/product_details_page.dart';
 
 class _ProductDetailsHeader extends StatelessWidget {
-  const _ProductDetailsHeader({
-    super.key,
-    required this.product,
-  });
+  const _ProductDetailsHeader({required this.product});
   final ProductEntity? product;
 
   @override
@@ -17,9 +14,7 @@ class _ProductDetailsHeader extends StatelessWidget {
             height: 170,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
-              child: AppCachedNetworkImage(
-                image: product?.image,
-              ),
+              child: AppCachedNetworkImage(image: product?.image),
             ),
           ),
           const SizedBox(height: 21),
@@ -46,7 +41,7 @@ class _ProductDetailsHeader extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -54,9 +49,9 @@ class _ProductDetailsHeader extends StatelessWidget {
                 isProductDetails: true,
                 basePrice: product?.basePrice ?? 0,
                 discountedPrice: product?.discountedPrice,
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

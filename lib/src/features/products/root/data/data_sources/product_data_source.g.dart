@@ -12,14 +12,14 @@ String _$productDataSourceHash() => r'34a8cd4e89e07d4172cdb2f501fb6765e644b542';
 @ProviderFor(productDataSource)
 final productDataSourceProvider =
     AutoDisposeProvider<ProductDataSource>.internal(
-  productDataSource,
-  name: r'productDataSourceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$productDataSourceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      productDataSource,
+      name: r'productDataSourceProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$productDataSourceHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef ProductDataSourceRef = AutoDisposeProviderRef<ProductDataSource>;
 // ignore_for_file: type=lint

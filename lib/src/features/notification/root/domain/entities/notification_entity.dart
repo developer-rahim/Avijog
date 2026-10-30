@@ -6,7 +6,6 @@ class NotificationEntity {
   String? link;
   String? type;
   DateTime? createdAt;
- 
 
   NotificationEntity({
     this.id,
@@ -16,6 +15,5 @@ class NotificationEntity {
     this.link,
     this.type,
     this.createdAt,
-    
   });
 }

@@ -20,9 +20,7 @@ RestClient restClient(RestClientRef ref) {
 class RestClient {
   late Dio _dio;
 
-  RestClient({
-    required this.cacheService,
-  }) {
+  RestClient({required this.cacheService}) {
     BaseOptions options = BaseOptions(
       baseUrl: API.base,
       connectTimeout: const Duration(seconds: 30),
@@ -44,11 +42,7 @@ class RestClient {
     final standardHeaders = await _getOptions(apiType);
 
     return _dio
-        .get(
-          path,
-          queryParameters: queries,
-          options: standardHeaders,
-        )
+        .get(path, queryParameters: queries, options: standardHeaders)
         .then((value) => value)
         .catchError(_getDioException);
   }
@@ -89,9 +83,7 @@ class RestClient {
     _setDioInterceptorList();
 
     final standardHeaders = await _getOptions(apiType);
-    standardHeaders.headers?.addAll({
-      'Content-Type': 'multipart/form-data',
-    });
+    standardHeaders.headers?.addAll({'Content-Type': 'multipart/form-data'});
 
     return _dio
         .post(
@@ -144,11 +136,7 @@ class RestClient {
     }
 
     return _dio
-        .put(
-          path,
-          data: data,
-          options: standardHeaders,
-        )
+        .put(path, data: data, options: standardHeaders)
         .then((value) => value)
         .catchError(_getDioException);
   }
@@ -168,11 +156,7 @@ class RestClient {
     }
 
     return _dio
-        .delete(
-          path,
-          data: data,
-          options: standardHeaders,
-        )
+        .delete(path, data: data, options: standardHeaders)
         .then((value) => value)
         .catchError(_getDioException);
   }
@@ -189,20 +173,12 @@ class RestClient {
 
     final standardHeaders = await _getOptions(apiType);
     if (headers != null) {
-      standardHeaders.headers?.addAll({
-        'Content-Type': 'multipart/form-data',
-      });
+      standardHeaders.headers?.addAll({'Content-Type': 'multipart/form-data'});
     }
-    data.addAll({
-      '_method': 'PUT',
-    });
+    data.addAll({'_method': 'PUT'});
 
     return _dio
-        .post(
-          path,
-          data: FormData.fromMap(data),
-          options: standardHeaders,
-        )
+        .post(path, data: FormData.fromMap(data), options: standardHeaders)
         .then((value) => value)
         .catchError(_getDioException);
   }
@@ -216,9 +192,7 @@ class RestClient {
       preAssignedUrl,
       data: file.openRead(),
       options: Options(
-        headers: {
-          Headers.contentLengthHeader: await file.length(),
-        },
+        headers: {Headers.contentLengthHeader: await file.length()},
       ),
     );
   }

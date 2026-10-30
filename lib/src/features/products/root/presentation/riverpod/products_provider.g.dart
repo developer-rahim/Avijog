@@ -39,21 +39,13 @@ class ProductsFamily extends Family<AsyncValue<List<ProductEntity>>> {
   const ProductsFamily();
 
   /// See also [products].
-  ProductsProvider call({
-    String? vendorId,
-  }) {
-    return ProductsProvider(
-      vendorId: vendorId,
-    );
+  ProductsProvider call({String? vendorId}) {
+    return ProductsProvider(vendorId: vendorId);
   }
 
   @override
-  ProductsProvider getProviderOverride(
-    covariant ProductsProvider provider,
-  ) {
-    return call(
-      vendorId: provider.vendorId,
-    );
+  ProductsProvider getProviderOverride(covariant ProductsProvider provider) {
+    return call(vendorId: provider.vendorId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -74,23 +66,18 @@ class ProductsFamily extends Family<AsyncValue<List<ProductEntity>>> {
 /// See also [products].
 class ProductsProvider extends FutureProvider<List<ProductEntity>> {
   /// See also [products].
-  ProductsProvider({
-    String? vendorId,
-  }) : this._internal(
-          (ref) => products(
-            ref as ProductsRef,
-            vendorId: vendorId,
-          ),
-          from: productsProvider,
-          name: r'productsProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$productsHash,
-          dependencies: ProductsFamily._dependencies,
-          allTransitiveDependencies: ProductsFamily._allTransitiveDependencies,
-          vendorId: vendorId,
-        );
+  ProductsProvider({String? vendorId})
+    : this._internal(
+        (ref) => products(ref as ProductsRef, vendorId: vendorId),
+        from: productsProvider,
+        name: r'productsProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$productsHash,
+        dependencies: ProductsFamily._dependencies,
+        allTransitiveDependencies: ProductsFamily._allTransitiveDependencies,
+        vendorId: vendorId,
+      );
 
   ProductsProvider._internal(
     super._createNotifier, {
@@ -147,7 +134,8 @@ mixin ProductsRef on FutureProviderRef<List<ProductEntity>> {
 }
 
 class _ProductsProviderElement
-    extends FutureProviderElement<List<ProductEntity>> with ProductsRef {
+    extends FutureProviderElement<List<ProductEntity>>
+    with ProductsRef {
   _ProductsProviderElement(super.provider);
 
   @override

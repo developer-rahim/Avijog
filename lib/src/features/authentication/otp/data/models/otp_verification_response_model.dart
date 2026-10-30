@@ -19,16 +19,15 @@ class OtpVerificationResponseModel extends OtpVerificationEntity {
     String? otp,
     DateTime? createdAt,
     int? v,
-  }) =>
-      OtpVerificationResponseModel(
-        status: status ?? this.status,
-        message: message ?? this.message,
-        id: id ?? this.id,
-        phone: phone ?? this.phone,
-        otp: otp ?? this.otp,
-        createdAt: createdAt ?? this.createdAt,
-        v: v ?? this.v,
-      );
+  }) => OtpVerificationResponseModel(
+    status: status ?? this.status,
+    message: message ?? this.message,
+    id: id ?? this.id,
+    phone: phone ?? this.phone,
+    otp: otp ?? this.otp,
+    createdAt: createdAt ?? this.createdAt,
+    v: v ?? this.v,
+  );
 
   factory OtpVerificationResponseModel.fromJson(Map<String, dynamic> json) =>
       OtpVerificationResponseModel(
@@ -44,12 +43,12 @@ class OtpVerificationResponseModel extends OtpVerificationEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        "status": status,
-        "message": message,
-        "_id": id,
-        "phone": phone,
-        "otp": otp,
-        "created_at": createdAt?.toIso8601String(),
-        "__v": v,
-      };
+    "status": status,
+    "message": message,
+    "_id": id,
+    "phone": phone,
+    "otp": otp,
+    "created_at": createdAt?.toIso8601String(),
+    "__v": v,
+  };
 }

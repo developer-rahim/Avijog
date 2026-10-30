@@ -12,13 +12,14 @@ String _$signUpHash() => r'4c620958b52ba193a07ef60ec75cc371d208f693';
 @ProviderFor(SignUp)
 final signUpProvider =
     AsyncNotifierProvider<SignUp, AuthenticationEntity>.internal(
-  SignUp.new,
-  name: r'signUpProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$signUpHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      SignUp.new,
+      name: r'signUpProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$signUpHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$SignUp = AsyncNotifier<AuthenticationEntity>;
 // ignore_for_file: type=lint

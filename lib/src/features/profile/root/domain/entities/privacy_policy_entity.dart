@@ -1,7 +1,5 @@
 class PrivacyPolicyEntity {
   String? content;
 
-  PrivacyPolicyEntity({
-    this.content,
-  });
+  PrivacyPolicyEntity({this.content});
 }

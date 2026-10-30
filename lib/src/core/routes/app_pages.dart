@@ -24,7 +24,7 @@ final GoRouter _router = GoRouter(
               path: Routes.historyTab,
               name: Routes.historyTab,
               pageBuilder: (context, state) => const HomePage(),
-            )
+            ),
           ],
         ),
         StatefulShellBranch(
@@ -35,7 +35,7 @@ final GoRouter _router = GoRouter(
               path: Routes.homeTab,
               name: Routes.homeTab,
               pageBuilder: (context, state) => const HomePage(),
-            )
+            ),
           ],
         ),
         StatefulShellBranch(
@@ -46,7 +46,7 @@ final GoRouter _router = GoRouter(
               path: Routes.profileTab,
               name: Routes.profileTab,
               pageBuilder: (context, state) => const ProfilePage(),
-            )
+            ),
           ],
         ),
       ],
@@ -143,7 +143,7 @@ final GoRouter _router = GoRouter(
               closingLink: closingLink,
             );
           },
-        )
+        ),
       ],
     ),
     transitionGoRoute(
@@ -154,11 +154,7 @@ final GoRouter _router = GoRouter(
         final String url = state.uri.queryParameters['url']!;
         final String title = state.uri.queryParameters['title']!;
 
-        return WebViewPage(
-          key: state.pageKey,
-          url: url,
-          title: title,
-        );
+        return WebViewPage(key: state.pageKey, url: url, title: title);
       },
     ),
     transitionGoRoute(

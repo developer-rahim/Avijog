@@ -19,7 +19,8 @@ class AuthenticationUseCase<T> {
   AuthenticationUseCase(this._repository);
   final AuthenticationRepository _repository;
   Future<Either<ErrorModel, VerifyUserEntity>> verifyUser(
-      String phoneNumber) async {
+    String phoneNumber,
+  ) async {
     return await _repository.verifyUser(phoneNumber);
   }
 
@@ -28,12 +29,14 @@ class AuthenticationUseCase<T> {
   }
 
   Future<Either<ErrorModel, OtpVerificationEntity>> otpVerification(
-      T? body) async {
+    T? body,
+  ) async {
     return await _repository.otpVerification(body);
   }
 
   Future<Either<ErrorModel, ForgotPasswordEntity>> forgetPassword(
-      T? body) async {
+    T? body,
+  ) async {
     return await _repository.forgetPassword(body);
   }
 

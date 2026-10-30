@@ -43,10 +43,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
       ),
       body: SingleChildScrollView(
@@ -128,7 +125,7 @@ class _PinChangePageState extends ConsumerState<PinChangePage> {
                     },
                     label: AppLocalizations.of(context)!.submit,
                   ),
-                )
+                ),
               ],
             ),
           ),

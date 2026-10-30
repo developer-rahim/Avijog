@@ -72,8 +72,9 @@ class _OutlinedInputFieldState extends State<OutlinedInputField> {
         children: [
           Text(
             widget.labelText ?? '',
-            style: AppTextStyle.medium14
-                .copyWith(color: widget.labelTextColor ?? AppColors.black),
+            style: AppTextStyle.medium14.copyWith(
+              color: widget.labelTextColor ?? AppColors.black,
+            ),
           ),
           widget.showBorder == false
               ? const SizedBox(height: 14)
@@ -99,8 +100,9 @@ class _OutlinedInputFieldState extends State<OutlinedInputField> {
                     fontWeight: FontWeight.w400,
                     color: AppColors.black,
                   ),
-                  obscureText:
-                      widget.isPasswordField ? !showPassword.value : false,
+                  obscureText: widget.isPasswordField
+                      ? !showPassword.value
+                      : false,
                   decoration: InputDecoration(
                     disabledBorder: widget.isEnabled == false
                         ? OutlineInputBorder(
@@ -119,15 +121,14 @@ class _OutlinedInputFieldState extends State<OutlinedInputField> {
                               color: AppColors.primary,
                             ),
                           )
-                        : Theme.of(context)
-                            .inputDecorationTheme
-                            .enabledBorder
-                            ?.copyWith(
-                              borderSide: BorderSide(
-                                color: widget.borderColor ?? AppColors.primary,
-                                width: 0.5,
-                              ),
+                        : Theme.of(
+                            context,
+                          ).inputDecorationTheme.enabledBorder?.copyWith(
+                            borderSide: BorderSide(
+                              color: widget.borderColor ?? AppColors.primary,
+                              width: 0.5,
                             ),
+                          ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(
@@ -182,10 +183,7 @@ class _OutlinedInputFieldState extends State<OutlinedInputField> {
                 builder: (BuildContext context, String? value, child) {
                   if (showError.value && errorMessage.value != null) {
                     return Padding(
-                      padding: const EdgeInsets.only(
-                        top: 5.0,
-                        left: 5,
-                      ),
+                      padding: const EdgeInsets.only(top: 5.0, left: 5),
                       child: Text(
                         value.toString(),
                         style: const TextStyle(color: Colors.red),
@@ -197,7 +195,7 @@ class _OutlinedInputFieldState extends State<OutlinedInputField> {
                 },
               );
             },
-          )
+          ),
         ],
       ),
     );

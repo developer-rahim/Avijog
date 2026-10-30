@@ -113,8 +113,8 @@ class Button extends StatelessWidget {
         onPressed: disable
             ? null
             : isLoading
-                ? null
-                : onPressed,
+            ? null
+            : onPressed,
         style: filled
             ? ElevatedButton.styleFrom(
                 elevation: 0,
@@ -128,8 +128,9 @@ class Button extends StatelessWidget {
                 shadowColor: Colors.transparent,
                 elevation: 0,
                 fixedSize: Size(width, height),
-                backgroundColor:
-                    disable ? Colors.grey : background ?? Colors.transparent,
+                backgroundColor: disable
+                    ? Colors.grey
+                    : background ?? Colors.transparent,
                 side: BorderSide(
                   color: isLoading ? Colors.transparent : Colors.blue,
                   width: 1,
@@ -153,20 +154,14 @@ class Button extends StatelessWidget {
                     ),
                   )
                 : prefix == null
-                    ? Text(
-                        label,
-                        style: textStyle ?? _labelTextStyle(),
-                      )
-                    : Row(
-                        children: [
-                          prefix!,
-                          SizedBox(width: 10.w),
-                          Text(
-                            label,
-                            style: textStyle ?? _labelTextStyle(),
-                          ),
-                        ],
-                      ),
+                ? Text(label, style: textStyle ?? _labelTextStyle())
+                : Row(
+                    children: [
+                      prefix!,
+                      SizedBox(width: 10.w),
+                      Text(label, style: textStyle ?? _labelTextStyle()),
+                    ],
+                  ),
           ],
         ),
       ),

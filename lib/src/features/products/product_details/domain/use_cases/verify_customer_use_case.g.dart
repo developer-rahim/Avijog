@@ -40,21 +40,15 @@ class VerifyCustomerUseCaseFamily extends Family<VerifyCustomerUseCase> {
   const VerifyCustomerUseCaseFamily();
 
   /// See also [verifyCustomerUseCase].
-  VerifyCustomerUseCaseProvider call({
-    required Map<String, dynamic> body,
-  }) {
-    return VerifyCustomerUseCaseProvider(
-      body: body,
-    );
+  VerifyCustomerUseCaseProvider call({required Map<String, dynamic> body}) {
+    return VerifyCustomerUseCaseProvider(body: body);
   }
 
   @override
   VerifyCustomerUseCaseProvider getProviderOverride(
     covariant VerifyCustomerUseCaseProvider provider,
   ) {
-    return call(
-      body: provider.body,
-    );
+    return call(body: provider.body);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -76,24 +70,20 @@ class VerifyCustomerUseCaseFamily extends Family<VerifyCustomerUseCase> {
 class VerifyCustomerUseCaseProvider
     extends AutoDisposeProvider<VerifyCustomerUseCase> {
   /// See also [verifyCustomerUseCase].
-  VerifyCustomerUseCaseProvider({
-    required Map<String, dynamic> body,
-  }) : this._internal(
-          (ref) => verifyCustomerUseCase(
-            ref as VerifyCustomerUseCaseRef,
-            body: body,
-          ),
-          from: verifyCustomerUseCaseProvider,
-          name: r'verifyCustomerUseCaseProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$verifyCustomerUseCaseHash,
-          dependencies: VerifyCustomerUseCaseFamily._dependencies,
-          allTransitiveDependencies:
-              VerifyCustomerUseCaseFamily._allTransitiveDependencies,
-          body: body,
-        );
+  VerifyCustomerUseCaseProvider({required Map<String, dynamic> body})
+    : this._internal(
+        (ref) =>
+            verifyCustomerUseCase(ref as VerifyCustomerUseCaseRef, body: body),
+        from: verifyCustomerUseCaseProvider,
+        name: r'verifyCustomerUseCaseProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$verifyCustomerUseCaseHash,
+        dependencies: VerifyCustomerUseCaseFamily._dependencies,
+        allTransitiveDependencies:
+            VerifyCustomerUseCaseFamily._allTransitiveDependencies,
+        body: body,
+      );
 
   VerifyCustomerUseCaseProvider._internal(
     super._createNotifier, {

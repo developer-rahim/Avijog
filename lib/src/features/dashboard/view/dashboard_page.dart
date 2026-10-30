@@ -7,10 +7,7 @@ import 'package:obhijuk/src/core/gen/colors.gen.dart';
 import 'package:obhijuk/src/features/dashboard/presentation/riverpod/dashboard_provider.dart';
 
 class DashboardPage extends ConsumerStatefulWidget {
-  const DashboardPage({
-    super.key,
-    required this.navigationShell,
-  });
+  const DashboardPage({super.key, required this.navigationShell});
   final StatefulNavigationShell navigationShell;
   @override
   // ignore: library_private_types_in_public_api
@@ -65,10 +62,7 @@ class _DashboardPageState extends ConsumerState<DashboardPage> {
                 ),
                 label: AppLocalizations.of(context)!.history,
               ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: '',
-              ),
+              const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
               BottomNavigationBarItem(
                 icon: Image.asset(
                   Assets.user.path,
@@ -95,11 +89,7 @@ class _DashboardPageState extends ConsumerState<DashboardPage> {
                 .update((state) => 1);
             _goBranch(1);
           },
-          child: Image.asset(
-            Assets.floatBtn.path,
-            height: 65,
-            width: 65,
-          ),
+          child: Image.asset(Assets.floatBtn.path, height: 65, width: 65),
         ),
       ),
     );

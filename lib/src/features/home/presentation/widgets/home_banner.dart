@@ -38,22 +38,20 @@ class _BannerWidgetState extends ConsumerState<BannerWidget> {
                     });
                   },
                 ),
-                items: banners.map(
-                  (item) {
-                    return GestureDetector(
-                      onTap: () {
-                        _onTap(item);
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: AppCachedNetworkImage(
-                          image: item.image,
-                          fit: BoxFit.contain,
-                        ),
+                items: banners.map((item) {
+                  return GestureDetector(
+                    onTap: () {
+                      _onTap(item);
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: AppCachedNetworkImage(
+                        image: item.image,
+                        fit: BoxFit.contain,
                       ),
-                    );
-                  },
-                ).toList(),
+                    ),
+                  );
+                }).toList(),
               ),
               (banners.isNotEmpty)
                   ? Row(
@@ -71,8 +69,8 @@ class _BannerWidgetState extends ConsumerState<BannerWidget> {
                             ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
-                              color: (AppColors.primary).withOpacity(
-                                _current == entry.key ? 1 : 0.3,
+                              color: (AppColors.primary).withValues(
+                                alpha: _current == entry.key ? 1 : 0.3,
                               ),
                             ),
                           ),
@@ -100,7 +98,7 @@ class _BannerWidgetState extends ConsumerState<BannerWidget> {
     );
   }
 
-  _onTap(BannerEntity item) {
+  void _onTap(BannerEntity item) {
     if (item.link?.isNotEmpty ?? false) {
       urlLauncher(link: item.link);
     }

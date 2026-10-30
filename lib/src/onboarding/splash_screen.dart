@@ -25,30 +25,25 @@ class _SplashPageState extends ConsumerState<SplashPage> {
     await ref.read(cacheServiceProvider).init();
     final cacheService = ref.watch(cacheServiceProvider);
     bool? seenWelcomeScreen = await Future.microtask(
-      () => cacheService.read(CacheKeys.seenWelcomeScreen).then(
-            (value) => value,
-          ),
+      () =>
+          cacheService.read(CacheKeys.seenWelcomeScreen).then((value) => value),
     );
     String? token = await Future.microtask(
-      () => cacheService.read(CacheKeys.token).then(
-            (value) => value,
-          ),
+      () => cacheService.read(CacheKeys.token).then((value) => value),
     );
 
-    Future.delayed(const Duration(seconds: 2)).then(
-      (value) {
-        if (seenWelcomeScreen != true) {
-          context.goNamed(Routes.welcome);
-          return;
-        }
+    Future.delayed(const Duration(seconds: 2)).then((value) {
+      if (seenWelcomeScreen != true) {
+        context.goNamed(Routes.welcome);
+        return;
+      }
 
-        if (token == null) {
-          context.goNamed(Routes.homeTab);
-          return;
-        }
+      if (token == null) {
         context.goNamed(Routes.homeTab);
-      },
-    );
+        return;
+      }
+      context.goNamed(Routes.homeTab);
+    });
   }
 
   @override

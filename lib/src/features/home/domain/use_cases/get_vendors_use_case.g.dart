@@ -12,14 +12,14 @@ String _$getVendorsUseCaseHash() => r'bca253f7b08b67d411a4999c142a4571e6116df9';
 @ProviderFor(getVendorsUseCase)
 final getVendorsUseCaseProvider =
     AutoDisposeProvider<GetVendorsUseCase>.internal(
-  getVendorsUseCase,
-  name: r'getVendorsUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getVendorsUseCaseHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      getVendorsUseCase,
+      name: r'getVendorsUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$getVendorsUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef GetVendorsUseCaseRef = AutoDisposeProviderRef<GetVendorsUseCase>;
 // ignore_for_file: type=lint

@@ -59,10 +59,7 @@ class _NotificationPageState extends State<NotificationPage>
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
         shape: const OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -98,10 +95,7 @@ class _NotificationPageState extends State<NotificationPage>
                   ),
                   labelColor: AppColors.white,
                   unselectedLabelColor: AppColors.primary,
-                  labelPadding: const EdgeInsets.only(
-                    left: 5,
-                    right: 5,
-                  ),
+                  labelPadding: const EdgeInsets.only(left: 5, right: 5),
                   unselectedLabelStyle: AppTextStyle.medium16.copyWith(
                     height: 21 / 16,
                   ),
@@ -109,9 +103,7 @@ class _NotificationPageState extends State<NotificationPage>
                     color: AppColors.primary,
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  labelStyle: AppTextStyle.bold20.copyWith(
-                    height: 21 / 16,
-                  ),
+                  labelStyle: AppTextStyle.bold20.copyWith(height: 21 / 16),
                   tabs: [
                     Tab(
                       child: Text(

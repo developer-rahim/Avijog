@@ -43,8 +43,9 @@ class ProductDetailsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncProduct =
-        ref.watch(productDetailsProvider(productId: productId));
+    final asyncProduct = ref.watch(
+      productDetailsProvider(productId: productId),
+    );
 
     ref.listen(paymentCallbackProvider, (previous, next) {
       if (next?.contains('status=success') ?? false) {
@@ -66,17 +67,11 @@ class ProductDetailsPage extends ConsumerWidget {
       }
 
       if (next?.contains('status=failure') ?? false) {
-        GlobalSnackBar.show(
-          context,
-          'Payment failed, please try again',
-        );
+        GlobalSnackBar.show(context, 'Payment failed, please try again');
       }
 
       if (next?.contains('status=cancel') ?? false) {
-        GlobalSnackBar.show(
-          context,
-          'Payment cancelled.',
-        );
+        GlobalSnackBar.show(context, 'Payment cancelled.');
       }
     });
 
@@ -87,18 +82,13 @@ class ProductDetailsPage extends ConsumerWidget {
         backgroundColor: AppColors.primary,
         title: Text(
           productName ?? '',
-          style: const TextStyle(
-            color: AppColors.white,
-          ),
+          style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
         shape: const OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -136,9 +126,7 @@ class ProductDetailsPage extends ConsumerWidget {
                   children: [
                     Text(
                       'Error: ${error.toString()}',
-                      style: const TextStyle(
-                        color: AppColors.red,
-                      ),
+                      style: const TextStyle(color: AppColors.red),
                     ),
                     ElevatedButton(
                       onPressed: () {

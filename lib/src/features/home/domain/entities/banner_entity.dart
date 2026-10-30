@@ -3,9 +3,5 @@ class BannerEntity {
   String? image;
   String? link;
 
-  BannerEntity({
-    this.id,
-    this.image,
-    this.link,
-  });
+  BannerEntity({this.id, this.image, this.link});
 }

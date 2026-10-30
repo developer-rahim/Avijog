@@ -8,10 +8,9 @@ part 'product_details_data_source_impl.dart';
 
 @Riverpod()
 ProductDetailsDataSource productDetailsDataSource(
-    ProductDetailsDataSourceRef ref) {
-  return ProductDetailsDataSourceImpl(
-    restClient: ref.read(restClientProvider),
-  );
+  ProductDetailsDataSourceRef ref,
+) {
+  return ProductDetailsDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 
 abstract class ProductDetailsDataSource {

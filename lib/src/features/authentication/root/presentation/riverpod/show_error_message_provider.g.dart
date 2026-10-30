@@ -12,14 +12,14 @@ String _$showErrorMessageHash() => r'90aba7d01ef252776f3341600e2fc9f52564838b';
 @ProviderFor(ShowErrorMessage)
 final showErrorMessageProvider =
     AutoDisposeNotifierProvider<ShowErrorMessage, String>.internal(
-  ShowErrorMessage.new,
-  name: r'showErrorMessageProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$showErrorMessageHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      ShowErrorMessage.new,
+      name: r'showErrorMessageProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$showErrorMessageHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$ShowErrorMessage = AutoDisposeNotifier<String>;
 // ignore_for_file: type=lint

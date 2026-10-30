@@ -6,8 +6,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_products_use_case.g.dart';
 
 @Riverpod()
-GetProductsUseCase getProductsUseCase(GetProductsUseCaseRef ref,
-    {String? vendorId}) {
+GetProductsUseCase getProductsUseCase(
+  GetProductsUseCaseRef ref, {
+  String? vendorId,
+}) {
   return GetProductsUseCase(
     vendorId: vendorId,
     repository: ref.read(productRepositoryProvider),
@@ -15,10 +17,7 @@ GetProductsUseCase getProductsUseCase(GetProductsUseCaseRef ref,
 }
 
 class GetProductsUseCase {
-  GetProductsUseCase({
-    required this.repository,
-    this.vendorId,
-  });
+  GetProductsUseCase({required this.repository, this.vendorId});
   final ProductRepository repository;
   final String? vendorId;
 

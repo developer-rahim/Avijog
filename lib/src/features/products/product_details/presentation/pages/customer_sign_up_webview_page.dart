@@ -70,16 +70,11 @@ class _CustomerSignUpWebviewPageState
       ..addJavaScriptChannel(
         'Toaster',
         onMessageReceived: (JavaScriptMessage message) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(message.message),
-            ),
-          );
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(message.message)));
         },
       )
-      ..loadRequest(
-        Uri.parse(widget.webviewLink!),
-      );
+      ..loadRequest(Uri.parse(widget.webviewLink!));
 
     _controller = controller;
   }
@@ -93,10 +88,7 @@ class _CustomerSignUpWebviewPageState
         appBar: AppBar(
           title: const Text('Create Account'),
           leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back,
-              color: AppColors.white,
-            ),
+            icon: const Icon(Icons.arrow_back, color: AppColors.white),
             onPressed: () async {
               if (await _controller.canGoBack()) {
                 _controller.goBack();
@@ -108,14 +100,12 @@ class _CustomerSignUpWebviewPageState
             },
           ),
         ),
-        body: SafeArea(
-          child: WebViewWidget(controller: _controller),
-        ),
+        body: SafeArea(child: WebViewWidget(controller: _controller)),
       ),
     );
   }
 
-  _onWillPop(bool canGoBack) async {
+  Future<bool> _onWillPop(bool canGoBack) async {
     if (await _controller.canGoBack()) {
       await _controller.goBack();
       return false;

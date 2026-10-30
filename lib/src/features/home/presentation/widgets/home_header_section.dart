@@ -10,9 +10,7 @@ class HomeHeaderSection extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            Assets.dashboardLogo.path,
-          ),
+          image: AssetImage(Assets.dashboardLogo.path),
           fit: BoxFit.fill,
         ),
       ),
@@ -21,9 +19,7 @@ class HomeHeaderSection extends StatelessWidget {
         children: [
           Text(
             'সমাধান ওভারভিউ',
-            style: AppTextStyle.extraBold20.copyWith(
-              color: AppColors.white,
-            ),
+            style: AppTextStyle.extraBold20.copyWith(color: AppColors.white),
           ),
           10.sh,
           const BkashBalanceAnimation(),

@@ -23,7 +23,9 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
       }
       GlobalSnackBar.show(context, 'Profile Updated Successfully');
     });
-    ref.watch(userProvider).maybeWhen(
+    ref
+        .watch(userProvider)
+        .maybeWhen(
           orElse: () => null,
           data: (data) {
             _nameController.text = data?.name ?? '';
@@ -45,10 +47,7 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
       ),
       body: SafeArea(
@@ -84,8 +83,8 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
                     OutlinedInputField(
                       labelText: AppLocalizations.of(context)!.instituteName,
                       controller: _institutionController,
-                      hintText:
-                          AppLocalizations.of(context)!.enterinstituteName,
+                      hintText: AppLocalizations.of(context)!
+                          .enterinstituteName,
                     ),
                     OutlinedInputField(
                       labelText: AppLocalizations.of(context)!.address,
@@ -106,14 +105,15 @@ class _ProfileUpdatedPageState extends ConsumerState<ProfileUpdatedPage> {
                         if (!_formKey.currentState!.validate()) {
                           return;
                         }
-                        ref.watch(updateProfileProvider.notifier).updateProfile(
-                          {
-                            'name': _nameController.text,
-                            'institute': _institutionController.text,
-                            'address': _addressController.text,
-                            'reference': _refController.text,
-                          },
-                        ).then((value) => userRefresh());
+                        ref
+                            .watch(updateProfileProvider.notifier)
+                            .updateProfile({
+                              'name': _nameController.text,
+                              'institute': _institutionController.text,
+                              'address': _addressController.text,
+                              'reference': _refController.text,
+                            })
+                            .then((value) => userRefresh());
                       },
                     ),
                   ],
@@ -176,13 +176,10 @@ class ProfileImageUpdatedSection extends ConsumerWidget {
                   ),
                   height: 30,
                   width: 30,
-                  child: const Icon(
-                    Icons.edit,
-                    color: AppColors.primary,
-                  ),
+                  child: const Icon(Icons.edit, color: AppColors.primary),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

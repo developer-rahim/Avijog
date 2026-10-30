@@ -1,19 +1,15 @@
 import 'package:obhijuk/src/features/authentication/root/domain/entities/verify_user_entity.dart';
 
 class VerifyUserResponseModel extends VerifyUserEntity {
-  VerifyUserResponseModel({
-    super.message,
-    super.data,
-  });
+  VerifyUserResponseModel({super.message, super.data});
 
   VerifyUserResponseModel copyWith({
     String? message,
     VerifyUserDataModel? data,
-  }) =>
-      VerifyUserResponseModel(
-        message: message ?? this.message,
-        data: data ?? this.data,
-      );
+  }) => VerifyUserResponseModel(
+    message: message ?? this.message,
+    data: data ?? this.data,
+  );
 
   factory VerifyUserResponseModel.fromJson(Map<String, dynamic> json) =>
       VerifyUserResponseModel(
@@ -25,17 +21,9 @@ class VerifyUserResponseModel extends VerifyUserEntity {
 }
 
 class VerifyUserDataModel extends VerifyUserData {
-  VerifyUserDataModel({
-    super.exists,
-    super.otp,
-    super.phone,
-  });
+  VerifyUserDataModel({super.exists, super.otp, super.phone});
 
-  VerifyUserDataModel copyWith({
-    bool? exists,
-    String? otp,
-    String? phone,
-  }) =>
+  VerifyUserDataModel copyWith({bool? exists, String? otp, String? phone}) =>
       VerifyUserDataModel(
         exists: exists ?? this.exists,
         otp: otp ?? this.otp,

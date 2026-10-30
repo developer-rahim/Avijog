@@ -33,22 +33,16 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final cacheService = ref.watch(cacheServiceProvider);
-    ref.listen(
-      loginProvider,
-      (previous, next) {
-        if (next.hasError) {
-          GlobalSnackBar.show(context, next.asError!.error.toString());
-        }
-      },
-    );
-    ref.listen(
-      forgetPasswordProvider,
-      (previous, next) {
-        if (next is AsyncError) {
-          GlobalSnackBar.show(context, ref.watch(showErrorMessageProvider));
-        }
-      },
-    );
+    ref.listen(loginProvider, (previous, next) {
+      if (next.hasError) {
+        GlobalSnackBar.show(context, next.asError!.error.toString());
+      }
+    });
+    ref.listen(forgetPasswordProvider, (previous, next) {
+      if (next is AsyncError) {
+        GlobalSnackBar.show(context, ref.watch(showErrorMessageProvider));
+      }
+    });
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Container(
@@ -101,13 +95,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         return;
                       }
 
-                      ref.read(loginProvider.notifier).login({
-                        "phone": ref.watch(saveNumberProvider),
-                        "password": _passwordController.text,
-                        'fcm_token': 'djilkysr7',
-                      }).then(
-                        (value) => context.goNamed(Routes.homeTab),
-                      );
+                      ref
+                          .read(loginProvider.notifier)
+                          .login({
+                            "phone": ref.watch(saveNumberProvider),
+                            "password": _passwordController.text,
+                            'fcm_token': 'djilkysr7',
+                          })
+                          .then((value) => context.goNamed(Routes.homeTab));
                     },
                     buttonText: AppLocalizations.of(context)!.login,
                   ),
@@ -121,31 +116,31 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   Builder _forgetPassword() {
-    return Builder(builder: (context) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          InkWell(
-            onTap: () {
-              ref
-                  .read(otpVerificationProvider.notifier)
-                  .otpVerification(phone: ref.watch(saveNumberProvider))
-                  .then(
-                    (value) => context.goNamed(
-                      Routes.otp,
-                      queryParameters: {
-                        'isFrom': 'forgetPassword',
-                      },
-                    ),
-                  );
-            },
-            child: Text(
-              AppLocalizations.of(context)!.forgotPassword,
-              style: const TextStyle(color: AppColors.primary),
+    return Builder(
+      builder: (context) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            InkWell(
+              onTap: () {
+                ref
+                    .read(otpVerificationProvider.notifier)
+                    .otpVerification(phone: ref.watch(saveNumberProvider))
+                    .then(
+                      (value) => context.goNamed(
+                        Routes.otp,
+                        queryParameters: {'isFrom': 'forgetPassword'},
+                      ),
+                    );
+              },
+              child: Text(
+                AppLocalizations.of(context)!.forgotPassword,
+                style: const TextStyle(color: AppColors.primary),
+              ),
             ),
-          )
-        ],
-      );
-    });
+          ],
+        );
+      },
+    );
   }
 }

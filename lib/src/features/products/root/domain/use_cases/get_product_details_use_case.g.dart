@@ -40,21 +40,15 @@ class GetProductDetailsUseCaseFamily extends Family<GetProductDetailsUseCase> {
   const GetProductDetailsUseCaseFamily();
 
   /// See also [getProductDetailsUseCase].
-  GetProductDetailsUseCaseProvider call({
-    required String productId,
-  }) {
-    return GetProductDetailsUseCaseProvider(
-      productId: productId,
-    );
+  GetProductDetailsUseCaseProvider call({required String productId}) {
+    return GetProductDetailsUseCaseProvider(productId: productId);
   }
 
   @override
   GetProductDetailsUseCaseProvider getProviderOverride(
     covariant GetProductDetailsUseCaseProvider provider,
   ) {
-    return call(
-      productId: provider.productId,
-    );
+    return call(productId: provider.productId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -76,24 +70,22 @@ class GetProductDetailsUseCaseFamily extends Family<GetProductDetailsUseCase> {
 class GetProductDetailsUseCaseProvider
     extends AutoDisposeProvider<GetProductDetailsUseCase> {
   /// See also [getProductDetailsUseCase].
-  GetProductDetailsUseCaseProvider({
-    required String productId,
-  }) : this._internal(
-          (ref) => getProductDetailsUseCase(
-            ref as GetProductDetailsUseCaseRef,
-            productId: productId,
-          ),
-          from: getProductDetailsUseCaseProvider,
-          name: r'getProductDetailsUseCaseProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$getProductDetailsUseCaseHash,
-          dependencies: GetProductDetailsUseCaseFamily._dependencies,
-          allTransitiveDependencies:
-              GetProductDetailsUseCaseFamily._allTransitiveDependencies,
+  GetProductDetailsUseCaseProvider({required String productId})
+    : this._internal(
+        (ref) => getProductDetailsUseCase(
+          ref as GetProductDetailsUseCaseRef,
           productId: productId,
-        );
+        ),
+        from: getProductDetailsUseCaseProvider,
+        name: r'getProductDetailsUseCaseProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$getProductDetailsUseCaseHash,
+        dependencies: GetProductDetailsUseCaseFamily._dependencies,
+        allTransitiveDependencies:
+            GetProductDetailsUseCaseFamily._allTransitiveDependencies,
+        productId: productId,
+      );
 
   GetProductDetailsUseCaseProvider._internal(
     super._createNotifier, {
@@ -110,7 +102,7 @@ class GetProductDetailsUseCaseProvider
   @override
   Override overrideWith(
     GetProductDetailsUseCase Function(GetProductDetailsUseCaseRef provider)
-        create,
+    create,
   ) {
     return ProviderOverride(
       origin: this,

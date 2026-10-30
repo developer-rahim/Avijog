@@ -10,17 +10,7 @@ class VendorsNotifier extends StateNotifier<List<String>> {
   List<String> intialVendors = [];
   int pages = 0;
   int perPageItem = 6;
-  List<String> allVendors = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'A',
-    'B',
-    'A',
-    'B',
-  ];
+  List<String> allVendors = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'A', 'B'];
 
   void initialVendorsList() {
     state = allVendors;

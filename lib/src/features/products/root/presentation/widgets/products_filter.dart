@@ -1,9 +1,7 @@
 part of '../pages/products_page.dart';
 
 class _ProductsFilter extends ConsumerWidget {
-  const _ProductsFilter({
-    required this.vendorId,
-  });
+  const _ProductsFilter({required this.vendorId});
   final String? vendorId;
 
   @override
@@ -13,18 +11,14 @@ class _ProductsFilter extends ConsumerWidget {
     List<String?> productCategories = [];
 
     ref
-        .watch(productsProvider(
-          vendorId: vendorId,
-        ))
+        .watch(productsProvider(vendorId: vendorId))
         .maybeWhen(
-            orElse: () => null,
-            data: (products) {
-              productCategories = products
-                  .map((e) => e.category)
-                  .toSet()
-                  .toList()
-                ..insert(0, 'All products');
-            });
+          orElse: () => null,
+          data: (products) {
+            productCategories = products.map((e) => e.category).toSet().toList()
+              ..insert(0, 'All products');
+          },
+        );
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -41,10 +35,7 @@ class _ProductsFilter extends ConsumerWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(0, -5),
-                        ),
+                        Shadow(color: Colors.black, offset: Offset(0, -5)),
                       ],
                       color: Colors.transparent,
                       decoration: TextDecoration.underline,
@@ -55,9 +46,7 @@ class _ProductsFilter extends ConsumerWidget {
                   ),
                 ],
               ),
-              PopUpMenuItems(
-                categories: productCategories,
-              )
+              PopUpMenuItems(categories: productCategories),
             ],
           ),
         ],
@@ -80,30 +69,24 @@ class _PopUpMenuItemsState extends ConsumerState<PopUpMenuItems> {
     final categoryNotifier = ref.read(selectedCategoryProvider.notifier);
 
     if (widget.categories.isEmpty) {
-      return const SizedBox(
-        height: 48,
-      );
+      return const SizedBox(height: 48);
     }
 
     return MenuAnchor(
       builder:
           (BuildContext context, MenuController controller, Widget? child) {
-        return IconButton(
-          onPressed: () {
-            if (controller.isOpen) {
-              controller.close();
-            } else {
-              controller.open();
-            }
+            return IconButton(
+              onPressed: () {
+                if (controller.isOpen) {
+                  controller.close();
+                } else {
+                  controller.open();
+                }
+              },
+              icon: Image.asset(Assets.listMenu.path, height: 24, width: 24),
+              tooltip: 'Show menu',
+            );
           },
-          icon: Image.asset(
-            Assets.listMenu.path,
-            height: 24,
-            width: 24,
-          ),
-          tooltip: 'Show menu',
-        );
-      },
       menuChildren: List<MenuItemButton>.generate(
         widget.categories.length,
         (int index) => MenuItemButton(

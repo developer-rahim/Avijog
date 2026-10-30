@@ -7,9 +7,7 @@ part 'get_banners_use_case.g.dart';
 
 @Riverpod()
 GetBannersUseCase getBannersUseCase(GetBannersUseCaseRef ref) {
-  return GetBannersUseCase(
-    homeRepository: ref.read(homeRepositoryProvider),
-  );
+  return GetBannersUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 
 class GetBannersUseCase {

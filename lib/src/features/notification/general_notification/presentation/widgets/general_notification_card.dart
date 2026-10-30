@@ -1,8 +1,10 @@
 part of '../../../root/presentation/page/notification_page.dart';
 
 class GeneralNotificationCard extends StatelessWidget {
-  const GeneralNotificationCard(
-      {super.key, required this.generalNofifications});
+  const GeneralNotificationCard({
+    super.key,
+    required this.generalNofifications,
+  });
   final NotificationEntity generalNofifications;
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class GeneralNotificationCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

@@ -26,9 +26,7 @@ ThemeData themeData = ThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
       backgroundColor: AppColors.transparent,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       maximumSize: const Size(double.infinity, 40),
       minimumSize: const Size(double.infinity, 40),
       // maximumSize: double.infinity,
@@ -40,40 +38,23 @@ ThemeData themeData = ThemeData(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    errorStyle: const TextStyle(
-      fontSize: 0.01,
-      height: 0.01,
-    ),
-    contentPadding: const EdgeInsets.symmetric(
-      horizontal: 20,
-      vertical: 10,
-    ),
+    errorStyle: const TextStyle(fontSize: 0.01, height: 0.01),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(
-        color: AppColors.primary,
-      ),
+      borderSide: const BorderSide(color: AppColors.primary),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(
-        color: AppColors.primary,
-        width: 0.5,
-      ),
+      borderSide: const BorderSide(color: AppColors.primary, width: 0.5),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(
-        color: Colors.red,
-        width: 0.5,
-      ),
+      borderSide: const BorderSide(color: Colors.red, width: 0.5),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(
-        color: Colors.red,
-        width: 0.5,
-      ),
+      borderSide: const BorderSide(color: Colors.red, width: 0.5),
     ),
   ),
   useMaterial3: true,

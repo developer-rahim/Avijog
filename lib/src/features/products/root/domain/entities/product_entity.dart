@@ -38,8 +38,5 @@ class ProductDataEntity {
   String? level;
   String? group;
 
-  ProductDataEntity({
-    this.level,
-    this.group,
-  });
+  ProductDataEntity({this.level, this.group});
 }

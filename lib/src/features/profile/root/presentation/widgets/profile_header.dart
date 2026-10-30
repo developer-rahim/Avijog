@@ -12,9 +12,7 @@ class ProfileHeaderSection extends ConsumerWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            Assets.dashboardLogo.path,
-          ),
+          image: AssetImage(Assets.dashboardLogo.path),
           fit: BoxFit.fill,
         ),
       ),
@@ -38,7 +36,8 @@ class ProfileHeaderSection extends ConsumerWidget {
                               height: 56,
                               width: 56,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                              ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: const AppCachedNetworkImage(
@@ -68,8 +67,9 @@ class ProfileHeaderSection extends ConsumerWidget {
                                   const SizedBox(height: 5),
                                   Text(
                                     user?.phone ?? '',
-                                    style: AppTextStyle.regular14
-                                        .copyWith(color: AppColors.white),
+                                    style: AppTextStyle.regular14.copyWith(
+                                      color: AppColors.white,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -87,11 +87,7 @@ class ProfileHeaderSection extends ConsumerWidget {
                 onTap: () {
                   context.pushNamed(Routes.profileUpdated);
                 },
-                child: Image.asset(
-                  Assets.edit.path,
-                  height: 20,
-                  width: 20,
-                ),
+                child: Image.asset(Assets.edit.path, height: 20, width: 20),
               ),
             ],
           ),

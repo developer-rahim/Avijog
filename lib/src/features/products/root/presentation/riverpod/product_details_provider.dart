@@ -10,8 +10,9 @@ Future<ProductEntity?> productDetails(
   ProductDetailsRef ref, {
   required String productId,
 }) async {
-  final getProductDetails =
-      ref.read(getProductDetailsUseCaseProvider(productId: productId));
+  final getProductDetails = ref.read(
+    getProductDetailsUseCaseProvider(productId: productId),
+  );
 
   ErrorModel? errorModel;
   ProductEntity? product;

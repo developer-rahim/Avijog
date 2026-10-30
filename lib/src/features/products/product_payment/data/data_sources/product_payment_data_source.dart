@@ -9,10 +9,9 @@ part 'product_payment_data_source_impl.dart';
 
 @Riverpod()
 ProductPaymentDataSource productPaymentDataSource(
-    ProductPaymentDataSourceRef ref) {
-  return ProductPaymentDataSourceImpl(
-    restClient: ref.read(restClientProvider),
-  );
+  ProductPaymentDataSourceRef ref,
+) {
+  return ProductPaymentDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 
 abstract class ProductPaymentDataSource {

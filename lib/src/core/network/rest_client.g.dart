@@ -13,8 +13,9 @@ String _$restClientHash() => r'31ab97a222aba749a1ee337e43ad90130a581b27';
 final restClientProvider = Provider<RestClient>.internal(
   restClient,
   name: r'restClientProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$restClientHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$restClientHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

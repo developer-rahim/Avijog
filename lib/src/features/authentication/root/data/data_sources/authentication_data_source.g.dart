@@ -13,14 +13,14 @@ String _$authenticationDataSourceHash() =>
 @ProviderFor(authenticationDataSource)
 final authenticationDataSourceProvider =
     Provider<AuthenticationDataSource>.internal(
-  authenticationDataSource,
-  name: r'authenticationDataSourceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$authenticationDataSourceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      authenticationDataSource,
+      name: r'authenticationDataSourceProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$authenticationDataSourceHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef AuthenticationDataSourceRef = ProviderRef<AuthenticationDataSource>;
 // ignore_for_file: type=lint

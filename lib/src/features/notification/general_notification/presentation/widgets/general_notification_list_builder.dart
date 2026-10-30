@@ -1,8 +1,10 @@
 part of '../../../root/presentation/page/notification_page.dart';
 
 class GeneralNotificationListBuilder extends StatelessWidget {
-  const GeneralNotificationListBuilder(
-      {super.key, required this.generalNotificatons});
+  const GeneralNotificationListBuilder({
+    super.key,
+    required this.generalNotificatons,
+  });
   final List<NotificationEntity> generalNotificatons;
   @override
   Widget build(BuildContext context) {

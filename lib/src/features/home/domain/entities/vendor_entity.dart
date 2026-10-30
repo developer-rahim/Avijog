@@ -4,10 +4,5 @@ class VendorEntity {
   String? instituteName;
   String? logo;
 
-  VendorEntity({
-    this.id,
-    this.name,
-    this.instituteName,
-    this.logo,
-  });
+  VendorEntity({this.id, this.name, this.instituteName, this.logo});
 }

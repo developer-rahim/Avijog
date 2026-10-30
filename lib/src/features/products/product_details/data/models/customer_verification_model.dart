@@ -4,33 +4,26 @@ class CustomerVerificationResponseModel {
   int? status;
   CustomerVerificationModel? data;
 
-  CustomerVerificationResponseModel({
-    this.status,
-    this.data,
-  });
+  CustomerVerificationResponseModel({this.status, this.data});
 
   CustomerVerificationResponseModel copyWith({
     int? status,
     CustomerVerificationModel? data,
-  }) =>
-      CustomerVerificationResponseModel(
-        status: status ?? this.status,
-        data: data ?? this.data,
-      );
+  }) => CustomerVerificationResponseModel(
+    status: status ?? this.status,
+    data: data ?? this.data,
+  );
 
   factory CustomerVerificationResponseModel.fromJson(
-          Map<String, dynamic> json) =>
-      CustomerVerificationResponseModel(
-        status: json["status"],
-        data: json["data"] == null
-            ? null
-            : CustomerVerificationModel.fromJson(json["data"]),
-      );
+    Map<String, dynamic> json,
+  ) => CustomerVerificationResponseModel(
+    status: json["status"],
+    data: json["data"] == null
+        ? null
+        : CustomerVerificationModel.fromJson(json["data"]),
+  );
 
-  Map<String, dynamic> toJson() => {
-        "status": status,
-        "data": data?.toJson(),
-      };
+  Map<String, dynamic> toJson() => {"status": status, "data": data?.toJson()};
 }
 
 class CustomerVerificationModel extends CustomerVerificationEntity {
@@ -46,13 +39,12 @@ class CustomerVerificationModel extends CustomerVerificationEntity {
     String? name,
     String? webview,
     String? closing,
-  }) =>
-      CustomerVerificationModel(
-        exists: exists ?? this.exists,
-        name: name ?? this.name,
-        webview: webview ?? this.webview,
-        closing: closing ?? this.closing,
-      );
+  }) => CustomerVerificationModel(
+    exists: exists ?? this.exists,
+    name: name ?? this.name,
+    webview: webview ?? this.webview,
+    closing: closing ?? this.closing,
+  );
 
   factory CustomerVerificationModel.fromJson(Map<String, dynamic> json) =>
       CustomerVerificationModel(
@@ -63,9 +55,9 @@ class CustomerVerificationModel extends CustomerVerificationEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        "exists": exists,
-        "name": name,
-        "webview": webview,
-        "closing": closing,
-      };
+    "exists": exists,
+    "name": name,
+    "webview": webview,
+    "closing": closing,
+  };
 }

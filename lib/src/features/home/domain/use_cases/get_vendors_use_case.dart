@@ -7,9 +7,7 @@ part 'get_vendors_use_case.g.dart';
 
 @Riverpod()
 GetVendorsUseCase getVendorsUseCase(GetVendorsUseCaseRef ref) {
-  return GetVendorsUseCase(
-    homeRepository: ref.read(homeRepositoryProvider),
-  );
+  return GetVendorsUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 
 class GetVendorsUseCase {

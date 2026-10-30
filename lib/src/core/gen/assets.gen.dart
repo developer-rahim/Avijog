@@ -46,31 +46,35 @@ class $AssetsFontsGen {
 
   /// List of all assets
   List<String> get values => [
-        notoSerifBengaliBlack,
-        notoSerifBengaliBold,
-        notoSerifBengaliExtraBold,
-        notoSerifBengaliExtraLight,
-        notoSerifBengaliLight,
-        notoSerifBengaliMedium,
-        notoSerifBengaliRegular,
-        notoSerifBengaliSemiBold,
-        notoSerifBengaliThin
-      ];
+    notoSerifBengaliBlack,
+    notoSerifBengaliBold,
+    notoSerifBengaliExtraBold,
+    notoSerifBengaliExtraLight,
+    notoSerifBengaliLight,
+    notoSerifBengaliMedium,
+    notoSerifBengaliRegular,
+    notoSerifBengaliSemiBold,
+    notoSerifBengaliThin,
+  ];
 }
 
 class Assets {
   Assets._();
 
-  static const AssetGenImage accountType =
-      AssetGenImage('assets/account_type.png');
+  static const AssetGenImage accountType = AssetGenImage(
+    'assets/account_type.png',
+  );
   static const AssetGenImage alert = AssetGenImage('assets/alert.png');
-  static const AssetGenImage announcement =
-      AssetGenImage('assets/announcement.png');
-  static const AssetGenImage checkCircular =
-      AssetGenImage('assets/check_circular.png');
+  static const AssetGenImage announcement = AssetGenImage(
+    'assets/announcement.png',
+  );
+  static const AssetGenImage checkCircular = AssetGenImage(
+    'assets/check_circular.png',
+  );
   static const AssetGenImage cutLine = AssetGenImage('assets/cut_line.png');
-  static const AssetGenImage dashboardLogo =
-      AssetGenImage('assets/dashboard_logo.png');
+  static const AssetGenImage dashboardLogo = AssetGenImage(
+    'assets/dashboard_logo.png',
+  );
   static const AssetGenImage downArrow = AssetGenImage('assets/down_arrow.png');
   static const AssetGenImage dustbin = AssetGenImage('assets/dustbin.jpg');
   static const AssetGenImage edit = AssetGenImage('assets/edit.png');
@@ -78,87 +82,92 @@ class Assets {
   static const AssetGenImage fileText = AssetGenImage('assets/file-text.png');
   static const AssetGenImage floatBtn = AssetGenImage('assets/float-btn.png');
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
-  static const AssetGenImage illegelconstruction =
-      AssetGenImage('assets/illegelconstruction.jpg');
+  static const AssetGenImage illegelconstruction = AssetGenImage(
+    'assets/illegelconstruction.jpg',
+  );
   static const AssetGenImage language = AssetGenImage('assets/language.png');
   static const AssetGenImage lighting = AssetGenImage('assets/lighting.jpg');
   static const AssetGenImage listMenu = AssetGenImage('assets/list_menu.png');
   static const AssetGenImage logOut = AssetGenImage('assets/log_out.png');
   static const AssetGenImage mosque = AssetGenImage('assets/mosque.jpg');
   static const AssetGenImage nardoma = AssetGenImage('assets/nardoma.jpg');
-  static const AssetGenImage nextiveLogo =
-      AssetGenImage('assets/nextive_logo.png');
-  static const AssetGenImage notifications =
-      AssetGenImage('assets/notifications.png');
-  static const AssetGenImage onBoarding =
-      AssetGenImage('assets/on_boarding.png');
-  static const AssetGenImage onBoardingStartupIcon =
-      AssetGenImage('assets/on_boarding_startup_icon.png');
+  static const AssetGenImage nextiveLogo = AssetGenImage(
+    'assets/nextive_logo.png',
+  );
+  static const AssetGenImage notifications = AssetGenImage(
+    'assets/notifications.png',
+  );
+  static const AssetGenImage onBoarding = AssetGenImage(
+    'assets/on_boarding.png',
+  );
+  static const AssetGenImage onBoardingStartupIcon = AssetGenImage(
+    'assets/on_boarding_startup_icon.png',
+  );
   static const AssetGenImage pinChange = AssetGenImage('assets/pin_change.png');
-  static const AssetGenImage privacyPolicy =
-      AssetGenImage('assets/privacy_policy.png');
+  static const AssetGenImage privacyPolicy = AssetGenImage(
+    'assets/privacy_policy.png',
+  );
   static const AssetGenImage road = AssetGenImage('assets/road.jpg');
-  static const AssetGenImage signinOtpPageLogo =
-      AssetGenImage('assets/signin_otp_page_logo.png');
+  static const AssetGenImage signinOtpPageLogo = AssetGenImage(
+    'assets/signin_otp_page_logo.png',
+  );
   static const AssetGenImage success = AssetGenImage('assets/success.png');
-  static const AssetGenImage tkSymboleLight =
-      AssetGenImage('assets/tk-symbole_light.png');
+  static const AssetGenImage tkSymboleLight = AssetGenImage(
+    'assets/tk-symbole_light.png',
+  );
   static const AssetGenImage tkSymbol = AssetGenImage('assets/tk_symbol.png');
   static const AssetGenImage toilet = AssetGenImage('assets/toilet.jpg');
   static const AssetGenImage upArrow = AssetGenImage('assets/up_arrow.png');
   static const AssetGenImage user = AssetGenImage('assets/user.png');
   static const AssetGenImage userGuide = AssetGenImage('assets/user_guide.png');
-  static const AssetGenImage waterflowing =
-      AssetGenImage('assets/waterflowing.jpg');
+  static const AssetGenImage waterflowing = AssetGenImage(
+    'assets/waterflowing.jpg',
+  );
   static const AssetGenImage whatsapp = AssetGenImage('assets/whatsapp.png');
 
   /// List of all assets
   static List<AssetGenImage> get values => [
-        accountType,
-        alert,
-        announcement,
-        checkCircular,
-        cutLine,
-        dashboardLogo,
-        downArrow,
-        dustbin,
-        edit,
-        faq,
-        fileText,
-        floatBtn,
-        illegelconstruction,
-        language,
-        lighting,
-        listMenu,
-        logOut,
-        mosque,
-        nardoma,
-        nextiveLogo,
-        notifications,
-        onBoarding,
-        onBoardingStartupIcon,
-        pinChange,
-        privacyPolicy,
-        road,
-        signinOtpPageLogo,
-        success,
-        tkSymboleLight,
-        tkSymbol,
-        toilet,
-        upArrow,
-        user,
-        userGuide,
-        waterflowing,
-        whatsapp
-      ];
+    accountType,
+    alert,
+    announcement,
+    checkCircular,
+    cutLine,
+    dashboardLogo,
+    downArrow,
+    dustbin,
+    edit,
+    faq,
+    fileText,
+    floatBtn,
+    illegelconstruction,
+    language,
+    lighting,
+    listMenu,
+    logOut,
+    mosque,
+    nardoma,
+    nextiveLogo,
+    notifications,
+    onBoarding,
+    onBoardingStartupIcon,
+    pinChange,
+    privacyPolicy,
+    road,
+    signinOtpPageLogo,
+    success,
+    tkSymboleLight,
+    tkSymbol,
+    toilet,
+    upArrow,
+    user,
+    userGuide,
+    waterflowing,
+    whatsapp,
+  ];
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -218,15 +227,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

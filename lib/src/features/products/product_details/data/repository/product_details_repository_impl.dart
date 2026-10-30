@@ -8,8 +8,8 @@ class ProductDetailsRepositoryImpl implements ProductDetailsRepository {
   Future<(ErrorModel?, CustomerVerificationEntity?)> verifyCustomer({
     required Map<String, dynamic> body,
   }) async {
-    return await dataSource.verifyCustomer(body: body).guard(
-          (data) => CustomerVerificationResponseModel.fromJson(data).data,
-        );
+    return await dataSource
+        .verifyCustomer(body: body)
+        .guard((data) => CustomerVerificationResponseModel.fromJson(data).data);
   }
 }

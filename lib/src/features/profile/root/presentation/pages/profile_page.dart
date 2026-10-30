@@ -52,23 +52,14 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.profile,
-          style: AppTextStyle.extraBold24.copyWith(
-            color: AppColors.white,
-          ),
+          style: AppTextStyle.extraBold24.copyWith(color: AppColors.white),
         ),
         backgroundColor: AppColors.primary,
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       ),
       body: const SafeArea(
-        child: Column(
-          children: [
-            ProfileHeaderSection(),
-            ProfileBodySection(),
-          ],
-        ),
+        child: Column(children: [ProfileHeaderSection(), ProfileBodySection()]),
       ),
     );
   }

@@ -13,8 +13,9 @@ String _$balanceHash() => r'cbcd337c81f990d4d9b4e1e8e4e526590653dfdd';
 final balanceProvider = FutureProvider<BalanceEntity?>.internal(
   balance,
   name: r'balanceProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$balanceHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$balanceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

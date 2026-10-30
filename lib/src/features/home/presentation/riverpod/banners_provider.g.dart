@@ -13,8 +13,9 @@ String _$bannersHash() => r'82d6f5405699518dd566d104ba4d66a56f19bfc1';
 final bannersProvider = FutureProvider<List<BannerEntity>>.internal(
   banners,
   name: r'bannersProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$bannersHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$bannersHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

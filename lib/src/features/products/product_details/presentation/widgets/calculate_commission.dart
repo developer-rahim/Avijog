@@ -3,10 +3,7 @@ part of '../pages/product_details_page.dart';
 final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
 class _CalculateCommission extends ConsumerStatefulWidget {
-  const _CalculateCommission({
-    super.key,
-    required this.product,
-  });
+  const _CalculateCommission({required this.product});
   final ProductEntity? product;
 
   @override
@@ -52,12 +49,12 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
     yourCommission = isSellingPriceInvalid
         ? 0
         : (double.parse(sellingPriceController.text) * commissionInPercent) ~/
-            100;
+              100;
     youNeedToPay = isSellingPriceInvalid
         ? 0
         : (double.parse(sellingPriceController.text) - yourCommission)
-            .toInt()
-            .floor();
+              .toInt()
+              .floor();
 
     return Padding(
       padding: const EdgeInsets.only(top: 58),
@@ -65,10 +62,7 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
         children: [
           Container(
             color: AppColors.lighterBlue,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 15,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Column(
               children: [
                 _PriceInfoItem(
@@ -231,12 +225,13 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
                   return;
                 }
 
-                ref.read(sellingPriceProvider.notifier).state =
-                    double.parse(sellingPriceController.text);
+                ref.read(sellingPriceProvider.notifier).state = double.parse(
+                  sellingPriceController.text,
+                );
                 _userVerificationBottomSheet(context);
               },
             ),
-          )
+          ),
         ],
       ),
     );
@@ -245,7 +240,6 @@ class _CalculateCommissionState extends ConsumerState<_CalculateCommission> {
 
 class _PriceInfoItem extends StatelessWidget {
   const _PriceInfoItem({
-    super.key,
     required this.title,
     this.value,
     this.showSymbol = true,
@@ -261,13 +255,7 @@ class _PriceInfoItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Flexible(
-          flex: 4,
-          child: Text(
-            title,
-            style: AppTextStyle.extraBold16,
-          ),
-        ),
+        Flexible(flex: 4, child: Text(title, style: AppTextStyle.extraBold16)),
         Builder(
           builder: (context) {
             if (valueWidget != null) {
@@ -280,10 +268,7 @@ class _PriceInfoItem extends StatelessWidget {
 
             return Row(
               children: [
-                Text(
-                  value ?? '',
-                  style: AppTextStyle.extraBold20,
-                ),
+                Text(value ?? '', style: AppTextStyle.extraBold20),
                 if (showSymbol)
                   Padding(
                     padding: const EdgeInsets.only(left: 3),
@@ -292,7 +277,7 @@ class _PriceInfoItem extends StatelessWidget {
                       height: 17,
                       width: 14,
                     ),
-                  )
+                  ),
               ],
             );
           },

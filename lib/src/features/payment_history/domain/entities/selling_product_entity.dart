@@ -3,9 +3,5 @@ class SellingProductEntity {
   String? name;
   String? image;
 
-  SellingProductEntity({
-    this.id,
-    this.name,
-    this.image,
-  });
+  SellingProductEntity({this.id, this.name, this.image});
 }

@@ -13,8 +13,9 @@ String _$cacheServiceHash() => r'292e60c142ae338d3bddd8288acdd9cf24d8fb5c';
 final cacheServiceProvider = Provider<CacheService>.internal(
   cacheService,
   name: r'cacheServiceProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$cacheServiceHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$cacheServiceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

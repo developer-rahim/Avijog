@@ -9,23 +9,15 @@ class AuthenticationDataSourceImpl extends AuthenticationDataSource {
 
   @override
   Future<Response> verifyUser(String phone) async {
-    return await restClient.post(
-      APIType.public,
-      API.verifyUser,
-      {
-        'phone': phone,
-        "recaptcha": "668be73dcad2999a957ff440",
-      },
-    );
+    return await restClient.post(APIType.public, API.verifyUser, {
+      'phone': phone,
+      "recaptcha": "668be73dcad2999a957ff440",
+    });
   }
 
   @override
   Future<Response> login(data) async {
-    final response = await restClient.post(
-      APIType.public,
-      API.login,
-      data,
-    );
+    final response = await restClient.post(APIType.public, API.login, data);
 
     return response;
   }
@@ -43,11 +35,7 @@ class AuthenticationDataSourceImpl extends AuthenticationDataSource {
 
   @override
   Future<Response> signUp(data) async {
-    final response = await restClient.post(
-      APIType.public,
-      API.signUp,
-      data,
-    );
+    final response = await restClient.post(APIType.public, API.signUp, data);
 
     return response;
   }

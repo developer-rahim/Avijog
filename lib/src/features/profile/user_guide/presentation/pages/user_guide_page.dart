@@ -15,10 +15,7 @@ class UserGuidePage extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
       ),
       body: Padding(

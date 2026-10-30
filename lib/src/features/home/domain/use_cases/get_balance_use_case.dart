@@ -7,9 +7,7 @@ part 'get_balance_use_case.g.dart';
 
 @Riverpod()
 GetBalanceUseCase getBalanceUseCase(GetBalanceUseCaseRef ref) {
-  return GetBalanceUseCase(
-    homeRepository: ref.read(homeRepositoryProvider),
-  );
+  return GetBalanceUseCase(homeRepository: ref.read(homeRepositoryProvider));
 }
 
 class GetBalanceUseCase {

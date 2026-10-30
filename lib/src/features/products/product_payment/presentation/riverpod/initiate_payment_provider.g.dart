@@ -12,14 +12,14 @@ String _$initiatePaymentHash() => r'2c0a1aa12ff9ad2d16e2c8dae8805e19acae9770';
 @ProviderFor(InitiatePayment)
 final initiatePaymentProvider =
     AutoDisposeAsyncNotifierProvider<InitiatePayment, PaymentEntity?>.internal(
-  InitiatePayment.new,
-  name: r'initiatePaymentProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$initiatePaymentHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      InitiatePayment.new,
+      name: r'initiatePaymentProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$initiatePaymentHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$InitiatePayment = AutoDisposeAsyncNotifier<PaymentEntity?>;
 // ignore_for_file: type=lint

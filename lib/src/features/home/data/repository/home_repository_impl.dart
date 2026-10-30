@@ -16,21 +16,21 @@ class HomeRepositoryImpl implements HomeRepository {
   @override
   Future<(ErrorModel?, List<VendorEntity>?)> getVendors() async {
     return await dataSource.fetchVendors().guard(
-          (data) => VendorsResponseModel.fromJson(data).vendors,
-        );
+      (data) => VendorsResponseModel.fromJson(data).vendors,
+    );
   }
 
   @override
   Future<(ErrorModel?, BalanceEntity?)> getBalance() async {
     return await dataSource.fetchBalance().guard(
-          (data) => BalanceModel.fromJson(data),
-        );
+      (data) => BalanceModel.fromJson(data),
+    );
   }
 
   @override
   Future<(ErrorModel?, List<BannerEntity>?)> getBanners() async {
     return await dataSource.fetchBanners().guard(
-          (data) => BannersResponseModel.fromJson(data).banners,
-        );
+      (data) => BannersResponseModel.fromJson(data).banners,
+    );
   }
 }

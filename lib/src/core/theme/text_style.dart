@@ -50,10 +50,7 @@ class AppTextStyle {
     fontFamily: 'Montserrat',
   );
 
-  static const medium12 = TextStyle(
-    fontWeight: FontWeight.w400,
-    fontSize: 12,
-  );
+  static const medium12 = TextStyle(fontWeight: FontWeight.w400, fontSize: 12);
   static const medium10 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 10,
@@ -90,10 +87,7 @@ class AppTextStyle {
     fontFamily: 'Montserrat',
   );
 
-  static const bold32 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 32,
-  );
+  static const bold32 = TextStyle(fontWeight: FontWeight.w600, fontSize: 32);
   static const bold22 = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 22,
@@ -118,14 +112,8 @@ class AppTextStyle {
     fontSize: 15,
     height: 21 / 15,
   );
-  static const bold18 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 18,
-  );
-  static const bold28 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 28,
-  );
+  static const bold18 = TextStyle(fontWeight: FontWeight.w600, fontSize: 18);
+  static const bold28 = TextStyle(fontWeight: FontWeight.w600, fontSize: 28);
 
   static const bold14 = TextStyle(
     fontWeight: FontWeight.w600,
@@ -139,14 +127,8 @@ class AppTextStyle {
     height: 16 / 11,
     fontFamily: 'Montserrat',
   );
-  static const bold12 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 12,
-  );
-  static const bold13 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 13,
-  );
+  static const bold12 = TextStyle(fontWeight: FontWeight.w600, fontSize: 12);
+  static const bold13 = TextStyle(fontWeight: FontWeight.w600, fontSize: 13);
   static const extraBold12 = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 12,
@@ -174,10 +156,7 @@ class AppTextStyle {
     fontFamily: 'Montserrat',
   );
 
-  static const medium20 = TextStyle(
-    fontWeight: FontWeight.w400,
-    fontSize: 20,
-  );
+  static const medium20 = TextStyle(fontWeight: FontWeight.w400, fontSize: 20);
 
   static const semiBold16 = TextStyle(
     fontWeight: FontWeight.w500,

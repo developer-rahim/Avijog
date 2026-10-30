@@ -13,8 +13,9 @@ String _$allVendorsHash() => r'1719f64545f2200d752a48a30f932861b5fe152f';
 final allVendorsProvider = FutureProvider<List<VendorEntity>>.internal(
   allVendors,
   name: r'allVendorsProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$allVendorsHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$allVendorsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

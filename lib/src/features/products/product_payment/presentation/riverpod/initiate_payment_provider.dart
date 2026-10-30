@@ -33,9 +33,9 @@ class InitiatePayment extends _$InitiatePayment {
     (errorModel, paymentEntity) = await initiatePaymentUseCase();
 
     if (errorModel != null) {
-      ref.read(showErrorMessageProvider.notifier).errorMessage(
-            errorModel.message ?? 'Something went wrong',
-          );
+      ref
+          .read(showErrorMessageProvider.notifier)
+          .errorMessage(errorModel.message ?? 'Something went wrong');
       state = AsyncError(errorModel, StackTrace.current);
       throw errorModel;
     } else {

@@ -1,7 +1,5 @@
 class PinChangeEntity {
   String? message;
 
-  PinChangeEntity({
-    this.message,
-  });
+  PinChangeEntity({this.message});
 }

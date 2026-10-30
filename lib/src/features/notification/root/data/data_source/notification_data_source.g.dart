@@ -13,14 +13,14 @@ String _$notificationDataSourceHash() =>
 @ProviderFor(notificationDataSource)
 final notificationDataSourceProvider =
     Provider<NotificationDataSource>.internal(
-  notificationDataSource,
-  name: r'notificationDataSourceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$notificationDataSourceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      notificationDataSource,
+      name: r'notificationDataSourceProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$notificationDataSourceHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef NotificationDataSourceRef = ProviderRef<NotificationDataSource>;
 // ignore_for_file: type=lint

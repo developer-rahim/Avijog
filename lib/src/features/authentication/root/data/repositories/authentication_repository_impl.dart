@@ -1,10 +1,7 @@
 part of '../../domain/repositories/authentication_repository.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
-  AuthenticationRepositoryImpl({
-    required this.dataSource,
-    required this.ref,
-  });
+  AuthenticationRepositoryImpl({required this.dataSource, required this.ref});
 
   final AuthenticationDataSource dataSource;
   final Ref ref;
@@ -30,14 +27,15 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
   @override
   Future<(ErrorModel?, AuthenticationEntity?)> login(data) async {
-    return await dataSource.login(data).guard(
-          (data) => AuthenticationResponseModel.fromJson(data),
-        );
+    return await dataSource
+        .login(data)
+        .guard((data) => AuthenticationResponseModel.fromJson(data));
   }
 
   @override
   Future<Either<ErrorModel, OtpVerificationEntity>> otpVerification(
-      data) async {
+    data,
+  ) async {
     try {
       final response = await dataSource.otpVerification(data);
       final model = OtpVerificationResponseModel.fromJson(response.data);

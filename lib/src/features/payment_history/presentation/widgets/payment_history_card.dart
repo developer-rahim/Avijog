@@ -1,10 +1,7 @@
 part of '../pages/payment_history_page.dart';
 
 class _PaymentHistoryCard extends StatelessWidget {
-  const _PaymentHistoryCard({
-    super.key,
-    required this.paymentHistoryModel,
-  });
+  const _PaymentHistoryCard({required this.paymentHistoryModel});
   final HistoryEntity? paymentHistoryModel;
   @override
   Widget build(BuildContext context) {
@@ -18,11 +15,9 @@ class _PaymentHistoryCard extends StatelessWidget {
         child: Column(
           children: [
             _PaymentHistoryCardHeader(
-                paymentHistoryModel: paymentHistoryModel!),
-            const Text(
-              ConstantData.dashLine,
-              maxLines: 1,
+              paymentHistoryModel: paymentHistoryModel!,
             ),
+            const Text(ConstantData.dashLine, maxLines: 1),
             5.sh,
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,13 +51,14 @@ class _PaymentHistoryCard extends StatelessWidget {
                         value: paymentHistoryModel?.clientName ?? 'N/A',
                       ),
                       _PaymentHistoryItems(
-                          title: AppLocalizations.of(context)!.phone,
-                          value: paymentHistoryModel?.clientPhone ?? 'N/A'),
+                        title: AppLocalizations.of(context)!.phone,
+                        value: paymentHistoryModel?.clientPhone ?? 'N/A',
+                      ),
                       _PaymentHistoryItems(
                         title: AppLocalizations.of(context)!.status,
                         value: paymentHistoryModel?.status ?? '',
                       ),
-                      _PriceSection(paymentHistoryModel: paymentHistoryModel!)
+                      _PriceSection(paymentHistoryModel: paymentHistoryModel!),
                     ],
                   ),
                 ),
@@ -76,7 +72,7 @@ class _PaymentHistoryCard extends StatelessWidget {
 }
 
 class _PriceSection extends ConsumerWidget {
-  const _PriceSection({super.key, required this.paymentHistoryModel});
+  const _PriceSection({required this.paymentHistoryModel});
   final HistoryEntity paymentHistoryModel;
 
   @override
@@ -94,11 +90,7 @@ class _PriceSection extends ConsumerWidget {
                     paymentHistoryModel.amount.toString(),
                     style: AppTextStyle.extraBold20,
                   ),
-                  Image.asset(
-                    Assets.tkSymbol.path,
-                    height: 14,
-                    width: 12,
-                  ),
+                  Image.asset(Assets.tkSymbol.path, height: 14, width: 12),
                 ],
               ),
               Text(
@@ -115,11 +107,7 @@ class _PriceSection extends ConsumerWidget {
                     paymentHistoryModel.comission.toString(),
                     style: AppTextStyle.extraBold20,
                   ),
-                  Image.asset(
-                    Assets.tkSymbol.path,
-                    height: 14,
-                    width: 12,
-                  ),
+                  Image.asset(Assets.tkSymbol.path, height: 14, width: 12),
                 ],
               ),
               Text(
@@ -135,8 +123,9 @@ class _PriceSection extends ConsumerWidget {
 }
 
 class _PaymentHistoryCardHeader extends ConsumerWidget {
-  const _PaymentHistoryCardHeader(
-      {super.key, required this.paymentHistoryModel});
+  const _PaymentHistoryCardHeader({
+    required this.paymentHistoryModel,
+  });
   final HistoryEntity paymentHistoryModel;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -150,10 +139,7 @@ class _PaymentHistoryCardHeader extends ConsumerWidget {
               style: AppTextStyle.medium12,
             ),
             const SizedBox(height: 4),
-            Text(
-              paymentHistoryModel.orderId!,
-              style: AppTextStyle.extraBold12,
-            )
+            Text(paymentHistoryModel.orderId!, style: AppTextStyle.extraBold12),
           ],
         ),
         Column(
@@ -177,7 +163,6 @@ class _PaymentHistoryCardHeader extends ConsumerWidget {
 
 class _PaymentHistoryItems extends ConsumerWidget {
   const _PaymentHistoryItems({
-    super.key,
     required this.title,
     required this.value,
   });
@@ -189,16 +174,8 @@ class _PaymentHistoryItems extends ConsumerWidget {
       padding: const EdgeInsets.only(bottom: 7),
       child: Row(
         children: [
-          Text(
-            title,
-            style: AppTextStyle.medium12,
-          ),
-          Flexible(
-            child: Text(
-              value,
-              style: AppTextStyle.extraBold12,
-            ),
-          ),
+          Text(title, style: AppTextStyle.medium12),
+          Flexible(child: Text(value, style: AppTextStyle.extraBold12)),
         ],
       ),
     );

@@ -17,7 +17,9 @@ class PaymentHistoryUseCase {
   final PaymentHistoryRepository paymentRepository;
 
   Future<(ErrorModel?, List<PaymentHistoryModel>?)> call(
-      String? month, String? year) async {
+    String? month,
+    String? year,
+  ) async {
     return await paymentRepository.getPaymentHistory(month, year);
   }
 }

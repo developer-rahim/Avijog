@@ -48,10 +48,9 @@ class WelcomePage extends StatelessWidget {
                 builder: (context, ref, child) {
                   return InkWell(
                     onTap: () {
-                      ref.read(cacheServiceProvider).save(
-                            CacheKeys.seenWelcomeScreen,
-                            true,
-                          );
+                      ref
+                          .read(cacheServiceProvider)
+                          .save(CacheKeys.seenWelcomeScreen, true);
 
                       context.goNamed(Routes.login);
                     },
@@ -69,7 +68,7 @@ class WelcomePage extends StatelessWidget {
               Text(
                 AppLocalizations.of(context)!.letsGo,
                 style: AppTextStyle.bold18,
-              )
+              ),
             ],
           ),
         ),

@@ -10,10 +10,7 @@ import 'package:obhijuk/src/features/products/root/domain/entities/product_entit
 import 'package:obhijuk/src/features/products/root/presentation/widgets/product_price.dart';
 
 class ProductCard extends ConsumerWidget {
-  const ProductCard({
-    super.key,
-    required this.product,
-  });
+  const ProductCard({super.key, required this.product});
   final ProductEntity product;
 
   @override

@@ -37,7 +37,7 @@ class VerifyUserPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: AppTextStyle.medium18,
                 ),
-                const _UserVerificationSection()
+                const _UserVerificationSection(),
               ],
             ),
           ),
@@ -61,14 +61,11 @@ class _UserVerificationSectionState
   final _phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    ref.listen(
-      verifyUserProvider,
-      (previous, next) {
-        if (next is AsyncError) {
-          GlobalSnackBar.show(context, ref.watch(showErrorMessageProvider));
-        }
-      },
-    );
+    ref.listen(verifyUserProvider, (previous, next) {
+      if (next is AsyncError) {
+        GlobalSnackBar.show(context, ref.watch(showErrorMessageProvider));
+      }
+    });
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -105,27 +102,19 @@ class _UserVerificationSectionState
         .update((state) => _phoneController.text);
     ref
         .read(verifyUserProvider.notifier)
-        .checkUserVerification(
-          phoneNumber: _phoneController.text,
-        )
-        .then(
-      (value) {
-        if (value.data?.exists == true) {
-          context.goNamed(
-            Routes.passwordSubmit,
-            queryParameters: {
-              'phoneNumber': _phoneController.text,
-            },
-          );
-        } else {
-          context.pushNamed(
-            Routes.otp,
-            queryParameters: {
-              'isFrom': 'userVerification',
-            },
-          );
-        }
-      },
-    );
+        .checkUserVerification(phoneNumber: _phoneController.text)
+        .then((value) {
+          if (value.data?.exists == true) {
+            context.goNamed(
+              Routes.passwordSubmit,
+              queryParameters: {'phoneNumber': _phoneController.text},
+            );
+          } else {
+            context.pushNamed(
+              Routes.otp,
+              queryParameters: {'isFrom': 'userVerification'},
+            );
+          }
+        });
   }
 }

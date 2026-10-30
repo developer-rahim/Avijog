@@ -8,10 +8,7 @@ import 'package:obhijuk/src/core/widgets/cached_network_image.dart';
 import 'package:obhijuk/src/features/home/domain/entities/vendor_entity.dart';
 
 class VendorCard extends ConsumerWidget {
-  const VendorCard({
-    super.key,
-    required this.vendor,
-  });
+  const VendorCard({super.key, required this.vendor});
   final VendorEntity vendor;
 
   @override
@@ -52,9 +49,8 @@ class VendorCard extends ConsumerWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10).copyWith(
-                top: 2,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 10)
+                  .copyWith(top: 2),
               child: Text(
                 vendor.name ?? 'N/A',
                 style: AppTextStyle.bold14.copyWith(

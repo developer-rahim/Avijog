@@ -17,10 +17,7 @@ VerifyCustomerUseCase verifyCustomerUseCase(
 }
 
 class VerifyCustomerUseCase {
-  VerifyCustomerUseCase({
-    required this.repository,
-    required this.body,
-  });
+  VerifyCustomerUseCase({required this.repository, required this.body});
   final ProductDetailsRepository repository;
   final Map<String, dynamic> body;
 

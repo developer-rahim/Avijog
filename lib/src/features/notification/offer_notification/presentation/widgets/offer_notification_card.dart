@@ -8,43 +8,44 @@ class OfferNotificationCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         appDialog(
-            context: context,
-            showYesButton: offers.link!.notificationLinkNotNull ? true : false,
-            yesButtonText: "Go To course",
-            bodyContent: Column(
-              children: [
-                Text(
-                  offers.title ?? '',
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+          context: context,
+          showYesButton: offers.link!.notificationLinkNotNull ? true : false,
+          yesButtonText: "Go To course",
+          bodyContent: Column(
+            children: [
+              Text(
+                offers.title ?? '',
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
                 ),
-                AppCachedNetworkImage(
-                  height: 200,
-                  image: offers.image,
-                  fit: BoxFit.fill,
+              ),
+              AppCachedNetworkImage(
+                height: 200,
+                image: offers.image,
+                fit: BoxFit.fill,
+              ),
+              Text(
+                offers.body ?? '',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
                 ),
-                Text(
-                  offers.body ?? '',
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
-            ),
-            onYesPressed: () {
-              Navigator.pop(context);
-              context.pushNamed(
-                Routes.productDetails,
-                queryParameters: {
-                  'productId': offers.link,
-                  'productName': offers.title,
-                },
-              );
-              // GlobalSnackBar.show(context, 'Need to add course id');
-            });
+              ),
+            ],
+          ),
+          onYesPressed: () {
+            Navigator.pop(context);
+            context.pushNamed(
+              Routes.productDetails,
+              queryParameters: {
+                'productId': offers.link,
+                'productName': offers.title,
+              },
+            );
+            // GlobalSnackBar.show(context, 'Need to add course id');
+          },
+        );
       },
       child: SizedBox(
         height: 157,

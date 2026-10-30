@@ -15,10 +15,7 @@ class PrivacyPolicyPage extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
       ),
       body: SingleChildScrollView(
@@ -29,9 +26,7 @@ class PrivacyPolicyPage extends StatelessWidget {
 
             return asyncPrivacyPolicy.when(
               data: (privacyPolicy) {
-                return Text(
-                  privacyPolicy?.content ?? '',
-                );
+                return Text(privacyPolicy?.content ?? '');
               },
               loading: () => const _LoadingWidget(),
               error: (error, stackTrace) {

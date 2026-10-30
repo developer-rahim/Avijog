@@ -30,8 +30,8 @@ class PaymentHistoryPage extends ConsumerWidget {
     final yearProvider = ref.watch(selectedYearProvider);
     final asyncPyamentHistoryProvider =
         monthProvider != null && yearProvider != null
-            ? ref.watch(paymentHistoryProvider(monthProvider, yearProvider))
-            : ref.watch(paymentHistoryProvider('', ''));
+        ? ref.watch(paymentHistoryProvider(monthProvider, yearProvider))
+        : ref.watch(paymentHistoryProvider('', ''));
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -52,8 +52,9 @@ class PaymentHistoryPage extends ConsumerWidget {
                 const MonthFilteringCard(),
                 switch (asyncPyamentHistoryProvider) {
                   AsyncError(:final error) => Text('Error: $error'),
-                  AsyncData(:final value) =>
-                    _PaymentHistoryBuilder(paymentHistory: value),
+                  AsyncData(:final value) => _PaymentHistoryBuilder(
+                    paymentHistory: value,
+                  ),
                   _ => const ListViewLoading(height: 250),
                 },
               ],

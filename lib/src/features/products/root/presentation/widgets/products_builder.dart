@@ -1,32 +1,23 @@
 part of '../pages/products_page.dart';
 
 class _ProductsBuilder extends ConsumerWidget {
-  const _ProductsBuilder({
-    super.key,
-    this.vendorId,
-  });
+  const _ProductsBuilder({this.vendorId});
   final String? vendorId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedCategory = ref.watch(selectedCategoryProvider);
-    final asyncProducts = ref.watch(productsProvider(
-      vendorId: vendorId,
-    ));
+    final asyncProducts = ref.watch(productsProvider(vendorId: vendorId));
 
     return Expanded(
       child: RefreshIndicator(
         onRefresh: () async {
           ref.invalidate(selectedCategoryProvider);
-          ref.invalidate(productsProvider(
-            vendorId: vendorId,
-          ));
+          ref.invalidate(productsProvider(vendorId: vendorId));
         },
         child: Stack(
           children: [
-            ListView(
-              physics: const AlwaysScrollableScrollPhysics(),
-            ),
+            ListView(physics: const AlwaysScrollableScrollPhysics()),
             asyncProducts.when(
               data: (allProducts) {
                 List<ProductEntity> products = [];
@@ -40,9 +31,7 @@ class _ProductsBuilder extends ConsumerWidget {
                 }
 
                 if (products.isEmpty) {
-                  return const Center(
-                    child: Text('No products found'),
-                  );
+                  return const Center(child: Text('No products found'));
                 }
 
                 return GridView.builder(
@@ -59,16 +48,13 @@ class _ProductsBuilder extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     ProductEntity product = products[index];
 
-                    return ProductCard(
-                      product: product,
-                    );
+                    return ProductCard(product: product);
                   },
                 );
               },
               loading: () => _buildProductsLoader(),
-              error: (error, _) => const Center(
-                child: Text('No products found'),
-              ),
+              error: (error, _) =>
+                  const Center(child: Text('No products found')),
             ),
           ],
         ),
@@ -78,10 +64,7 @@ class _ProductsBuilder extends ConsumerWidget {
 
   Widget _buildProductsLoader() {
     return GridView.builder(
-      padding: const EdgeInsets.only(
-        bottom: 150,
-        top: 20,
-      ),
+      padding: const EdgeInsets.only(bottom: 150, top: 20),
       itemCount: 10,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,

@@ -10,9 +10,7 @@ part 'home_repository.g.dart';
 
 @Riverpod()
 HomeRepository homeRepository(HomeRepositoryRef ref) {
-  return HomeRepositoryImpl(
-    dataSource: ref.read(homeDataSourceProvider),
-  );
+  return HomeRepositoryImpl(dataSource: ref.read(homeDataSourceProvider));
 }
 
 abstract class HomeRepository {

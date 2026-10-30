@@ -12,14 +12,14 @@ String _$getBalanceUseCaseHash() => r'be08446868c8ec12debc79dda541e7ad3411ddc6';
 @ProviderFor(getBalanceUseCase)
 final getBalanceUseCaseProvider =
     AutoDisposeProvider<GetBalanceUseCase>.internal(
-  getBalanceUseCase,
-  name: r'getBalanceUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getBalanceUseCaseHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      getBalanceUseCase,
+      name: r'getBalanceUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$getBalanceUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef GetBalanceUseCaseRef = AutoDisposeProviderRef<GetBalanceUseCase>;
 // ignore_for_file: type=lint

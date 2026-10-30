@@ -1,7 +1,7 @@
 part of '../pages/product_details_page.dart';
 
 class _ProductDescription extends StatelessWidget {
-  const _ProductDescription({super.key, this.product});
+  const _ProductDescription({this.product});
   final ProductEntity? product;
 
   @override

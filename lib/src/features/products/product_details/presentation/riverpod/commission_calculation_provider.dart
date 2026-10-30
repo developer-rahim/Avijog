@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final commissionCalculationProvider =
     ChangeNotifierProvider<CommissionCalculationProvider>(
-        (ref) => CommissionCalculationProvider());
+      (ref) => CommissionCalculationProvider(),
+    );
 
 class CommissionCalculationProvider extends ChangeNotifier {
   int commission = 0;

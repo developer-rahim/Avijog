@@ -12,14 +12,14 @@ String _$updateProfileHash() => r'406867dd5cf325d928937577f5fa634d42fa1a44';
 @ProviderFor(UpdateProfile)
 final updateProfileProvider =
     AsyncNotifierProvider<UpdateProfile, UserEntity>.internal(
-  UpdateProfile.new,
-  name: r'updateProfileProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$updateProfileHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      UpdateProfile.new,
+      name: r'updateProfileProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$updateProfileHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$UpdateProfile = AsyncNotifier<UserEntity>;
 // ignore_for_file: type=lint

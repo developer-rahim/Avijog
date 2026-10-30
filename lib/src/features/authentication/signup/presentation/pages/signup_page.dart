@@ -25,10 +25,7 @@ class SignUpPage extends ConsumerWidget {
     final cacheService = ref.watch(cacheServiceProvider);
     ref.listen(signUpProvider, (previous, next) {
       if (next is AsyncError) {
-        GlobalSnackBar.show(
-          context,
-          next.error.toString(),
-        );
+        GlobalSnackBar.show(context, next.error.toString());
       }
     });
 
@@ -71,13 +68,14 @@ class SignUpPage extends ConsumerWidget {
                     child: Column(
                       children: [
                         OutlinedInputField(
-                            keyboardType: TextInputType.name,
-                            labelText:
-                                AppLocalizations.of(context)!.affiliatorName,
-                            controller: _nameController,
-                            hintText:
-                                AppLocalizations.of(context)!.enterYourFullName,
-                            validator: InputFieldValidator.name()),
+                          keyboardType: TextInputType.name,
+                          labelText: AppLocalizations.of(context)!
+                              .affiliatorName,
+                          controller: _nameController,
+                          hintText: AppLocalizations.of(context)!
+                              .enterYourFullName,
+                          validator: InputFieldValidator.name(),
+                        ),
                         const SizedBox(height: 38),
                         Text(
                           AppLocalizations.of(context)!.studentInformation,
@@ -85,13 +83,14 @@ class SignUpPage extends ConsumerWidget {
                         ),
                         const SizedBox(height: 14),
                         OutlinedInputField(
-                            keyboardType: TextInputType.name,
-                            labelText:
-                                AppLocalizations.of(context)!.instituteName,
-                            controller: _institutionNameController,
-                            hintText: AppLocalizations.of(context)!
-                                .enterinstituteName,
-                            validator: InputFieldValidator.name()),
+                          keyboardType: TextInputType.name,
+                          labelText: AppLocalizations.of(context)!
+                              .instituteName,
+                          controller: _institutionNameController,
+                          hintText: AppLocalizations.of(context)!
+                              .enterinstituteName,
+                          validator: InputFieldValidator.name(),
+                        ),
                         OutlinedInputField(
                           keyboardType: TextInputType.emailAddress,
                           labelText: AppLocalizations.of(context)!.address,
@@ -103,8 +102,8 @@ class SignUpPage extends ConsumerWidget {
                           keyboardType: TextInputType.name,
                           labelText: AppLocalizations.of(context)!.reference,
                           controller: _referenceController,
-                          hintText:
-                              AppLocalizations.of(context)!.enterreference,
+                          hintText: AppLocalizations.of(context)!
+                              .enterreference,
                         ),
                         OutlinedInputField(
                           labelText: AppLocalizations.of(context)!.password,
@@ -113,11 +112,11 @@ class SignUpPage extends ConsumerWidget {
                           validator: InputFieldValidator.password(),
                         ),
                         OutlinedInputField(
-                          labelText:
-                              AppLocalizations.of(context)!.confirmPassword,
+                          labelText: AppLocalizations.of(context)!
+                              .confirmPassword,
                           controller: _confirmPasswordController,
-                          hintText:
-                              AppLocalizations.of(context)!.confirmPassword,
+                          hintText: AppLocalizations.of(context)!
+                              .confirmPassword,
                           validator: InputFieldValidator.confirmPassword(
                             password: _passwordController.text,
                             optional: _passwordController.text.isEmpty,
@@ -153,13 +152,11 @@ class SignUpPage extends ConsumerWidget {
                       ref
                           .read(signUpProvider.notifier)
                           .signUp(
-                            payload:
-                                SignUpPayloadModel.fromEntity(signUpPayload)
-                                    .toJson(),
+                            payload: SignUpPayloadModel.fromEntity(
+                              signUpPayload,
+                            ).toJson(),
                           )
-                          .then(
-                            (value) => context.pushNamed(Routes.homeTab),
-                          );
+                          .then((value) => context.pushNamed(Routes.homeTab));
                     },
                     buttonText: AppLocalizations.of(context)!.signup,
                   ),
@@ -189,9 +186,7 @@ class SignUpPage extends ConsumerWidget {
           },
           child: Text(
             AppLocalizations.of(context)!.login,
-            style: AppTextStyle.bold14.copyWith(
-              color: AppColors.primary,
-            ),
+            style: AppTextStyle.bold14.copyWith(color: AppColors.primary),
             textAlign: TextAlign.center,
           ),
         ),

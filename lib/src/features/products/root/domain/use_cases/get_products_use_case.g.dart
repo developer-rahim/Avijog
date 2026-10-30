@@ -40,21 +40,15 @@ class GetProductsUseCaseFamily extends Family<GetProductsUseCase> {
   const GetProductsUseCaseFamily();
 
   /// See also [getProductsUseCase].
-  GetProductsUseCaseProvider call({
-    String? vendorId,
-  }) {
-    return GetProductsUseCaseProvider(
-      vendorId: vendorId,
-    );
+  GetProductsUseCaseProvider call({String? vendorId}) {
+    return GetProductsUseCaseProvider(vendorId: vendorId);
   }
 
   @override
   GetProductsUseCaseProvider getProviderOverride(
     covariant GetProductsUseCaseProvider provider,
   ) {
-    return call(
-      vendorId: provider.vendorId,
-    );
+    return call(vendorId: provider.vendorId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -76,24 +70,22 @@ class GetProductsUseCaseFamily extends Family<GetProductsUseCase> {
 class GetProductsUseCaseProvider
     extends AutoDisposeProvider<GetProductsUseCase> {
   /// See also [getProductsUseCase].
-  GetProductsUseCaseProvider({
-    String? vendorId,
-  }) : this._internal(
-          (ref) => getProductsUseCase(
-            ref as GetProductsUseCaseRef,
-            vendorId: vendorId,
-          ),
-          from: getProductsUseCaseProvider,
-          name: r'getProductsUseCaseProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$getProductsUseCaseHash,
-          dependencies: GetProductsUseCaseFamily._dependencies,
-          allTransitiveDependencies:
-              GetProductsUseCaseFamily._allTransitiveDependencies,
+  GetProductsUseCaseProvider({String? vendorId})
+    : this._internal(
+        (ref) => getProductsUseCase(
+          ref as GetProductsUseCaseRef,
           vendorId: vendorId,
-        );
+        ),
+        from: getProductsUseCaseProvider,
+        name: r'getProductsUseCaseProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$getProductsUseCaseHash,
+        dependencies: GetProductsUseCaseFamily._dependencies,
+        allTransitiveDependencies:
+            GetProductsUseCaseFamily._allTransitiveDependencies,
+        vendorId: vendorId,
+      );
 
   GetProductsUseCaseProvider._internal(
     super._createNotifier, {

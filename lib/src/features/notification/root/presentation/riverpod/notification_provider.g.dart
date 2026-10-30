@@ -39,21 +39,15 @@ class NotificationFamily extends Family<AsyncValue<List<NotificationEntity>>> {
   const NotificationFamily();
 
   /// See also [notification].
-  NotificationProvider call(
-    String type,
-  ) {
-    return NotificationProvider(
-      type,
-    );
+  NotificationProvider call(String type) {
+    return NotificationProvider(type);
   }
 
   @override
   NotificationProvider getProviderOverride(
     covariant NotificationProvider provider,
   ) {
-    return call(
-      provider.type,
-    );
+    return call(provider.type);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -74,24 +68,19 @@ class NotificationFamily extends Family<AsyncValue<List<NotificationEntity>>> {
 /// See also [notification].
 class NotificationProvider extends FutureProvider<List<NotificationEntity>> {
   /// See also [notification].
-  NotificationProvider(
-    String type,
-  ) : this._internal(
-          (ref) => notification(
-            ref as NotificationRef,
-            type,
-          ),
-          from: notificationProvider,
-          name: r'notificationProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$notificationHash,
-          dependencies: NotificationFamily._dependencies,
-          allTransitiveDependencies:
-              NotificationFamily._allTransitiveDependencies,
-          type: type,
-        );
+  NotificationProvider(String type)
+    : this._internal(
+        (ref) => notification(ref as NotificationRef, type),
+        from: notificationProvider,
+        name: r'notificationProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$notificationHash,
+        dependencies: NotificationFamily._dependencies,
+        allTransitiveDependencies:
+            NotificationFamily._allTransitiveDependencies,
+        type: type,
+      );
 
   NotificationProvider._internal(
     super._createNotifier, {
@@ -108,7 +97,7 @@ class NotificationProvider extends FutureProvider<List<NotificationEntity>> {
   @override
   Override overrideWith(
     FutureOr<List<NotificationEntity>> Function(NotificationRef provider)
-        create,
+    create,
   ) {
     return ProviderOverride(
       origin: this,

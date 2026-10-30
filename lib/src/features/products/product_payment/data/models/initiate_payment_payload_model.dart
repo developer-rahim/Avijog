@@ -21,14 +21,13 @@ class InitiatePaymentPayloadModel {
     double? salePrice,
     String? clientName,
     String? clientPhone,
-  }) =>
-      InitiatePaymentPayloadModel(
-        vendorId: vendorId ?? this.vendorId,
-        productId: productId ?? this.productId,
-        salePrice: salePrice ?? this.salePrice,
-        clientName: clientName ?? this.clientName,
-        clientPhone: clientPhone ?? this.clientPhone,
-      );
+  }) => InitiatePaymentPayloadModel(
+    vendorId: vendorId ?? this.vendorId,
+    productId: productId ?? this.productId,
+    salePrice: salePrice ?? this.salePrice,
+    clientName: clientName ?? this.clientName,
+    clientPhone: clientPhone ?? this.clientPhone,
+  );
 
   factory InitiatePaymentPayloadModel.fromJson(Map<String, dynamic> json) =>
       InitiatePaymentPayloadModel(
@@ -40,10 +39,10 @@ class InitiatePaymentPayloadModel {
       );
 
   Map<String, dynamic> toJson() => {
-        "vendorId": vendorId,
-        "productId": productId,
-        "sale_price": salePrice,
-        "client_name": clientName,
-        "client_phone": clientPhone,
-      };
+    "vendorId": vendorId,
+    "productId": productId,
+    "sale_price": salePrice,
+    "client_name": clientName,
+    "client_phone": clientPhone,
+  };
 }

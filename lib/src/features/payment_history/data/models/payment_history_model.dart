@@ -10,16 +10,15 @@ PaymentHistoryResponseModel historyResponseModelFromJson(String str) =>
 class PaymentHistoryResponseModel {
   List<PaymentHistoryModel>? data;
 
-  PaymentHistoryResponseModel({
-    this.data,
-  });
+  PaymentHistoryResponseModel({this.data});
 
   factory PaymentHistoryResponseModel.fromJson(Map<String, dynamic> json) =>
       PaymentHistoryResponseModel(
         data: json["data"] == null
             ? []
             : List<PaymentHistoryModel>.from(
-                json["data"].map((x) => PaymentHistoryModel.fromJson(x))),
+                json["data"].map((x) => PaymentHistoryModel.fromJson(x)),
+              ),
       );
 }
 
@@ -42,8 +41,9 @@ class PaymentHistoryModel extends HistoryEntity {
   factory PaymentHistoryModel.fromJson(Map<String, dynamic> json) =>
       PaymentHistoryModel(
         id: json["_id"],
-        product:
-            json["product"] == null ? null : Product.fromJson(json["product"]),
+        product: json["product"] == null
+            ? null
+            : Product.fromJson(json["product"]),
         vendor: json["vendor"] == null ? null : Vendor.fromJson(json["vendor"]),
         user: json["user"],
         amount: json["sale_price"],
@@ -62,27 +62,15 @@ class PaymentHistoryModel extends HistoryEntity {
 }
 
 class Product extends SellingProductEntity {
-  Product({
-    super.id,
-    super.name,
-    super.image,
-  });
+  Product({super.id, super.name, super.image});
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
-        id: json["_id"],
-        name: json["name"],
-        image: json["image"],
-      );
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      Product(id: json["_id"], name: json["name"], image: json["image"]);
 }
 
 class Vendor extends VendorEntity {
-  Vendor({
-    super.id,
-    super.name,
-  });
+  Vendor({super.id, super.name});
 
-  factory Vendor.fromJson(Map<String, dynamic> json) => Vendor(
-        id: json["_id"],
-        name: json["name"],
-      );
+  factory Vendor.fromJson(Map<String, dynamic> json) =>
+      Vendor(id: json["_id"], name: json["name"]);
 }

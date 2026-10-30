@@ -10,9 +10,7 @@ part 'product_repository.g.dart';
 
 @Riverpod()
 ProductRepository productRepository(ProductRepositoryRef ref) {
-  return ProductRepositoryImpl(
-    dataSource: ref.read(productDataSourceProvider),
-  );
+  return ProductRepositoryImpl(dataSource: ref.read(productDataSourceProvider));
 }
 
 abstract class ProductRepository {

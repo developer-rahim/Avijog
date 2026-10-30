@@ -8,7 +8,10 @@ part 'payment_history_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 Future<List<PaymentHistoryModel>> paymentHistory(
-    PaymentHistoryRef ref, String month, String year) async {
+  PaymentHistoryRef ref,
+  String month,
+  String year,
+) async {
   final paymentHistoryUseCase = ref.read(paymentHistoryUseCaseProvider);
 
   ErrorModel? errorModel;

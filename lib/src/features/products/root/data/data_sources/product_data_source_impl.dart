@@ -9,9 +9,7 @@ class ProductDataSourceImpl implements ProductDataSource {
     final response = restClient.get(
       APIType.protected,
       API.products,
-      queries: {
-        if (vendorId != null) 'vendor': vendorId,
-      },
+      queries: {'vendor': ?vendorId},
     );
 
     return response;

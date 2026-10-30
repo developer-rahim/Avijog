@@ -43,17 +43,10 @@ class PriceSection extends StatelessWidget {
                           fontSize: 11.sp,
                         ),
                       ),
-                      Image.asset(
-                        Assets.cutLine.path,
-                        height: 11.w,
-                      )
+                      Image.asset(Assets.cutLine.path, height: 11.w),
                     ],
                   ),
-                  Image.asset(
-                    Assets.tkSymboleLight.path,
-                    height: 7,
-                    width: 7,
-                  )
+                  Image.asset(Assets.tkSymboleLight.path, height: 7, width: 7),
                 ],
               ),
             Row(
@@ -66,13 +59,9 @@ class PriceSection extends StatelessWidget {
                     fontSize: 15.sp,
                   ),
                 ),
-                Image.asset(
-                  Assets.tkSymbol.path,
-                  height: 11,
-                  width: 12,
-                )
+                Image.asset(Assets.tkSymbol.path, height: 11, width: 12),
               ],
-            )
+            ),
           ],
         ),
       ],

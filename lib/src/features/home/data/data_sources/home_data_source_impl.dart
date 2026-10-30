@@ -9,30 +9,21 @@ class HomeDataSourceImpl implements HomeDataSource {
 
   @override
   Future<Response> fetchVendors() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.vendors,
-    );
+    final response = await restClient.get(APIType.protected, API.vendors);
 
     return response;
   }
 
   @override
   Future<Response> fetchBalance() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.balance,
-    );
+    final response = await restClient.get(APIType.protected, API.balance);
 
     return response;
   }
 
   @override
   Future<Response> fetchBanners() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.banners,
-    );
+    final response = await restClient.get(APIType.protected, API.banners);
 
     return response;
   }

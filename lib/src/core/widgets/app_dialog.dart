@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:obhijuk/src/core/gen/colors.gen.dart';
 
-appDialog({
+void appDialog({
   required BuildContext context,
   required Function() onYesPressed,
   Function()? onNoPressed,
-  final String? title,
-  final String? description,
-  final String? yesButtonText,
-  final String? noButtonText,
-  final Widget? bodyContent,
-  final TextAlign? descriptionTextAlign,
-  final String? icon,
+  String? title,
+  String? description,
+  String? yesButtonText,
+  String? noButtonText,
+  Widget? bodyContent,
+  TextAlign? descriptionTextAlign,
+  String? icon,
   bool? isDismissible = true,
   bool showNoButton = true,
   bool? showYesButton = true,

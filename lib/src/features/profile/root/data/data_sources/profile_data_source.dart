@@ -8,9 +8,7 @@ part 'profile_data_source_impl.dart';
 
 @Riverpod()
 ProfileDataSource profileDataSource(ProfileDataSourceRef ref) {
-  return ProfileDataSourceImpl(
-    restClient: ref.read(restClientProvider),
-  );
+  return ProfileDataSourceImpl(restClient: ref.read(restClientProvider));
 }
 
 abstract class ProfileDataSource<T> {

@@ -12,13 +12,14 @@ String _$pinChangeHash() => r'1d0927198bcb3e596a159cd2418352b0d9dcf3dd';
 @ProviderFor(PinChange)
 final pinChangeProvider =
     AsyncNotifierProvider<PinChange, PinChangeEntity>.internal(
-  PinChange.new,
-  name: r'pinChangeProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$pinChangeHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      PinChange.new,
+      name: r'pinChangeProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$pinChangeHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$PinChange = AsyncNotifier<PinChangeEntity>;
 // ignore_for_file: type=lint

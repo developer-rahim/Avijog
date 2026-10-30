@@ -13,14 +13,14 @@ String _$authenticationRepositoryHash() =>
 @ProviderFor(authenticationRepository)
 final authenticationRepositoryProvider =
     Provider<AuthenticationRepository>.internal(
-  authenticationRepository,
-  name: r'authenticationRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$authenticationRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      authenticationRepository,
+      name: r'authenticationRepositoryProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$authenticationRepositoryHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef AuthenticationRepositoryRef = ProviderRef<AuthenticationRepository>;
 // ignore_for_file: type=lint

@@ -33,15 +33,11 @@ class HomePage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.appName,
-          style: AppTextStyle.extraBold24.copyWith(
-            color: AppColors.white,
-          ),
+          style: AppTextStyle.extraBold24.copyWith(color: AppColors.white),
         ),
         backgroundColor: AppColors.primary,
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 30),
@@ -67,11 +63,7 @@ class HomePage extends ConsumerWidget {
         child: const SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
-            children: [
-              HomeHeaderSection(),
-              AllVendors(),
-              BannerWidget(),
-            ],
+            children: [HomeHeaderSection(), AllVendors(), BannerWidget()],
           ),
         ),
       ),

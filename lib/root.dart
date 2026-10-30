@@ -51,29 +51,29 @@ class _RootState extends ConsumerState<Root> {
   Widget build(BuildContext context) {
     final language = ref.watch(languageProvider);
     return ScreenUtilInit(
-        useInheritedMediaQuery: true,
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, _) {
-          //   debugInvertOversizedImages = true;
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            title: 'Nextive Affiliators',
-            theme: themeData,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            routerConfig: _router,
-            builder: (_, router) {
-              return MediaQuery(
-                data: MediaQuery.of(_).copyWith(
-                  textScaler: const TextScaler.linear(1.0),
-                ),
-                child: router!,
-              );
-            },
-            locale: Locale(language.code),
-          );
-        });
+      useInheritedMediaQuery: true,
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, _) {
+        //   debugInvertOversizedImages = true;
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Nextive Affiliators',
+          theme: themeData,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerConfig: _router,
+          builder: (_, router) {
+            return MediaQuery(
+              data: MediaQuery.of(_)
+                  .copyWith(textScaler: const TextScaler.linear(1.0)),
+              child: router!,
+            );
+          },
+          locale: Locale(language.code),
+        );
+      },
+    );
   }
 }

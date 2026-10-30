@@ -12,9 +12,7 @@ class VerifyUser extends _$VerifyUser {
     return VerifyUserEntity();
   }
 
-  Future<VerifyUserEntity> checkUserVerification({
-    String? phoneNumber,
-  }) async {
+  Future<VerifyUserEntity> checkUserVerification({String? phoneNumber}) async {
     final authenticationUseCase = ref.read(authenticationUseCaseProvider);
 
     state = const AsyncValue.loading();

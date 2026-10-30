@@ -14,13 +14,12 @@ class AuthenticationResponseModel extends AuthenticationEntity {
     String? accessToken,
     String? refreshToken,
     UserModel? user,
-  }) =>
-      AuthenticationResponseModel(
-        message: message ?? this.message,
-        accessToken: accessToken ?? this.accessToken,
-        refreshToken: refreshToken ?? this.refreshToken,
-        user: user ?? this.user,
-      );
+  }) => AuthenticationResponseModel(
+    message: message ?? this.message,
+    accessToken: accessToken ?? this.accessToken,
+    refreshToken: refreshToken ?? this.refreshToken,
+    user: user ?? this.user,
+  );
 
   factory AuthenticationResponseModel.fromJson(Map<String, dynamic> json) =>
       AuthenticationResponseModel(

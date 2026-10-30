@@ -8,7 +8,8 @@ import 'package:obhijuk/src/features/notification/root/domain/entities/notificat
 
 List<NotificationModel> notificationModelFromJson(String str) =>
     List<NotificationModel>.from(
-        json.decode(str).map((x) => NotificationModel.fromJson(x)));
+      json.decode(str).map((x) => NotificationModel.fromJson(x)),
+    );
 
 String notificationModelToJson(List<NotificationModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -38,12 +39,12 @@ class NotificationModel extends NotificationEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        "_id": id,
-        "title": title,
-        "body": body,
-        "image": image,
-        "link": link,
-        "type": type,
-        "createdAt": createdAt!.toIso8601String(),
-      };
+    "_id": id,
+    "title": title,
+    "body": body,
+    "image": image,
+    "link": link,
+    "type": type,
+    "createdAt": createdAt!.toIso8601String(),
+  };
 }

@@ -11,13 +11,13 @@ class NotificationRepositoryImpl implements NotificationRepository {
 
   @override
   Future<(ErrorModel?, List<NotificationEntity>?)> getNotification(
-      String type) async {
-    return await dataSource.fetchNotification(type).guard(
-      (data) {
-        List<NotificationEntity>? notifications =
-            (data as List).map((e) => NotificationModel.fromJson(e)).toList();
-        return notifications;
-      },
-    );
+    String type,
+  ) async {
+    return await dataSource.fetchNotification(type).guard((data) {
+      List<NotificationEntity>? notifications = (data as List)
+          .map((e) => NotificationModel.fromJson(e))
+          .toList();
+      return notifications;
+    });
   }
 }

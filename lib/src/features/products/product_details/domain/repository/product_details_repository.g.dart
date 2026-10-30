@@ -13,16 +13,16 @@ String _$productDetailsRepositoryHash() =>
 @ProviderFor(productDetailsRepository)
 final productDetailsRepositoryProvider =
     AutoDisposeProvider<ProductDetailsRepository>.internal(
-  productDetailsRepository,
-  name: r'productDetailsRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$productDetailsRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      productDetailsRepository,
+      name: r'productDetailsRepositoryProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$productDetailsRepositoryHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
-typedef ProductDetailsRepositoryRef
-    = AutoDisposeProviderRef<ProductDetailsRepository>;
+typedef ProductDetailsRepositoryRef =
+    AutoDisposeProviderRef<ProductDetailsRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -12,11 +12,7 @@ extension FutureResponseExtension on Future<Response> {
 
       return (null, parse(response.data) as T);
     } on Failure catch (e, stacktrace) {
-      log(
-        runtimeType.toString(),
-        error: {},
-        stackTrace: stacktrace,
-      );
+      log(runtimeType.toString(), error: {}, stackTrace: stacktrace);
 
       ErrorModel errorModel = ErrorModel.fromJson(e.error);
 

@@ -17,7 +17,7 @@ class LanguagePopupMenu extends ConsumerWidget {
       itemBuilder: (context) {
         return [
           for (var value in Language.values)
-            PopupMenuItem(value: value, child: Text(value.name))
+            PopupMenuItem(value: value, child: Text(value.name)),
         ];
       },
       child: Text('Language ${languageSelectedProvider.code}'),

@@ -13,14 +13,14 @@ String _$notificationUseCaseHash() =>
 @ProviderFor(notificationUseCase)
 final notificationUseCaseProvider =
     AutoDisposeProvider<NotificationUseCase>.internal(
-  notificationUseCase,
-  name: r'notificationUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$notificationUseCaseHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      notificationUseCase,
+      name: r'notificationUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$notificationUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef NotificationUseCaseRef = AutoDisposeProviderRef<NotificationUseCase>;
 // ignore_for_file: type=lint

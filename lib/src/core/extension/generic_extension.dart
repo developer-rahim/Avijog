@@ -17,7 +17,7 @@ extension NumberConverter on num {
     '৬',
     '৭',
     '৮',
-    '৯'
+    '৯',
   ];
 
   String toBangla() {

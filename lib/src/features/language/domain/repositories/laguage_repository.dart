@@ -3,10 +3,12 @@ import 'package:obhijuk/src/features/language/pages/language.dart';
 import 'package:obhijuk/src/features/language/pages/riverpod/language_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final sharedPrefProvider =
-    FutureProvider<SharedPreferences>((ref) => SharedPreferences.getInstance());
-final languageRepositoryProvider =
-    Provider<LanguageRepository>((ref) => LanguageRepository(ref: ref));
+final sharedPrefProvider = FutureProvider<SharedPreferences>(
+  (ref) => SharedPreferences.getInstance(),
+);
+final languageRepositoryProvider = Provider<LanguageRepository>(
+  (ref) => LanguageRepository(ref: ref),
+);
 
 class LanguageRepository {
   LanguageRepository({required this.ref});

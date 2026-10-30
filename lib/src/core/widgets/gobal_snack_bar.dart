@@ -5,14 +5,9 @@ import 'package:obhijuk/src/core/theme/text_style.dart';
 class GlobalSnackBar {
   final String? message;
 
-  const GlobalSnackBar({
-    @required this.message,
-  });
+  const GlobalSnackBar({@required this.message});
 
-  static show(
-    BuildContext context,
-    String message,
-  ) {
+  static void show(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         backgroundColor: AppColors.lighterBlue,
@@ -21,14 +16,10 @@ class GlobalSnackBar {
         behavior: SnackBarBehavior.floating,
         content: Text(
           message,
-          style: AppTextStyle.bold15.copyWith(
-            color: AppColors.lightBlack90,
-          ),
+          style: AppTextStyle.bold15.copyWith(color: AppColors.lightBlack90),
         ),
         duration: const Duration(seconds: 3),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
   }

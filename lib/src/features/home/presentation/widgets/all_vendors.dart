@@ -23,26 +23,21 @@ class _AllVendorsState extends ConsumerState<AllVendors> {
     VendorEntity(logo: Assets.toilet.path, name: 'পাবলিক টয়লেট'),
     VendorEntity(logo: Assets.nardoma.path, name: 'নর্দমা'),
     VendorEntity(logo: Assets.illegelconstruction.path, name: 'অবৈধ স্থাপনা'),
-    VendorEntity(logo: Assets.waterflowing.path, name: 'জলাবদ্ধতা')
+    VendorEntity(logo: Assets.waterflowing.path, name: 'জলাবদ্ধতা'),
   ];
   @override
   Widget build(BuildContext context) {
     // final asyncVendors = ref.watch(allVendorsProvider);
 
     return
-        // asyncVendors.when(
-        //   data: (vendors) {
-        //     if (vendors.isEmpty) {
-        //       return const Offstage();
-        //     }
-
-        //     return
-        Padding(
-      padding: const EdgeInsets.only(
-        top: 20,
-        left: 20,
-        right: 20,
-      ),
+    // asyncVendors.when(
+    //   data: (vendors) {
+    //     if (vendors.isEmpty) {
+    //       return const Offstage();
+    //     }
+    //     return
+    Padding(
+      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       child: Column(
         children: [
           Row(
@@ -59,7 +54,7 @@ class _AllVendorsState extends ConsumerState<AllVendors> {
               Text(
                 AppLocalizations.of(context)!.allVendors,
                 style: AppTextStyle.bold16,
-              )
+              ),
             ],
           ),
           const SizedBox(height: 20),
@@ -68,9 +63,7 @@ class _AllVendorsState extends ConsumerState<AllVendors> {
               AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 height: _getExtendedHeight(8),
-                child: _VendorGrideViewBuilder(
-                  vendors: vendors,
-                ),
+                child: _VendorGrideViewBuilder(vendors: vendors),
               ),
               // Positioned(
               //   bottom: 0,
@@ -164,9 +157,7 @@ double _getExtendedHeight(int itemCount) {
 }
 
 class _VendorGrideViewBuilder extends ConsumerWidget {
-  const _VendorGrideViewBuilder({
-    required this.vendors,
-  });
+  const _VendorGrideViewBuilder({required this.vendors});
   final List<VendorEntity> vendors;
 
   @override
@@ -182,15 +173,11 @@ class _VendorGrideViewBuilder extends ConsumerWidget {
         crossAxisSpacing: 10.0,
         mainAxisExtent: 110,
       ),
-      padding: const EdgeInsets.only(
-        bottom: 50,
-      ),
+      padding: const EdgeInsets.only(bottom: 50),
       itemBuilder: (context, index) {
         final vendor = vendors[index];
 
-        return VendorCard(
-          vendor: vendor,
-        );
+        return VendorCard(vendor: vendor);
       },
     );
   }

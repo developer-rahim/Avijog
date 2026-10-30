@@ -9,10 +9,7 @@ class ProfileBodySection extends StatelessWidget {
       child: SingleChildScrollView(
         child: Container(
           color: AppColors.lighterBlue,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 28,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
           child: Column(
             children: [
               ProfileListTile(
@@ -27,9 +24,7 @@ class ProfileBodySection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  urlLauncher(
-                    link: 'https://wa.me/+8801515287150',
-                  );
+                  urlLauncher(link: 'https://wa.me/+8801515287150');
                 },
                 child: Container(
                   width: 188,
@@ -41,11 +36,7 @@ class ProfileBodySection extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        Assets.whatsapp.path,
-                        height: 20,
-                        width: 20,
-                      ),
+                      Image.asset(Assets.whatsapp.path, height: 20, width: 20),
                       const SizedBox(width: 5),
                       Text(
                         AppLocalizations.of(context)!.supportCenter,
@@ -56,10 +47,7 @@ class ProfileBodySection extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
-                ConstantData.dashLine,
-                maxLines: 1,
-              ),
+              const Text(ConstantData.dashLine, maxLines: 1),
               const SizedBox(height: 12),
               ProfileListTile(
                 onTap: () {
@@ -110,13 +98,14 @@ class LogOutSection extends ConsumerWidget {
     return GestureDetector(
       onTap: () {
         appDialog(
-            context: context,
-            title: AppLocalizations.of(context)!.logOut,
-            description: 'Are you sure you want to log out?',
-            onYesPressed: () {
-              ref.read(cacheServiceProvider).delete(CacheKeys.token);
-              context.goNamed(Routes.login);
-            });
+          context: context,
+          title: AppLocalizations.of(context)!.logOut,
+          description: 'Are you sure you want to log out?',
+          onYesPressed: () {
+            ref.read(cacheServiceProvider).delete(CacheKeys.token);
+            context.goNamed(Routes.login);
+          },
+        );
       },
       child: Container(
         height: 45,
@@ -128,16 +117,12 @@ class LogOutSection extends ConsumerWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              Assets.logOut.path,
-              height: 20,
-              width: 20,
-            ),
+            Image.asset(Assets.logOut.path, height: 20, width: 20),
             const SizedBox(width: 5),
             Text(
               AppLocalizations.of(context)!.logOut,
               style: AppTextStyle.extraBold16.copyWith(color: AppColors.white),
-            )
+            ),
           ],
         ),
       ),
@@ -146,7 +131,7 @@ class LogOutSection extends ConsumerWidget {
 }
 
 class _DeveloperSection extends ConsumerStatefulWidget {
-  const _DeveloperSection({super.key});
+  const _DeveloperSection();
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -193,10 +178,7 @@ class _DeveloperSectionState extends ConsumerState<_DeveloperSection> {
             children: [
               const Text(
                 'Developed by  ',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                ),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
               ),
               Text(
                 ' Nextive Solution',
@@ -243,16 +225,9 @@ class ProfileListTile extends ConsumerWidget {
             children: [
               Row(
                 children: [
-                  Image.asset(
-                    image,
-                    height: 42,
-                    width: 42,
-                  ),
+                  Image.asset(image, height: 42, width: 42),
                   const SizedBox(width: 18),
-                  Text(
-                    title,
-                    style: AppTextStyle.bold16,
-                  ),
+                  Text(title, style: AppTextStyle.bold16),
                 ],
               ),
               Row(
@@ -276,10 +251,9 @@ class ProfileListTile extends ConsumerWidget {
                           },
                           child: Row(
                             children: [
-                              Text(ref
-                                  .read(languageProvider.notifier)
-                                  .state
-                                  .flag),
+                              Text(
+                                ref.read(languageProvider.notifier).state.flag,
+                              ),
                               const SizedBox(width: 7),
                               Text(
                                 AppLocalizations.of(context)!.language_type,
@@ -301,7 +275,7 @@ class ProfileListTile extends ConsumerWidget {
                           color: AppColors.black,
                         ),
                 ],
-              )
+              ),
             ],
           ),
           const SizedBox(height: 12),

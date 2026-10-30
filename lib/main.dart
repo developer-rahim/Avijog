@@ -8,8 +8,9 @@ import 'package:obhijuk/src/features/language/pages/riverpod/language_provider.d
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final container = ProviderContainer();
-  final language =
-      await container.read(languageRepositoryProvider).getLanguage();
+  final language = await container
+      .read(languageRepositoryProvider)
+      .getLanguage();
 
   runApp(
     ProviderScope(

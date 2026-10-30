@@ -19,10 +19,7 @@ import 'package:obhijuk/src/features/authentication/otp/presentation/riverpod/ot
 import 'package:obhijuk/src/features/authentication/root/presentation/riverpod/save_phone_number_provider.dart';
 
 class OtpPage extends ConsumerStatefulWidget {
-  const OtpPage({
-    super.key,
-    required this.isFrom,
-  });
+  const OtpPage({super.key, required this.isFrom});
   final String isFrom;
 
   @override
@@ -85,7 +82,7 @@ class _OtpPageState extends ConsumerState<OtpPage> {
                 10.sh,
                 _ResendOTP(
                   isUserVerification: widget.isFrom == 'userVerification',
-                )
+                ),
               ],
             ),
           ),
@@ -100,10 +97,9 @@ class _OtpPageState extends ConsumerState<OtpPage> {
     }
 
     if (widget.isFrom == 'userVerification') {
-      final otpToVerify = ref.watch(verifyUserProvider).maybeWhen(
-            orElse: () => null,
-            data: (data) => data.data?.otp,
-          );
+      final otpToVerify = ref
+          .watch(verifyUserProvider)
+          .maybeWhen(orElse: () => null, data: (data) => data.data?.otp);
 
       if (otpToVerify != _otpController.text) {
         GlobalSnackBar.show(context, 'OTP is not valid!');
@@ -113,10 +109,9 @@ class _OtpPageState extends ConsumerState<OtpPage> {
       context.goNamed(Routes.signup);
       return;
     } else {
-      final otpToVerify = ref.watch(otpVerificationProvider).maybeWhen(
-            orElse: () => null,
-            data: (data) => data.otp,
-          );
+      final otpToVerify = ref
+          .watch(otpVerificationProvider)
+          .maybeWhen(orElse: () => null, data: (data) => data.otp);
 
       if (otpToVerify != _otpController.text) {
         GlobalSnackBar.show(context, 'OTP is not valid!');
@@ -153,17 +148,14 @@ class _ResendOTPState extends ConsumerState<_ResendOTP> {
     if (_remainingTime.value == 0) {
       _remainingTime.value = 60;
     }
-    _timer = Timer.periodic(
-      const Duration(seconds: 1),
-      (Timer timer) {
-        if (_remainingTime.value == 0) {
-          timer.cancel();
-          _showTimer.value = false;
-        } else {
-          _remainingTime.value--;
-        }
-      },
-    );
+    _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
+      if (_remainingTime.value == 0) {
+        timer.cancel();
+        _showTimer.value = false;
+      } else {
+        _remainingTime.value--;
+      }
+    });
   }
 
   @override
@@ -175,9 +167,11 @@ class _ResendOTPState extends ConsumerState<_ResendOTP> {
 
   @override
   Widget build(BuildContext context) {
-    bool isOtpProviderLoading = ref.exists(otpVerificationProvider) &&
+    bool isOtpProviderLoading =
+        ref.exists(otpVerificationProvider) &&
         ref.watch(otpVerificationProvider) is AsyncLoading<void>;
-    bool isVerifyUserProviderLoading = ref.exists(verifyUserProvider) &&
+    bool isVerifyUserProviderLoading =
+        ref.exists(verifyUserProvider) &&
         ref.watch(verifyUserProvider) is AsyncLoading<void>;
 
     return ValueListenableBuilder<bool>(
@@ -186,40 +180,34 @@ class _ResendOTPState extends ConsumerState<_ResendOTP> {
         return InkWell(
           onTap:
               (showTimer || isOtpProviderLoading || isVerifyUserProviderLoading)
-                  ? null
-                  : () {
-                      if (widget.isUserVerification) {
-                        ref
-                            .read(verifyUserProvider.notifier)
-                            .checkUserVerification(
-                              phoneNumber: ref.watch(saveNumberProvider),
-                            )
-                            .then(
-                          (value) {
-                            startTimer();
-                            return GlobalSnackBar.show(
-                              context,
-                              'OTP has been sent to your number!',
-                            );
-                          },
-                        );
-                      } else {
-                        ref
-                            .read(otpVerificationProvider.notifier)
-                            .otpVerification(
-                              phone: ref.watch(saveNumberProvider),
-                            )
-                            .then(
-                          (value) {
-                            startTimer();
-                            return GlobalSnackBar.show(
-                              context,
-                              'OTP has been sent to your number!',
-                            );
-                          },
-                        );
-                      }
-                    },
+              ? null
+              : () {
+                  if (widget.isUserVerification) {
+                    ref
+                        .read(verifyUserProvider.notifier)
+                        .checkUserVerification(
+                          phoneNumber: ref.watch(saveNumberProvider),
+                        )
+                        .then((value) {
+                          startTimer();
+                          return GlobalSnackBar.show(
+                            context,
+                            'OTP has been sent to your number!',
+                          );
+                        });
+                  } else {
+                    ref
+                        .read(otpVerificationProvider.notifier)
+                        .otpVerification(phone: ref.watch(saveNumberProvider))
+                        .then((value) {
+                          startTimer();
+                          return GlobalSnackBar.show(
+                            context,
+                            'OTP has been sent to your number!',
+                          );
+                        });
+                  }
+                },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -236,19 +224,20 @@ class _ResendOTPState extends ConsumerState<_ResendOTP> {
                                 valueListenable: _remainingTime,
                                 builder:
                                     (BuildContext context, int value, child) {
-                                  return Text(
-                                    'Resend in: $value',
-                                    style: AppTextStyle.bold16,
-                                  );
-                                },
+                                      return Text(
+                                        'Resend in: $value',
+                                        style: AppTextStyle.bold16,
+                                      );
+                                    },
                               )
                             : Text(
                                 AppLocalizations.of(context)!.resendCode,
-                                style: AppTextStyle.bold16
-                                    .copyWith(color: AppColors.primary),
+                                style: AppTextStyle.bold16.copyWith(
+                                  color: AppColors.primary,
+                                ),
                               );
                       },
-                    )
+                    ),
             ],
           ),
         );

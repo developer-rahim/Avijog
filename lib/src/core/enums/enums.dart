@@ -1,4 +1,1 @@
-enum NotificaionType {
-  general,
-  offer,
-}
+enum NotificaionType { general, offer }

@@ -6,9 +6,11 @@ class PaymentHistoryRepositoryImpl implements PaymentHistoryRepository {
 
   @override
   Future<(ErrorModel?, List<PaymentHistoryModel>?)> getPaymentHistory(
-      String? month, String? year) async {
-    return await dataSource.fetchPaymentHistory(month, year).guard(
-          (data) => PaymentHistoryResponseModel.fromJson(data).data,
-        );
+    String? month,
+    String? year,
+  ) async {
+    return await dataSource
+        .fetchPaymentHistory(month, year)
+        .guard((data) => PaymentHistoryResponseModel.fromJson(data).data);
   }
 }

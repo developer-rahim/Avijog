@@ -54,10 +54,7 @@ class InitiatePaymentUseCaseFamily extends Family<InitiatePaymentUseCase> {
   InitiatePaymentUseCaseProvider getProviderOverride(
     covariant InitiatePaymentUseCaseProvider provider,
   ) {
-    return call(
-      body: provider.body,
-      paymentMethod: provider.paymentMethod,
-    );
+    return call(body: provider.body, paymentMethod: provider.paymentMethod);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -83,23 +80,22 @@ class InitiatePaymentUseCaseProvider
     required Map<String, dynamic> body,
     required PaymentMethod paymentMethod,
   }) : this._internal(
-          (ref) => initiatePaymentUseCase(
-            ref as InitiatePaymentUseCaseRef,
-            body: body,
-            paymentMethod: paymentMethod,
-          ),
-          from: initiatePaymentUseCaseProvider,
-          name: r'initiatePaymentUseCaseProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$initiatePaymentUseCaseHash,
-          dependencies: InitiatePaymentUseCaseFamily._dependencies,
-          allTransitiveDependencies:
-              InitiatePaymentUseCaseFamily._allTransitiveDependencies,
-          body: body,
-          paymentMethod: paymentMethod,
-        );
+         (ref) => initiatePaymentUseCase(
+           ref as InitiatePaymentUseCaseRef,
+           body: body,
+           paymentMethod: paymentMethod,
+         ),
+         from: initiatePaymentUseCaseProvider,
+         name: r'initiatePaymentUseCaseProvider',
+         debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+             ? null
+             : _$initiatePaymentUseCaseHash,
+         dependencies: InitiatePaymentUseCaseFamily._dependencies,
+         allTransitiveDependencies:
+             InitiatePaymentUseCaseFamily._allTransitiveDependencies,
+         body: body,
+         paymentMethod: paymentMethod,
+       );
 
   InitiatePaymentUseCaseProvider._internal(
     super._createNotifier, {

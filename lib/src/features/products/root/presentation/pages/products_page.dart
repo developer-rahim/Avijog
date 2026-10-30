@@ -11,11 +11,7 @@ part '../widgets/products_builder.dart';
 part '../widgets/products_filter.dart';
 
 class ProductsPage extends ConsumerWidget {
-  const ProductsPage({
-    super.key,
-    this.vendorId,
-    this.vendorName,
-  });
+  const ProductsPage({super.key, this.vendorId, this.vendorName});
   final String? vendorId;
   final String? vendorName;
 
@@ -28,18 +24,13 @@ class ProductsPage extends ConsumerWidget {
         backgroundColor: AppColors.primary,
         title: Text(
           vendorName ?? 'Products',
-          style: const TextStyle(
-            color: AppColors.white,
-          ),
+          style: const TextStyle(color: AppColors.white),
         ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
         ),
         shape: const OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -50,17 +41,11 @@ class ProductsPage extends ConsumerWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            _ProductsFilter(
-              vendorId: vendorId,
-            ),
-            _ProductsBuilder(
-              vendorId: vendorId,
-            ),
+            _ProductsFilter(vendorId: vendorId),
+            _ProductsBuilder(vendorId: vendorId),
           ],
         ),
       ),

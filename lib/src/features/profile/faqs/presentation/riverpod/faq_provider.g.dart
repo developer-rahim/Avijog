@@ -13,8 +13,9 @@ String _$faqHash() => r'98f131be5fc2ad431f9b7a20f0f919e5c5dfa2a1';
 final faqProvider = FutureProvider<List<FaqEntity>?>.internal(
   faq,
   name: r'faqProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$faqHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$faqHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

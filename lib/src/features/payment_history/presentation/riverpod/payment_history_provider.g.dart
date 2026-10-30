@@ -40,24 +40,15 @@ class PaymentHistoryFamily
   const PaymentHistoryFamily();
 
   /// See also [paymentHistory].
-  PaymentHistoryProvider call(
-    String month,
-    String year,
-  ) {
-    return PaymentHistoryProvider(
-      month,
-      year,
-    );
+  PaymentHistoryProvider call(String month, String year) {
+    return PaymentHistoryProvider(month, year);
   }
 
   @override
   PaymentHistoryProvider getProviderOverride(
     covariant PaymentHistoryProvider provider,
   ) {
-    return call(
-      provider.month,
-      provider.year,
-    );
+    return call(provider.month, provider.year);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -78,27 +69,20 @@ class PaymentHistoryFamily
 /// See also [paymentHistory].
 class PaymentHistoryProvider extends FutureProvider<List<PaymentHistoryModel>> {
   /// See also [paymentHistory].
-  PaymentHistoryProvider(
-    String month,
-    String year,
-  ) : this._internal(
-          (ref) => paymentHistory(
-            ref as PaymentHistoryRef,
-            month,
-            year,
-          ),
-          from: paymentHistoryProvider,
-          name: r'paymentHistoryProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$paymentHistoryHash,
-          dependencies: PaymentHistoryFamily._dependencies,
-          allTransitiveDependencies:
-              PaymentHistoryFamily._allTransitiveDependencies,
-          month: month,
-          year: year,
-        );
+  PaymentHistoryProvider(String month, String year)
+    : this._internal(
+        (ref) => paymentHistory(ref as PaymentHistoryRef, month, year),
+        from: paymentHistoryProvider,
+        name: r'paymentHistoryProvider',
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$paymentHistoryHash,
+        dependencies: PaymentHistoryFamily._dependencies,
+        allTransitiveDependencies:
+            PaymentHistoryFamily._allTransitiveDependencies,
+        month: month,
+        year: year,
+      );
 
   PaymentHistoryProvider._internal(
     super._createNotifier, {
@@ -117,7 +101,7 @@ class PaymentHistoryProvider extends FutureProvider<List<PaymentHistoryModel>> {
   @override
   Override overrideWith(
     FutureOr<List<PaymentHistoryModel>> Function(PaymentHistoryRef provider)
-        create,
+    create,
   ) {
     return ProviderOverride(
       origin: this,

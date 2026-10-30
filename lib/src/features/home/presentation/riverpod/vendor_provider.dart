@@ -3,5 +3,6 @@ import 'package:obhijuk/src/features/home/presentation/riverpod/vendor_sate_noti
 
 final vendorsNotificationProvider =
     StateNotifierProvider<VendorsNotifier, List<String>>(
-        (ref) => VendorsNotifier(ref: ref));
+      (ref) => VendorsNotifier(ref: ref),
+    );
 final isExpandedProvider = StateProvider<bool>((ref) => false);

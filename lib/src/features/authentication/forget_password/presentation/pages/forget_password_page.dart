@@ -76,8 +76,8 @@ class ForgetPasswordPage extends ConsumerWidget {
                         validator: InputFieldValidator.password(),
                       ),
                       OutlinedInputField(
-                        labelText:
-                            AppLocalizations.of(context)!.confirmPassword,
+                        labelText: AppLocalizations.of(context)!
+                            .confirmPassword,
                         controller: _confirmPasswordController,
                         hintText: AppLocalizations.of(context)!.confirmPassword,
                         validator: InputFieldValidator.confirmPassword(

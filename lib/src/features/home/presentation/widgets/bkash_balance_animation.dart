@@ -15,21 +15,9 @@ class _BkashBalanceAnimationState extends ConsumerState<BkashBalanceAnimation> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _OverviewItem(
-          count: '২০',
-          title: 'সর্বমোট',
-          color: Colors.purple,
-        ),
-        _OverviewItem(
-          count: '১৮',
-          title: 'চলমান',
-          color: Colors.lime,
-        ),
-        _OverviewItem(
-          count: '০৫',
-          title: 'সমাধান হয়েছে',
-          color: Colors.yellow,
-        )
+        _OverviewItem(count: '২০', title: 'সর্বমোট', color: Colors.purple),
+        _OverviewItem(count: '১৮', title: 'চলমান', color: Colors.lime),
+        _OverviewItem(count: '০৫', title: 'সমাধান হয়েছে', color: Colors.yellow),
       ],
     );
   }
@@ -37,7 +25,6 @@ class _BkashBalanceAnimationState extends ConsumerState<BkashBalanceAnimation> {
 
 class _OverviewItem extends StatelessWidget {
   const _OverviewItem({
-    super.key,
     required this.count,
     required this.title,
     required this.color,
@@ -56,7 +43,7 @@ class _OverviewItem extends StatelessWidget {
         Text(
           count.toString(),
           style: AppTextStyle.bold20.copyWith(color: color),
-        )
+        ),
       ],
     );
   }

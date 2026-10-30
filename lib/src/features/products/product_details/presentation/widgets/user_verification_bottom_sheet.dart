@@ -11,9 +11,7 @@ void _userVerificationBottomSheet(BuildContext context) {
 }
 
 class _UserVerification extends ConsumerStatefulWidget {
-  const _UserVerification({
-    super.key,
-  });
+  const _UserVerification();
 
   @override
   ConsumerState<_UserVerification> createState() => _UserVerificationState();
@@ -27,10 +25,13 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
   @override
   Widget build(BuildContext context) {
     final customerVerification = ref.watch(verifyCustomerProvider);
-    final customerVerificationNotifier =
-        ref.watch(verifyCustomerProvider.notifier);
+    final customerVerificationNotifier = ref.watch(
+      verifyCustomerProvider.notifier,
+    );
 
-    final user = ref.watch(userProvider).maybeWhen(
+    final user = ref
+        .watch(userProvider)
+        .maybeWhen(
           orElse: () => null,
           data: (data) {
             return data;
@@ -38,23 +39,16 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
         );
 
     return Padding(
-      padding: const EdgeInsets.all(20.0).copyWith(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-      ),
+      padding: const EdgeInsets.all(20.0)
+          .copyWith(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
-        constraints: const BoxConstraints(
-          maxHeight: 400,
-        ),
+        constraints: const BoxConstraints(maxHeight: 400),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Image.asset(
-                Assets.alert.path,
-                height: 56,
-                width: 56,
-              ),
+              Image.asset(Assets.alert.path, height: 56, width: 56),
               const SizedBox(height: 10),
               Text(
                 AppLocalizations.of(context)!.verificationCheck,
@@ -77,22 +71,20 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                   onSubmitted: (val) async {
                     VerifyCustomerPayloadModel customerInfo =
                         VerifyCustomerPayloadModel(
-                      productId: ref.watch(selectedProductProvider)?.id,
-                      vendorId: user?.id,
-                      phone: _phoneNumberController.text,
-                    );
+                          productId: ref.watch(selectedProductProvider)?.id,
+                          vendorId: user?.id,
+                          phone: _phoneNumberController.text,
+                        );
 
                     if (!_formKey.currentState!.validate()) {
                       return;
                     }
 
                     await customerVerificationNotifier
-                        .verify(
-                      customerInfo: customerInfo,
-                    )
+                        .verify(customerInfo: customerInfo)
                         .then((value) {
-                      phoneNumber = _phoneNumberController.text;
-                    });
+                          phoneNumber = _phoneNumberController.text;
+                        });
                   },
                   suffix: customerVerification is AsyncLoading<void>
                       ? const CupertinoActivityIndicator(
@@ -103,19 +95,19 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                           onTap: () async {
                             VerifyCustomerPayloadModel customerInfo =
                                 VerifyCustomerPayloadModel(
-                              productId: ref.watch(selectedProductProvider)?.id,
-                              vendorId: user?.id,
-                              phone: _phoneNumberController.text,
-                            );
+                                  productId: ref
+                                      .watch(selectedProductProvider)
+                                      ?.id,
+                                  vendorId: user?.id,
+                                  phone: _phoneNumberController.text,
+                                );
 
                             if (!_formKey.currentState!.validate()) {
                               return;
                             }
 
                             await customerVerificationNotifier
-                                .verify(
-                                  customerInfo: customerInfo,
-                                )
+                                .verify(customerInfo: customerInfo)
                                 .then(
                                   (value) =>
                                       phoneNumber = _phoneNumberController.text,
@@ -130,19 +122,18 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                   validator: InputFieldValidator.phoneNumber(),
                 ),
               ),
-              CustomerInformation(
-                phoneNumber: phoneNumber,
-              ),
+              CustomerInformation(phoneNumber: phoneNumber),
               const SizedBox(height: 30),
               Consumer(
                 builder: (context, ref, child) {
                   final initiatePayment = ref.watch(initiatePaymentProvider);
-                  final initiatePaymentNotifier =
-                      ref.read(initiatePaymentProvider.notifier);
+                  final initiatePaymentNotifier = ref.read(
+                    initiatePaymentProvider.notifier,
+                  );
                   final customerInfo = ref.watch(verifyCustomerProvider).value;
                   bool notChecked =
                       customerVerification is AsyncLoading<void> ||
-                          customerInfo == null;
+                      customerInfo == null;
 
                   return SizedBox(
                     height: 50,
@@ -163,41 +154,41 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
                         if (customerInfo.exists == true) {
                           InitiatePaymentPayloadModel paymentPayload =
                               InitiatePaymentPayloadModel(
-                            productId: ref.watch(selectedProductProvider)?.id,
-                            vendorId: user?.id,
-                            salePrice: ref.watch(sellingPriceProvider),
-                            clientName: user?.name,
-                            clientPhone: user?.phone,
-                          );
+                                productId: ref
+                                    .watch(selectedProductProvider)
+                                    ?.id,
+                                vendorId: user?.id,
+                                salePrice: ref.watch(sellingPriceProvider),
+                                clientName: user?.name,
+                                clientPhone: user?.phone,
+                              );
 
                           await initiatePaymentNotifier
                               .initiatePayment(
-                            paymentPayload: paymentPayload,
-                            paymentMethod: PaymentMethod.bkash,
-                          )
+                                paymentPayload: paymentPayload,
+                                paymentMethod: PaymentMethod.bkash,
+                              )
                               .then((value) {
-                            context.pushNamed(
-                              Routes.webView,
-                              queryParameters: {
-                                'url': value?.bkashUrl,
-                                'title': 'Bkash Payment',
-                              },
-                            );
-                          });
+                                context.pushNamed(
+                                  Routes.webView,
+                                  queryParameters: {
+                                    'url': value?.bkashUrl,
+                                    'title': 'Bkash Payment',
+                                  },
+                                );
+                              });
                         }
 
                         if (customerInfo.exists == false) {
-                          WidgetsBinding.instance.addPostFrameCallback(
-                            (_) {
-                              context.pushNamed(
-                                Routes.customerSignUp,
-                                queryParameters: {
-                                  'webview': customerInfo.webview,
-                                  'closing': customerInfo.closing,
-                                },
-                              );
-                            },
-                          );
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            context.pushNamed(
+                              Routes.customerSignUp,
+                              queryParameters: {
+                                'webview': customerInfo.webview,
+                                'closing': customerInfo.closing,
+                              },
+                            );
+                          });
                         }
                       },
                     ),
@@ -213,10 +204,7 @@ class _UserVerificationState extends ConsumerState<_UserVerification> {
 }
 
 class CustomerInformation extends ConsumerWidget {
-  const CustomerInformation({
-    super.key,
-    this.phoneNumber,
-  });
+  const CustomerInformation({super.key, this.phoneNumber});
   final String? phoneNumber;
 
   @override
@@ -239,10 +227,7 @@ class CustomerInformation extends ConsumerWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColors.lighterBlue,
-                  border: Border.all(
-                    color: AppColors.white,
-                    width: 2,
-                  ),
+                  border: Border.all(color: AppColors.white, width: 2),
                 ),
                 child: Icon(
                   customerInfo.exists ?? false
@@ -265,10 +250,7 @@ class CustomerInformation extends ConsumerWidget {
                       maxLines: 2,
                       style: AppTextStyle.bold16,
                     ),
-                    Text(
-                      '$phoneNumber',
-                      style: AppTextStyle.medium12,
-                    )
+                    Text('$phoneNumber', style: AppTextStyle.medium12),
                   ],
                 ),
               ),
@@ -293,9 +275,9 @@ class CustomerInformation extends ConsumerWidget {
                     ? AppColors.primary
                     : AppColors.red,
               ),
-            )
+            ),
           ],
-        )
+        ),
       ],
     );
   }

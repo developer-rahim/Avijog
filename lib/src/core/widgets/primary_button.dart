@@ -25,9 +25,7 @@ class PrimaryButton extends StatelessWidget {
         color: AppColors.primary,
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-        ),
+        style: ElevatedButton.styleFrom(backgroundColor: backgroundColor),
         onPressed: isLoading ? null : () => onTap(),
         child: isLoading
             ? const Center(

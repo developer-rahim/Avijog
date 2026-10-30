@@ -9,7 +9,8 @@ part 'payment_history_repository.g.dart';
 
 @Riverpod()
 PaymentHistoryRepository paymentHistoryRepository(
-    PaymentHistoryRepositoryRef ref) {
+  PaymentHistoryRepositoryRef ref,
+) {
   return PaymentHistoryRepositoryImpl(
     dataSource: ref.read(paymentHistoryDataSourceProvider),
   );
@@ -17,5 +18,7 @@ PaymentHistoryRepository paymentHistoryRepository(
 
 abstract class PaymentHistoryRepository {
   Future<(ErrorModel?, List<PaymentHistoryModel>?)> getPaymentHistory(
-      String? month, String? year);
+    String? month,
+    String? year,
+  );
 }

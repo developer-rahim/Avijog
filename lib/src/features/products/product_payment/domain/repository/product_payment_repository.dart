@@ -11,7 +11,8 @@ part 'product_payment_repository.g.dart';
 
 @Riverpod()
 ProductPaymentRepository productPaymentRepository(
-    ProductPaymentRepositoryRef ref) {
+  ProductPaymentRepositoryRef ref,
+) {
   return ProductPaymentRepositoryImpl(
     dataSource: ref.read(productPaymentDataSourceProvider),
   );

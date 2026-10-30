@@ -6,40 +6,28 @@ class ProfileDataSourceImpl implements ProfileDataSource {
 
   @override
   Future<Response> fetchUser() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.user,
-    );
+    final response = await restClient.get(APIType.protected, API.user);
 
     return response;
   }
 
   @override
   Future<Response> fetchPrivacyPolicy() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.privacyPolicy,
-    );
+    final response = await restClient.get(APIType.protected, API.privacyPolicy);
 
     return response;
   }
 
   @override
   Future<Response> fetchFaqs() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.faqs,
-    );
+    final response = await restClient.get(APIType.protected, API.faqs);
 
     return response;
   }
 
   @override
   Future<Response> fetchUseGuide() async {
-    final response = await restClient.get(
-      APIType.protected,
-      API.userGuide,
-    );
+    final response = await restClient.get(APIType.protected, API.userGuide);
 
     return response;
   }

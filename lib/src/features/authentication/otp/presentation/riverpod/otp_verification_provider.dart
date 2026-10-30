@@ -14,9 +14,7 @@ class OtpVerification extends _$OtpVerification {
   Future<OtpVerificationEntity> otpVerification({String? phone}) async {
     final authenticationUseCase = ref.read(authenticationUseCaseProvider);
 
-    Map<String, dynamic> body = {
-      'phone': phone,
-    };
+    Map<String, dynamic> body = {'phone': phone};
 
     state = const AsyncValue.loading();
     final result = await authenticationUseCase.otpVerification(body);

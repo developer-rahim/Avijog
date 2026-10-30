@@ -13,8 +13,9 @@ String _$userGuideHash() => r'db4dca174bf1bb588fa1e1d5fd284010ccbdbb1c';
 final userGuideProvider = FutureProvider<UserGuideEntity?>.internal(
   userGuide,
   name: r'userGuideProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$userGuideHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$userGuideHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

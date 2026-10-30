@@ -13,8 +13,9 @@ String _$userHash() => r'261cb6b8531fa30ff84a803390cb0e68bb7bd8d4';
 final userProvider = FutureProvider<UserEntity?>.internal(
   user,
   name: r'userProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$userHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$userHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

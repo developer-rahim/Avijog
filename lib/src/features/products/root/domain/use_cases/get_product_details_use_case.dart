@@ -7,8 +7,9 @@ part 'get_product_details_use_case.g.dart';
 
 @Riverpod()
 GetProductDetailsUseCase getProductDetailsUseCase(
-    GetProductDetailsUseCaseRef ref,
-    {required String productId}) {
+  GetProductDetailsUseCaseRef ref, {
+  required String productId,
+}) {
   return GetProductDetailsUseCase(
     productId: productId,
     repository: ref.read(productRepositoryProvider),
@@ -16,10 +17,7 @@ GetProductDetailsUseCase getProductDetailsUseCase(
 }
 
 class GetProductDetailsUseCase {
-  GetProductDetailsUseCase({
-    required this.repository,
-    required this.productId,
-  });
+  GetProductDetailsUseCase({required this.repository, required this.productId});
   final ProductRepository repository;
   final String productId;
 

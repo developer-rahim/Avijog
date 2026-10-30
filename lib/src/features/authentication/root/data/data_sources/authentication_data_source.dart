@@ -7,7 +7,8 @@ part 'authentication_data_source.g.dart';
 
 @Riverpod(keepAlive: true)
 AuthenticationDataSource authenticationDataSource(
-    AuthenticationDataSourceRef ref) {
+  AuthenticationDataSourceRef ref,
+) {
   return AuthenticationDataSourceImpl(ref.read(restClientProvider));
 }
 
