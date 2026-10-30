@@ -1,4 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Required to reach the app's REST API (https://prod.etestpaper.net/api/).
+         The Flutter template only declares INTERNET in the debug and profile
+         manifests, so release builds would otherwise have no network access. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:label="Avijog"
         android:name="${applicationName}"
@@ -40,6 +45,17 @@
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Required on Android 11+ so that canLaunchUrl() can resolve external
+             http/https links (url_launcher). Without these entries the WhatsApp
+             button and banner links silently fail to open. -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="http"/>
         </intent>
     </queries>
 </manifest>
